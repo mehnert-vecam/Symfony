@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\SaleRabatteVaKategorien" table="sale_rabatte_va_kategorien">
+    <id name="rabattKategorie" type="integer" column="rabatt_kategorie">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="rabatteId" type="integer" column="rabatte_id" nullable="true"/>
+    <field name="kategorieId" type="integer" column="kategorie_id" nullable="true"/>
+  </entity>
+</doctrine-mapping>

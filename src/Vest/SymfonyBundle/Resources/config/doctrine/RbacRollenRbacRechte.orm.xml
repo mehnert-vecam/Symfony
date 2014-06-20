@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\RbacRollenRbacRechte" table="rbac_rollen_rbac_rechte">
+    <unique-constraints>
+      <unique-constraint name="rollen_rechte_id" columns="rollen_rechte_id"/>
+    </unique-constraints>
+    <id name="rollenRechteId" type="bigint" column="rollen_rechte_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="rolleId" type="bigint" column="rolle_id" nullable="false"/>
+    <field name="rechtId" type="bigint" column="recht_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

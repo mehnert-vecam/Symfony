@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\VaAnmeldungen" table="va_anmeldungen">
+    <id name="anmeldungId" type="integer" column="anmeldung_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="personId" type="integer" column="person_id" nullable="true"/>
+    <field name="event" type="string" column="event" length="200" nullable="false"/>
+    <field name="datumId" type="integer" column="datum_id" nullable="true"/>
+    <field name="flatrateId" type="bigint" column="flatrate_id" nullable="false"/>
+    <field name="anmeldungenBesuch" type="boolean" column="anmeldungen_besuch" nullable="false"/>
+    <field name="anmeldungenIsreg" type="boolean" column="anmeldungen_isReg" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\LzVergabe" table="lz_vergabe">
+    <id name="vergabeId" type="bigint" column="vergabe_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="lizenzId" type="bigint" column="lizenz_id" nullable="false"/>
+    <field name="kontaktId" type="bigint" column="kontakt_id" nullable="false"/>
+    <field name="vergabePublicKey" type="string" column="vergabe_public_key" length="100" nullable="false"/>
+    <field name="vergabePrivateKey" type="string" column="vergabe_private_key" length="100" nullable="false"/>
+    <field name="vergabeStart" type="datetime" column="vergabe_start" nullable="false"/>
+    <field name="vergabeEnde" type="datetime" column="vergabe_ende" nullable="false"/>
+  </entity>
+</doctrine-mapping>

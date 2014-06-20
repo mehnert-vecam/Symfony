@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\ActionLog" table="action_log">
+    <id name="logId" type="bigint" column="log_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="personId" type="bigint" column="person_id" nullable="false"/>
+    <field name="personName" type="string" column="person_name" length="255" nullable="false"/>
+    <field name="kontaktName" type="string" column="kontakt_name" length="255" nullable="false"/>
+    <field name="logAction" type="string" column="log_action" length="255" nullable="false"/>
+    <field name="sqlQuery" type="text" column="sql_query" nullable="false"/>
+    <field name="sqlTable" type="string" column="sql_table" length="50" nullable="false"/>
+    <field name="sqlIndex" type="string" column="sql_index" length="50" nullable="false"/>
+    <field name="sqlIndexValue" type="bigint" column="sql_index_value" nullable="false"/>
+    <field name="actionDate" type="datetime" column="action_date" nullable="false"/>
+  </entity>
+</doctrine-mapping>

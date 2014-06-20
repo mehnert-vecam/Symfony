@@ -1,0 +1,30 @@
+vest_symfony_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: VestSymfonyBundle:Default:index }
+    
+Formular-add:
+    pattern:  /form/
+    defaults: { _controller: VestSymfonyBundle:Formular:index }
+Formular-edit:
+    pattern:  /form/{id}
+    defaults: { _controller: VestSymfonyBundle:Formular:index }
+Formular-save:
+    pattern:  /form/save
+    defaults: { _controller: VestSymfonyBundle:Formular:save }
+task_success:
+    pattern:  /form/erfolg{ergebnis}
+    defaults: { _controller: VestSymfonyBundle:Formular:erfolg }
+task_fail:
+    pattern:  /form/fail{ergebnis}
+    defaults: { _controller: VestSymfonyBundle:Formular:erfolg } 
+    
+AddrPerson-add:
+    pattern:  /person/
+    defaults: { _controller: VestSymfonyBundle:AddrPerson:index }   
+AddrPerson-edit:
+    pattern:  /person/{id}
+    defaults: { _controller: VestSymfonyBundle:AddrPerson:index }   
+AddrPerson-save:
+    pattern:  /person/save/
+    defaults: { _controller: VestSymfonyBundle:AddrPerson:save }  
+        

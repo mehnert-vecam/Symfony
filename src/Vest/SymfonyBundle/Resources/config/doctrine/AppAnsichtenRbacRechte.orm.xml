@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\AppAnsichtenRbacRechte" table="app_ansichten_rbac_rechte">
+    <id name="ansichtRechtId" type="bigint" column="ansicht_recht_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="ansichtId" type="bigint" column="ansicht_id" nullable="false"/>
+    <field name="rechtId" type="bigint" column="recht_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

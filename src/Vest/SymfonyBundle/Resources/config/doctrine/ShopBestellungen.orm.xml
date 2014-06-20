@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\ShopBestellungen" table="shop_bestellungen">
+    <id name="bestellungId" type="integer" column="bestellung_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bestellerKontaktId" type="integer" column="besteller_kontakt_id" nullable="true"/>
+    <field name="bestellerPersonId" type="integer" column="besteller_person_id" nullable="true"/>
+    <field name="bestellDatum" type="string" column="bestell_datum" length="45" nullable="true"/>
+    <field name="lieferName" type="string" column="liefer_name" length="45" nullable="true"/>
+    <field name="lieferVorname" type="string" column="liefer_vorname" length="45" nullable="true"/>
+    <field name="lieferNachname" type="string" column="liefer_nachname" length="45" nullable="true"/>
+    <field name="lieferStrasse" type="string" column="liefer_strasse" length="45" nullable="true"/>
+    <field name="lieferPlz" type="string" column="liefer_plz" length="45" nullable="true"/>
+    <field name="lieferOrt" type="string" column="liefer_ort" length="45" nullable="true"/>
+    <field name="rechnungName" type="string" column="rechnung_name" length="45" nullable="true"/>
+    <field name="rechnungVorname" type="string" column="rechnung_vorname" length="45" nullable="true"/>
+  </entity>
+</doctrine-mapping>

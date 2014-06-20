@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\VaDatum" table="va_datum">
+    <id name="datumId" type="bigint" column="datum_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="veranstaltungTag" type="string" column="veranstaltung_tag" length="255" nullable="false"/>
+    <field name="veranstalterKontaktId" type="integer" column="veranstalter_kontakt_id" nullable="false"/>
+    <field name="veranstaltungsortKontaktId" type="integer" column="veranstaltungsort_kontakt_id" nullable="true"/>
+    <field name="moderatorPersonId" type="bigint" column="moderator_person_id" nullable="false"/>
+    <field name="datumStart" type="datetime" column="datum_start" nullable="true"/>
+    <field name="datumEnde" type="datetime" column="datum_ende" nullable="true"/>
+    <field name="datumDauer" type="text" column="datum_dauer" nullable="false"/>
+    <field name="datumPreis" type="float" column="datum_preis" precision="10" scale="0" nullable="false"/>
+    <field name="datumMwst" type="float" column="datum_mwst" precision="10" scale="0" nullable="false"/>
+    <field name="datumFrist" type="datetime" column="datum_frist" nullable="false"/>
+    <field name="datumStorno" type="datetime" column="datum_storno" nullable="false"/>
+    <field name="datumFristTage" type="integer" column="datum_frist_tage" nullable="false"/>
+    <field name="datumFristStunden" type="integer" column="datum_frist_stunden" nullable="false"/>
+    <field name="datumStornoTage" type="integer" column="datum_storno_tage" nullable="false"/>
+    <field name="datumStornoStunden" type="integer" column="datum_storno_stunden" nullable="false"/>
+    <field name="datumStatus" type="integer" column="datum_status" nullable="false"/>
+    <field name="datumNviewer" type="string" column="datum_nviewer" length="100" nullable="false"/>
+    <field name="datumReport" type="integer" column="datum_report" nullable="false"/>
+    <field name="datumStarted" type="integer" column="datum_started" nullable="false"/>
+    <field name="datumAddvisits" type="integer" column="datum_addvisits" nullable="false"/>
+    <field name="datumUseAccount" type="integer" column="datum_use_account" nullable="false"/>
+  </entity>
+</doctrine-mapping>

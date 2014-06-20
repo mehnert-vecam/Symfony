@@ -1,0 +1,23 @@
+{# src/Acme/TaskBundle/Resources/views/Default/erfolg.html.twig #}
+
+<p>
+  <!-- Gibt aus ob das eintragen erfolgreich war oder nicht -->
+  {% if ergebnis == 1 %}
+    Erfolgreich gespeichert! :)  
+  {% else %}
+  speichern fehlgeschlagen! :(
+  </p>
+  <p>
+  {{ error }}
+  {% endif %}
+</p>
+<p>
+  <!-- Wenn möglich wird der zurücklink so gesetzt, dass man direkt wieder zum Bearbeiten kommt. -->
+  <a href="
+  {% if id == 0 %}  
+    {{path('AddrPerson-add') }}
+  {%else%}
+    {{path('AddrPerson-edit',{'id': id }) }}
+  {% endif %}
+  ">zurück</a>
+<p>

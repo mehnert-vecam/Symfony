@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\RbacRollen" table="rbac_rollen">
+    <id name="rolleId" type="bigint" column="rolle_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="kontaktId" type="bigint" column="kontakt_id" nullable="false"/>
+    <field name="rolleName" type="string" column="rolle_name" length="255" nullable="false"/>
+    <field name="rolleBeschreibung" type="text" column="rolle_beschreibung" nullable="false"/>
+    <field name="rolleParentId" type="bigint" column="rolle_parent_id" nullable="false"/>
+    <field name="rolleKontaktspezifisch" type="boolean" column="rolle_kontaktspezifisch" nullable="false"/>
+    <field name="rolleLizenzspezifisch" type="integer" column="rolle_lizenzspezifisch" nullable="false"/>
+    <field name="rolleEssentiell" type="boolean" column="rolle_essentiell" nullable="false"/>
+    <field name="rolleSchutz" type="integer" column="rolle_schutz" nullable="false"/>
+  </entity>
+</doctrine-mapping>

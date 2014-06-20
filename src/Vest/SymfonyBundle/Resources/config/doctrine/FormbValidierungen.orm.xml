@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\FormbValidierungen" table="formb_validierungen">
+    <id name="validierungId" type="integer" column="validierung_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="validierungName" type="string" column="validierung_name" length="255" nullable="false"/>
+    <field name="validierungBeschreibung" type="text" column="validierung_beschreibung" nullable="false"/>
+    <field name="validierungKlasse" type="string" column="validierung_klasse" length="255" nullable="false"/>
+    <field name="validierungMethode" type="string" column="validierung_methode" length="255" nullable="false"/>
+  </entity>
+</doctrine-mapping>

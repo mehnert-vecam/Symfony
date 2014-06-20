@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\AppAnsichtenLzLizenzen" table="app_ansichten_lz_lizenzen">
+    <id name="ansichtLizenzId" type="integer" column="ansicht_lizenz_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="lizenzId" type="integer" column="lizenz_id" nullable="false"/>
+    <field name="ansichtId" type="integer" column="ansicht_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

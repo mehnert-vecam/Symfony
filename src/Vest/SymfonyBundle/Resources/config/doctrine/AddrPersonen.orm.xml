@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\AddrPersonen" table="addr_personen">
+    <indexes>
+      <index name="record_status" columns="record_status"/>
+    </indexes>
+    <id name="personId" type="bigint" column="person_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="kontaktId" type="bigint" column="kontakt_id" nullable="false"/>
+    <field name="personAnrede" type="string" column="person_anrede" length="25" nullable="false"/>
+    <field name="personTitel" type="string" column="person_titel" length="50" nullable="false"/>
+    <field name="personVorname" type="string" column="person_vorname" length="50" nullable="false"/>
+    <field name="personName" type="string" column="person_name" length="50" nullable="false"/>
+    <field name="personBriefanrede" type="string" column="person_briefanrede" length="75" nullable="false"/>
+    <field name="personZhanrede" type="string" column="person_zhanrede" length="75" nullable="false"/>
+    <field name="personTelefon" type="string" column="person_telefon" length="255" nullable="false"/>
+    <field name="personEmail" type="string" column="person_email" length="100" nullable="false"/>
+    <field name="personMobil" type="string" column="person_mobil" length="255" nullable="false"/>
+    <field name="personPass" type="string" column="person_pass" length="45" nullable="true"/>
+    <field name="personAktualisiert" type="datetime" column="person_aktualisiert" nullable="false"/>
+    <field name="recordStatus" type="boolean" column="record_status" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\RbacMandantGruppen" table="rbac_mandant_gruppen">
+    <id name="mandantGruppeId" type="integer" column="mandant_gruppe_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="mandantGruppeTemplate" type="integer" column="mandant_gruppe_template" nullable="false"/>
+    <field name="mandantGruppeName" type="string" column="mandant_gruppe_name" length="255" nullable="false"/>
+    <field name="mandantGruppeRollen" type="integer" column="mandant_gruppe_rollen" nullable="false"/>
+  </entity>
+</doctrine-mapping>

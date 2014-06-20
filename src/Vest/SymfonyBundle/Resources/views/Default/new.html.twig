@@ -1,0 +1,47 @@
+{# src/Acme/TaskBundle/Resources/views/Default/new.html.twig #}
+<!DOCTYPE HTML >
+
+{% stylesheets '../src/Vest/SymfonyBundle/css/bootstrap.css' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+<div class="form_wrapper">
+  {{ form_start(form) }}
+      {{ form_errors(form) }}
+  
+      <div class="task_wrapper">
+          {{ form_label(form.status_id, 'ID') }} <br />
+          {{ form_errors(form.status_id) }}
+          {{ form_widget(form.status_id) }}
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.status_objekt, 'Bezeichnung') }}   <br />
+          {{ form_errors(form.status_objekt) }}
+          {{ form_widget(form.status_objekt) }}
+      </div>
+      <div class="button_wrapper">
+          {{ form_widget(form.save) }}
+      </div>
+  
+  {{ form_end(form) }}
+</div>
+<style>     
+.form_wrapper{
+  margin: 10px;
+  width: 200px;
+}
+.task_wrapper{
+  margin: 10px;  
+  text-align: center;
+}
+.duedate_wrapper{
+  margin: 10px;
+  text-align: center;
+}
+.button_wrapper{
+  margin: 10px; 
+  text-align: center;
+}
+#form_dueDate select{
+  margin: 2px; 
+}
+</style>

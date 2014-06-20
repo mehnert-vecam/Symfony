@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\ShopVersandEinstellungen" table="shop_versand_einstellungen">
+    <indexes>
+      <index name="fk_shop_versand_einstellungen_shop_versandarten1" columns="versand_id"/>
+    </indexes>
+    <id name="versandEinstellungId" type="integer" column="versand_einstellung_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="versandId" type="integer" column="versand_id" nullable="true"/>
+  </entity>
+</doctrine-mapping>

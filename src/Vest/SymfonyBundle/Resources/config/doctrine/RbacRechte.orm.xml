@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\RbacRechte" table="rbac_rechte">
+    <id name="rechtId" type="bigint" column="recht_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="rechtName" type="string" column="recht_name" length="255" nullable="false"/>
+    <field name="rechtBeschreibung" type="text" column="recht_beschreibung" nullable="false"/>
+    <field name="rechtWert" type="string" column="recht_wert" length="255" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\ShopBestellungProdukte" table="shop_bestellung_produkte">
+    <indexes>
+      <index name="fk_shop_bestellung_produkte_shop_produkte1" columns="produkt_id"/>
+      <index name="fk_shop_bestellung_produkte_shop_bestellungen1" columns="bestell_id"/>
+      <index name="fk_shop_bestellung_produkte_shop_termine1" columns="termin_id"/>
+    </indexes>
+    <id name="bestellungProduktId" type="integer" column="bestellung_produkt_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="produktId" type="integer" column="produkt_id" nullable="true"/>
+    <field name="bestellId" type="integer" column="bestell_id" nullable="true"/>
+    <field name="terminId" type="integer" column="termin_id" nullable="true"/>
+    <field name="personId" type="integer" column="person_id" nullable="true"/>
+    <field name="produktPreis" type="float" column="produkt_preis" precision="10" scale="0" nullable="true"/>
+    <field name="produktMenge" type="float" column="produkt_menge" precision="10" scale="0" nullable="true"/>
+    <field name="produktGesamtPreis" type="float" column="produkt_gesamt_preis" precision="10" scale="0" nullable="true"/>
+  </entity>
+</doctrine-mapping>

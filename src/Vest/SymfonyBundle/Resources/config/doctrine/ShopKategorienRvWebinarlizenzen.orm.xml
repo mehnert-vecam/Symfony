@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\ShopKategorienRvWebinarlizenzen" table="shop_kategorien_rv_webinarlizenzen">
+    <id name="kategorieWebinarlizenzId" type="integer" column="kategorie_webinarlizenz_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="kategorieId" type="integer" column="kategorie_id" nullable="true"/>
+    <field name="webinarlizenzId" type="integer" column="webinarlizenz_id" nullable="true"/>
+  </entity>
+</doctrine-mapping>

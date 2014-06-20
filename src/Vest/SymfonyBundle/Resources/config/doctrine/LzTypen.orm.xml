@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\LzTypen" table="lz_typen">
+    <id name="typId" type="integer" column="typ_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="typName" type="string" column="typ_name" length="45" nullable="true"/>
+  </entity>
+</doctrine-mapping>

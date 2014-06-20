@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\RbacGruppenAddrKontakte" table="rbac_gruppen_addr_kontakte">
+    <id name="gruppeKontaktId" type="bigint" column="gruppe_kontakt_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="gruppeId" type="bigint" column="gruppe_id" nullable="false"/>
+    <field name="kontaktId" type="bigint" column="kontakt_id" nullable="false"/>
+    <field name="kontaktspezifischId" type="bigint" column="kontaktspezifisch_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

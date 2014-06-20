@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\ShopProdukteAttributeCopy1" table="shop_produkte_attribute_copy1">
+    <id name="produktAttributId" type="integer" column="produkt_attribut_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="productId" type="integer" column="product_id" nullable="true"/>
+    <field name="attributId" type="integer" column="attribut_id" nullable="true"/>
+    <field name="attributValue" type="text" column="attribut_value" nullable="true"/>
+  </entity>
+</doctrine-mapping>

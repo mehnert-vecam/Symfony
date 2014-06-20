@@ -1,0 +1,99 @@
+{# src/Acme/TaskBundle/Resources/views/Default/new.html.twig #}
+<!DOCTYPE HTML >
+
+{% stylesheets '../src/Vest/SymfonyBundle/css/bootstrap.css' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+
+<div class="form_wrapper">
+   
+  {{ form_start(form) }}      <!-- Start des Formularbereits -->
+      {{ form_errors(form) }}  <!-- Ausgabe von Fehler die erzeugt werden. -->
+  
+      <div class="task_wrapper">
+          {{ form_label(form.kontakt_id, 'Kontakt ID') }} <br />  <!-- Bestimmt das Lable des Feldes. Der Teil in '' gibt an was dafür angezeigt wird -->
+          {{ form_errors(form.kontakt_id) }}            <!-- ggf. Ausgabe von Fehlern. Diese werden zB ausgegeben, wenn das Format von dem was in der Datenbank für das Feld steht nicht zum angegebenen Eingabetyp passt. -->
+          {{ form_widget(form.kontakt_id) }}            <!-- Das eigentliche Formularfeld -->
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.person_anrede, 'Anrede') }}   <br />
+          {{ form_errors(form.person_anrede) }}
+          {{ form_widget(form.person_anrede) }}
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.person_titel, 'Titel') }}   <br />
+          {{ form_errors(form.person_titel) }}
+          {{ form_widget(form.person_titel) }}
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.person_vorname, 'Vorname') }}   <br />
+          {{ form_errors(form.person_vorname) }}
+          {{ form_widget(form.person_vorname) }}
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.person_name, 'Nachname') }}   <br />
+          {{ form_errors(form.person_name) }}
+          {{ form_widget(form.person_name) }}
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.person_briefanrede, 'Briefanrede') }}   <br />
+          {{ form_errors(form.person_briefanrede) }}
+          {{ form_widget(form.person_briefanrede) }}
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.person_zhanrede, 'zu Händen') }}   <br />
+          {{ form_errors(form.person_zhanrede) }}
+          {{ form_widget(form.person_zhanrede) }}
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.person_telefon, 'Telefon') }}   <br />
+          {{ form_errors(form.person_telefon) }}
+          {{ form_widget(form.person_telefon) }}
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.person_email, 'E-Mail') }}   <br />
+          {{ form_errors(form.person_email) }}
+          {{ form_widget(form.person_email) }}
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.person_mobil, 'Mobil-Telefon') }}   <br />
+          {{ form_errors(form.person_mobil) }}
+          {{ form_widget(form.person_mobil) }}
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.person_pass, 'Passwort') }}   <br />
+          {{ form_errors(form.person_pass) }}
+          {{ form_widget(form.person_pass) }}
+      </div>
+      <div class="button_wrapper">
+          {{ form_widget(form.save) }}
+      </div>
+  
+  {{ form_end(form) }}  <!-- Ende des Formularbereits -->
+
+</div>
+
+
+<div class="verlinkung">
+  <p><a href="{{ path('AddrPerson-add') }}">Neuen hinzufügen</a></p>
+</div>
+
+
+<style>  
+.verlinkung{
+  margin: 20px;
+}   
+.form_wrapper{
+  margin: 10px;
+  width: 200px;
+} 
+.task_wrapper{
+  margin: 10px;  
+  text-align: center;
+}
+
+.form_wrapper div{
+  margin: 10px;  
+  text-align: center;
+}
+</style>

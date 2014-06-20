@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\SymfonyBundle\Entity\ShopKategorieRvRaum" table="shop_kategorie_rv_raum">
+    <id name="kategorieRaumId" type="integer" column="kategorie_raum_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="raumId" type="integer" column="raum_id" nullable="true"/>
+    <field name="kategorieId" type="integer" column="kategorie_id" nullable="true"/>
+  </entity>
+</doctrine-mapping>
