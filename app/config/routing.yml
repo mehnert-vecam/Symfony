@@ -1,0 +1,4 @@
+vest_symfony:
+    resource: "@VestSymfonyBundle/Resources/config/routing.yml"
+    prefix:   /
+
