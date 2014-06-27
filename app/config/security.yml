@@ -1,10 +1,9 @@
 security:
-    encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
-
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+    encoders:
+        Vest\SymfonyUserBundle\Security\Entity\AddrPersonen: sha512
 
     providers:
         in_memory:
@@ -12,27 +11,30 @@ security:
                 users:
                     user:  { password: userpass, roles: [ 'ROLE_USER' ] }
                     admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+        datenbank:
+            id: user_provider
 
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        demo_login:
-            pattern:  ^/demo/secured/login$
-            security: false
 
         demo_secured_area:
-            pattern:    ^/demo/secured/
+            pattern:    ^/(person/test*|login_check)
             form_login:
-                check_path: _demo_security_check
-                login_path: _demo_login
+                check_path: user_provider
+                login_path: /sicher/login
             logout:
-                path:   _demo_logout
-                target: _demo
+                path:    /sicher/logout
+                target:  /
+        login_firewall:
+            pattern:  ^/person/login$
+            anonymous: ~
             #anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
 
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: ^/person, roles: ROLE_ADMIN }

@@ -1,5 +1,7 @@
 <?php
 
+    ini_set('eaccelerator.enable', 0);
+    ini_set('eaccelerator.optimizer', 0);
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Debug\Debug;
 
