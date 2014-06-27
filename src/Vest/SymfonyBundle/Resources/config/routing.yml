@@ -81,4 +81,4 @@ Responsa_view_show:
     defaults: { _controller: VestSymfonyBundle:View:show } 	
 Responsa_view_erhalten:
     pattern:  /responsa/view/erhalten/{u_id}
-    defaults: { _controller: VestSymfonyBundle:View:show } 	
+    defaults: { _controller: VestSymfonyBundle:View:erhalten } 	

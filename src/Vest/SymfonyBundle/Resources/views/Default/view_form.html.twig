@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ asset_url }}" />
 {% endstylesheets %}
 
-   <h3{{u_name}}</h3>
+   <h3>{{u_name}}</h3>
 <div class="form_wrapper">
   {{ form_start(form) }}      <!-- Start des Formularbereits -->
       {{ form_errors(form) }}  <!-- Ausgabe von Fehler die erzeugt werden. -->
@@ -13,13 +13,16 @@
 			{% for item in form.antwort %}
 				
       <div class="task_wrapper">
-			(% tmp = {{fragen[item.]}} %)
-			{{tmp}}
-          {{ form_label(item, '{{frage[item.lable]}}') }}   <br />
-          {{ form_errors(item) }}
-          {{ form_widget(item) }}
+				{{fragen[loop.index0]}} <br />
+						{{ form_errors(item) }}
+						{{ form_widget(item) }}
       </div>
 			{% endfor %}
+			
+			<div class="task_wrapper">
+						{{ form_errors(form.f_id) }}
+						{{ form_widget(form.f_id) }}
+      </div>
 			
 			
       <div class="button_wrapper">
@@ -38,7 +41,7 @@
 }   
 .form_wrapper{
   margin: 10px;
-  width: 200px;
+  width: 400px;
 } 
 .task_wrapper{
   margin: 10px;  
