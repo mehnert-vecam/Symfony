@@ -30,7 +30,7 @@ class ViewController extends BaseController
 				$f_id_tmp = array();
 				$antwort_tmp = array();
 				foreach($fragen as $frage){
-					$frage_tmp[$frage->getId()] = $frage->getFrage();
+					$frage_tmp[] = $frage->getFrage();
 					$f_id_tmp[]= $frage->getId();
 					$antwort_tmp[] = '';
 				}
@@ -60,7 +60,7 @@ class ViewController extends BaseController
 				$form  = $form->getForm();
             
 				return $this->render('VestSymfonyBundle:Default:view_form.html.twig', array(
-					'form' => $form->createView(), 'type' => 'new', 'u_name' =>$u_name
+					'form' => $form->createView(), 'type' => 'new', 'u_name' =>$u_name, 'fragen' => $frage_tmp
 				));
 	}
 	

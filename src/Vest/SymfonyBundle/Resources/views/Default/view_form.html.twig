@@ -10,7 +10,16 @@
   {{ form_start(form) }}      <!-- Start des Formularbereits -->
       {{ form_errors(form) }}  <!-- Ausgabe von Fehler die erzeugt werden. -->
   
-
+			{% for item in form.antwort %}
+				
+      <div class="task_wrapper">
+			(% tmp = {{fragen[item.]}} %)
+			{{tmp}}
+          {{ form_label(item, '{{frage[item.lable]}}') }}   <br />
+          {{ form_errors(item) }}
+          {{ form_widget(item) }}
+      </div>
+			{% endfor %}
 			
 			
       <div class="button_wrapper">
