@@ -1,4 +1,6 @@
-﻿<div class="warpper">
+{% extends "base.html.twig" %}
+{% block body %}
+<div class="warpper">
 <table class="overview">
 	<tr>
 		<th>id</th>
@@ -34,9 +36,9 @@
 			<td><a href="{{ path('Responsa_frage_overview', {'u_id': row.id}) }}">Fragen</a></td>
 			<td><a href="{{ path('Responsa_antwort_alloverview', {'u_id': row.id}) }}">Antworten</a></td>
 			<td><a href="{{ path('Responsa_view_show', {'u_id': row.id,'feld1': row.feld1,'feld2': row.feld2,'feld3': row.feld3,'feld4': row.feld4,'feld5': row.feld5}) }}">Show</a></td>
-			
-			
-		</tr>	
+
+
+		</tr>
 	{% endfor %}
 
 </table>
@@ -51,3 +53,4 @@
 	max-width: 90%;
 }
 </style>
+{% endblock %}

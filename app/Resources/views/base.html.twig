@@ -3,11 +3,50 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('favicon.ico') }}">
+
+
+		{# Laden Dateien im Bundleordner '@VestSymfonyBundle/Resources/public/css/*' #}
+		{# Laden Dateien in web/bundles  'bundles/allgemein/css/*'                   #}
+		{# Standardverzeichnis von asset() ist /web/ #}
+		{# Assetic ändert pfad der Dateien für relative IMG Pfade MUSS filter='cssrewrite' gesetzt sein #}
+
+		{# Loading ALL JS #}
+    	{#{% javascripts '@VestSymfonyBundle/Resources/public/js/*' %}#}
+			{#<script type="text/javascript" src="{{ asset_url }}"></script>#}
+		{#{% endjavascripts %}#}
+
+		{# Loading ALL CSS #}
+		{#{% stylesheets 'bundles/allgemein/css/*' filter='cssrewrite' %}#}
+			{#<link rel="stylesheet" href="{{ asset_url }}" />#}
+		{#{% endstylesheets %}#}
+
+		{# Loading ONE CSS #}
+		{#<link rel="stylesheet" href="{{ asset('bundles/allgemein/css/custom.css') }}" />#}
+
+
+{% block javascripts %}
+  {% javascripts '@jquery_js' '@bootstrap_js' filter='?yui_js' combine=true %}
+     <script src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+{% endblock %}
+
+{% block stylesheets %}
+  {% stylesheets '@bootstrap_less' combine=true %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+ {% endstylesheets %}
+{% endblock %}
+
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block testblock %}
+        	<div class="csstest1">TEST1</div>
+			<div class="csstest2">TEST2</div>
+        {% endblock %}
     </body>
 </html>
