@@ -6,23 +6,35 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * ShopKategorieRvRaum
+ *
+ * @ORM\Table(name="shop_kategorie_rv_raum")
+ * @ORM\Entity
  */
 class ShopKategorieRvRaum
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="raum_id", type="integer", nullable=true)
      */
     private $raumId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kategorie_id", type="integer", nullable=true)
      */
     private $kategorieId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kategorie_raum_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $kategorieRaumId;
+
 
 
     /**

@@ -1,0 +1,53 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * FormbValidierungen
+ *
+ * @ORM\Table(name="formb_validierungen")
+ * @ORM\Entity
+ */
+class FormbValidierungen
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="validierung_name", type="string", length=255, nullable=false)
+     */
+    private $validierungName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="validierung_beschreibung", type="text", nullable=false)
+     */
+    private $validierungBeschreibung;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="validierung_klasse", type="string", length=255, nullable=false)
+     */
+    private $validierungKlasse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="validierung_methode", type="string", length=255, nullable=false)
+     */
+    private $validierungMethode;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="validierung_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $validierungId;
+
+
+}

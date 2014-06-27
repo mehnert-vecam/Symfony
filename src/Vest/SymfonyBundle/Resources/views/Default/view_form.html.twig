@@ -1,0 +1,43 @@
+{# src/Acme/TaskBundle/Resources/views/Default/new.html.twig #}
+<!DOCTYPE HTML >
+
+{% stylesheets '../src/Vest/SymfonyBundle/css/bootstrap.css' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+
+   <h3{{u_name}}</h3>
+<div class="form_wrapper">
+  {{ form_start(form) }}      <!-- Start des Formularbereits -->
+      {{ form_errors(form) }}  <!-- Ausgabe von Fehler die erzeugt werden. -->
+  
+
+			
+			
+      <div class="button_wrapper">
+          {{ form_widget(form.Speichern) }}
+      </div>
+  
+  {{ form_end(form) }}  <!-- Ende des Formularbereits -->
+
+</div>
+
+
+
+<style>  
+.verlinkung{
+  margin: 20px;
+}   
+.form_wrapper{
+  margin: 10px;
+  width: 200px;
+} 
+.task_wrapper{
+  margin: 10px;  
+  text-align: center;
+}
+
+.form_wrapper div{
+  margin: 10px;  
+  text-align: center;
+}
+</style>

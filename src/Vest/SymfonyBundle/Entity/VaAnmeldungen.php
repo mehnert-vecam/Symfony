@@ -6,43 +6,63 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * VaAnmeldungen
+ *
+ * @ORM\Table(name="va_anmeldungen")
+ * @ORM\Entity
  */
 class VaAnmeldungen
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="person_id", type="integer", nullable=true)
      */
     private $personId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="event", type="string", length=200, nullable=false)
      */
     private $event;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datum_id", type="integer", nullable=true)
      */
     private $datumId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="flatrate_id", type="bigint", nullable=false)
      */
     private $flatrateId;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="anmeldungen_besuch", type="boolean", nullable=false)
      */
     private $anmeldungenBesuch;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="anmeldungen_isReg", type="boolean", nullable=false)
      */
     private $anmeldungenIsreg;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="anmeldung_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $anmeldungId;
+
 
 
     /**

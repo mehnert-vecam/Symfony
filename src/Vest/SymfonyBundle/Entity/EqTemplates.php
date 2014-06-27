@@ -6,33 +6,49 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * EqTemplates
+ *
+ * @ORM\Table(name="eq_templates")
+ * @ORM\Entity
  */
 class EqTemplates
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="template_objekt", type="text", nullable=true)
      */
     private $templateObjekt;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="template_status", type="string", length=200, nullable=true)
      */
     private $templateStatus;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="anlass_id", type="bigint", nullable=false)
      */
     private $anlassId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=false)
      */
     private $kontaktId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="template_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $templateId;
+
 
 
     /**

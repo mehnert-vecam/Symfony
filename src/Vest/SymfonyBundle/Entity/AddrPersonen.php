@@ -6,78 +6,112 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * AddrPersonen
+ *
+ * @ORM\Table(name="addr_personen", indexes={@ORM\Index(name="record_status", columns={"record_status"})})
+ * @ORM\Entity
  */
 class AddrPersonen
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=false)
      */
     private $kontaktId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="person_anrede", type="string", length=25, nullable=false)
      */
     private $personAnrede;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="person_titel", type="string", length=50, nullable=true)
      */
     private $personTitel;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="person_vorname", type="string", length=50, nullable=false)
      */
     private $personVorname;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="person_name", type="string", length=50, nullable=false)
      */
     private $personName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="person_briefanrede", type="string", length=75, nullable=true)
      */
     private $personBriefanrede;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="person_zhanrede", type="string", length=75, nullable=true)
      */
     private $personZhanrede;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="person_telefon", type="string", length=255, nullable=false)
      */
     private $personTelefon;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="person_email", type="string", length=100, nullable=false)
      */
     private $personEmail;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="person_mobil", type="string", length=255, nullable=true)
      */
     private $personMobil;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="person_pass", type="string", length=45, nullable=true)
      */
     private $personPass;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="person_aktualisiert", type="datetime", nullable=true)
      */
     private $personAktualisiert;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="record_status", type="boolean", nullable=false)
      */
     private $recordStatus;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="person_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $personId;
+
 
 
     /**
@@ -387,10 +421,5 @@ class AddrPersonen
     public function getPersonId()
     {
         return $this->personId;
-    }
-    
-    public function setPersonId($personId)
-    {
-        $this->personId = $personId;
     }
 }

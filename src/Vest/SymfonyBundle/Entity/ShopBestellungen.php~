@@ -1,0 +1,102 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ShopBestellungen
+ *
+ * @ORM\Table(name="shop_bestellungen")
+ * @ORM\Entity
+ */
+class ShopBestellungen
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="besteller_kontakt_id", type="integer", nullable=true)
+     */
+    private $bestellerKontaktId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="besteller_person_id", type="integer", nullable=true)
+     */
+    private $bestellerPersonId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bestell_datum", type="string", length=45, nullable=true)
+     */
+    private $bestellDatum;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="liefer_name", type="string", length=45, nullable=true)
+     */
+    private $lieferName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="liefer_vorname", type="string", length=45, nullable=true)
+     */
+    private $lieferVorname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="liefer_nachname", type="string", length=45, nullable=true)
+     */
+    private $lieferNachname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="liefer_strasse", type="string", length=45, nullable=true)
+     */
+    private $lieferStrasse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="liefer_plz", type="string", length=45, nullable=true)
+     */
+    private $lieferPlz;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="liefer_ort", type="string", length=45, nullable=true)
+     */
+    private $lieferOrt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rechnung_name", type="string", length=45, nullable=true)
+     */
+    private $rechnungName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rechnung_vorname", type="string", length=45, nullable=true)
+     */
+    private $rechnungVorname;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="bestellung_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $bestellungId;
+
+
+}

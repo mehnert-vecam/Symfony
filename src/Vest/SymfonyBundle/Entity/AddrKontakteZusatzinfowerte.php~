@@ -1,0 +1,46 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * AddrKontakteZusatzinfowerte
+ *
+ * @ORM\Table(name="addr_kontakte_zusatzinfowerte")
+ * @ORM\Entity
+ */
+class AddrKontakteZusatzinfowerte
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gruppe_kontakt_id", type="bigint", nullable=false)
+     */
+    private $gruppeKontaktId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="zusatzinfowert_objekt", type="text", nullable=false)
+     */
+    private $zusatzinfowertObjekt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="zusatzinfo_id", type="string", length=45, nullable=false)
+     */
+    private $zusatzinfoId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="zusatzinfowert_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $zusatzinfowertId;
+
+
+}

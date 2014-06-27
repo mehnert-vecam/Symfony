@@ -1,0 +1,67 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * EqAuftraege
+ *
+ * @ORM\Table(name="eq_auftraege")
+ * @ORM\Entity
+ */
+class EqAuftraege
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="auftrag_startdatum", type="datetime", nullable=true)
+     */
+    private $auftragStartdatum;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="auftrag_enddatum", type="date", nullable=true)
+     */
+    private $auftragEnddatum;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="auftrag_status", type="string", length=200, nullable=true)
+     */
+    private $auftragStatus;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="anlass_id", type="bigint", nullable=false)
+     */
+    private $anlassId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="person_id", type="bigint", nullable=false)
+     */
+    private $personId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="datum_id", type="bigint", nullable=false)
+     */
+    private $datumId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="auftrag_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $auftragId;
+
+
+}

@@ -1,0 +1,62 @@
+﻿
+<!DOCTYPE HTML >
+
+{% stylesheets '../src/Vest/SymfonyBundle/css/bootstrap.css' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+
+   <h3>Neue Frage erstellen</h3>
+<div class="form_wrapper">
+  {{ form_start(form) }}      <!-- Start des Formularbereits -->
+      {{ form_errors(form) }}  <!-- Ausgabe von Fehler die erzeugt werden. -->
+  
+      <div class="task_wrapper">
+          {{ form_label(form.frage, 'Frage') }}   <br />
+          {{ form_errors(form.frage) }}
+          {{ form_widget(form.frage) }}
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.prio, 'Priorität') }}   <br />
+          {{ form_errors(form.prio) }}
+          {{ form_widget(form.prio) }}
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.auswertungsbereich, 'Auswertungsbereich') }}   <br />
+          {{ form_errors(form.auswertungsbereich) }}
+          {{ form_widget(form.auswertungsbereich) }}
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.type, 'Fragentyp') }}   <br />
+          {{ form_errors(form.type) }}
+          {{ form_widget(form.type) }}
+      </div>
+			
+			
+      <div class="button_wrapper">
+          {{ form_widget(form.Speichern) }}
+      </div>
+  
+  {{ form_end(form) }}  <!-- Ende des Formularbereits -->
+
+</div>
+
+
+
+<style>  
+.verlinkung{
+  margin: 20px;
+}   
+.form_wrapper{
+  margin: 10px;
+  width: 200px;
+} 
+.task_wrapper{
+  margin: 10px;  
+  text-align: center;
+}
+
+.form_wrapper div{
+  margin: 10px;  
+  text-align: center;
+}
+</style>

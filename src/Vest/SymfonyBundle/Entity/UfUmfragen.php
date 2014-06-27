@@ -6,33 +6,49 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * UfUmfragen
+ *
+ * @ORM\Table(name="uf_umfragen")
+ * @ORM\Entity
  */
 class UfUmfragen
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="umfrage_name", type="text", nullable=false)
      */
     private $umfrageName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="umfrage_beschreibung", type="text", nullable=false)
      */
     private $umfrageBeschreibung;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="umfrage_typ", type="string", length=100, nullable=false)
      */
     private $umfrageTyp;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="lizenz_id", type="string", length=45, nullable=true)
      */
     private $lizenzId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="umfrage_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $umfrageId;
+
 
 
     /**

@@ -6,33 +6,49 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * RbacGruppenAddrZusatzinfos
+ *
+ * @ORM\Table(name="rbac_gruppen_addr_zusatzinfos")
+ * @ORM\Entity
  */
 class RbacGruppenAddrZusatzinfos
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="gruppe_id", type="bigint", nullable=false)
      */
     private $gruppeId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="zusatzinfo_id", type="bigint", nullable=false)
      */
     private $zusatzinfoId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="zusatzinfo_anzeigename", type="string", length=255, nullable=false)
      */
     private $zusatzinfoAnzeigename;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="zusatzinfo_typ_id", type="integer", nullable=false)
      */
     private $zusatzinfoTypId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="gruppe_zusatzinfo_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $gruppeZusatzinfoId;
+
 
 
     /**

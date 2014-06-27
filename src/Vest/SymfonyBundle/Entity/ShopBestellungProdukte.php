@@ -6,48 +6,70 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * ShopBestellungProdukte
+ *
+ * @ORM\Table(name="shop_bestellung_produkte", indexes={@ORM\Index(name="fk_shop_bestellung_produkte_shop_produkte1", columns={"produkt_id"}), @ORM\Index(name="fk_shop_bestellung_produkte_shop_bestellungen1", columns={"bestell_id"}), @ORM\Index(name="fk_shop_bestellung_produkte_shop_termine1", columns={"termin_id"})})
+ * @ORM\Entity
  */
 class ShopBestellungProdukte
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="produkt_id", type="integer", nullable=true)
      */
     private $produktId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="bestell_id", type="integer", nullable=true)
      */
     private $bestellId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="termin_id", type="integer", nullable=true)
      */
     private $terminId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="person_id", type="integer", nullable=true)
      */
     private $personId;
 
     /**
      * @var float
+     *
+     * @ORM\Column(name="produkt_preis", type="float", precision=10, scale=0, nullable=true)
      */
     private $produktPreis;
 
     /**
      * @var float
+     *
+     * @ORM\Column(name="produkt_menge", type="float", precision=10, scale=0, nullable=true)
      */
     private $produktMenge;
 
     /**
      * @var float
+     *
+     * @ORM\Column(name="produkt_gesamt_preis", type="float", precision=10, scale=0, nullable=true)
      */
     private $produktGesamtPreis;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="bestellung_produkt_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $bestellungProduktId;
+
 
 
     /**

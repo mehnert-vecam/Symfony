@@ -6,23 +6,35 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * AppAnwendungenRbacRollen
+ *
+ * @ORM\Table(name="app_anwendungen_rbac_rollen")
+ * @ORM\Entity
  */
 class AppAnwendungenRbacRollen
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="anwendung_id", type="integer", nullable=false)
      */
     private $anwendungId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="rolle_id", type="integer", nullable=false)
      */
     private $rolleId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="anwendungen_rollen_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $anwendungenRollenId;
+
 
 
     /**

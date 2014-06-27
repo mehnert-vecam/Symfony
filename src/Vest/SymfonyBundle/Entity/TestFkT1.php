@@ -6,23 +6,35 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * TestFkT1
+ *
+ * @ORM\Table(name="test_fk_t1")
+ * @ORM\Entity
  */
 class TestFkT1
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="WERT", type="string", length=8000, nullable=false)
      */
     private $wert;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="WERT_001", type="string", length=8000, nullable=false)
      */
     private $wert001;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="PK", type="boolean")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $pk;
+
 
 
     /**

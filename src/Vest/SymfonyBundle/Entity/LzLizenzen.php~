@@ -1,0 +1,102 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * LzLizenzen
+ *
+ * @ORM\Table(name="lz_lizenzen")
+ * @ORM\Entity
+ */
+class LzLizenzen
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="anwendung_id", type="integer", nullable=false)
+     */
+    private $anwendungId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ansicht_id", type="integer", nullable=false)
+     */
+    private $ansichtId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lizenz_name", type="string", length=45, nullable=true)
+     */
+    private $lizenzName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lizenz_beschreibung", type="text", nullable=true)
+     */
+    private $lizenzBeschreibung;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lizenz_preis", type="string", length=45, nullable=true)
+     */
+    private $lizenzPreis;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="typ_id", type="integer", nullable=true)
+     */
+    private $typId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lizenz_keys_zeigen", type="integer", nullable=false)
+     */
+    private $lizenzKeysZeigen;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lizenz_event_cat_id", type="integer", nullable=false)
+     */
+    private $lizenzEventCatId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lizenz_event_menge", type="integer", nullable=false)
+     */
+    private $lizenzEventMenge;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lizenz_dauer", type="string", length=10, nullable=false)
+     */
+    private $lizenzDauer;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lizenz_abo", type="integer", nullable=false)
+     */
+    private $lizenzAbo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lizenz_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $lizenzId;
+
+
+}

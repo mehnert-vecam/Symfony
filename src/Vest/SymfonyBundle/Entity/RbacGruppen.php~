@@ -1,0 +1,95 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RbacGruppen
+ *
+ * @ORM\Table(name="rbac_gruppen")
+ * @ORM\Entity
+ */
+class RbacGruppen
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=false)
+     */
+    private $kontaktId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gruppe_typ_id", type="integer", nullable=true)
+     */
+    private $gruppeTypId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gruppe_zugriffsstufe_id", type="integer", nullable=false)
+     */
+    private $gruppeZugriffsstufeId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gruppe_name", type="string", length=255, nullable=false)
+     */
+    private $gruppeName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gruppe_beschreibung", type="text", nullable=false)
+     */
+    private $gruppeBeschreibung;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gruppe_parent_id", type="bigint", nullable=false)
+     */
+    private $gruppeParentId;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="gruppe_kontaktspezifisch", type="boolean", nullable=false)
+     */
+    private $gruppeKontaktspezifisch;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gruppe_lizenzspezifisch", type="integer", nullable=false)
+     */
+    private $gruppeLizenzspezifisch;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="gruppe_essentiell", type="boolean", nullable=false)
+     */
+    private $gruppeEssentiell;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="gruppe_schutz", type="boolean", nullable=false)
+     */
+    private $gruppeSchutz;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gruppe_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $gruppeId;
+
+
+}

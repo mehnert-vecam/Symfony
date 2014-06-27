@@ -6,28 +6,42 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * NlTemplates
+ *
+ * @ORM\Table(name="nl_templates")
+ * @ORM\Entity
  */
 class NlTemplates
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="template_name", type="string", length=45, nullable=true)
      */
     private $templateName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="template_objekt", type="text", nullable=true)
      */
     private $templateObjekt;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=true)
      */
     private $kontaktId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="template_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $templateId;
+
 
 
     /**

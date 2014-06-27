@@ -6,33 +6,49 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * UfFragen
+ *
+ * @ORM\Table(name="uf_fragen")
+ * @ORM\Entity
  */
 class UfFragen
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="umfrage_id", type="bigint", nullable=false)
      */
     private $umfrageId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="frage_text", type="text", nullable=false)
      */
     private $frageText;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="frage_typ", type="integer", nullable=false)
      */
     private $frageTyp;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="frage_prio", type="integer", nullable=false)
      */
     private $fragePrio;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="frage_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $frageId;
+
 
 
     /**

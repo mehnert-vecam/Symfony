@@ -1,0 +1,53 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * FormbElemente
+ *
+ * @ORM\Table(name="formb_elemente")
+ * @ORM\Entity
+ */
+class FormbElemente
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="element_name", type="string", length=255, nullable=false)
+     */
+    private $elementName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="element_app", type="string", length=45, nullable=true)
+     */
+    private $elementApp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="element_methode", type="string", length=255, nullable=true)
+     */
+    private $elementMethode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="element_parameter", type="text", nullable=false)
+     */
+    private $elementParameter;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="element_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $elementId;
+
+
+}

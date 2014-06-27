@@ -6,53 +6,77 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * VtAngebote
+ *
+ * @ORM\Table(name="vt_angebote")
+ * @ORM\Entity
  */
 class VtAngebote
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=false)
      */
     private $kontaktId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="angebot_name", type="string", length=255, nullable=false)
      */
     private $angebotName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="angebot_beschreibung", type="text", nullable=false)
      */
     private $angebotBeschreibung;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="angebot_nutzung", type="integer", nullable=false)
      */
     private $angebotNutzung;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="angebot_dauer", type="string", length=25, nullable=false)
      */
     private $angebotDauer;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="angebot_cat", type="integer", nullable=false)
      */
     private $angebotCat;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="angebot_req_person", type="boolean", nullable=false)
      */
     private $angebotReqPerson;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="angebot_intern", type="boolean", nullable=false)
      */
     private $angebotIntern;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="angebot_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $angebotId;
+
 
 
     /**

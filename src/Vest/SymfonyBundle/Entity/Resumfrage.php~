@@ -1,0 +1,102 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Resumfrage
+ *
+ * @ORM\Table(name="resumfrage", uniqueConstraints={@ORM\UniqueConstraint(name="name", columns={"name"})})
+ * @ORM\Entity
+ */
+class Resumfrage
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=100, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feld1", type="string", length=100, nullable=true)
+     */
+    private $feld1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feld2", type="string", length=100, nullable=true)
+     */
+    private $feld2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feld3", type="string", length=100, nullable=true)
+     */
+    private $feld3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feld4", type="string", length=100, nullable=true)
+     */
+    private $feld4;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feld5", type="string", length=100, nullable=true)
+     */
+    private $feld5;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="auswertungsbereich1", type="string", length=100, nullable=true)
+     */
+    private $auswertungsbereich1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="auswertungsbereich2", type="string", length=100, nullable=true)
+     */
+    private $auswertungsbereich2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="auswertungsbereich3", type="string", length=100, nullable=true)
+     */
+    private $auswertungsbereich3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="auswertungsbereich4", type="string", length=100, nullable=true)
+     */
+    private $auswertungsbereich4;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="auswertungsbereich5", type="string", length=100, nullable=true)
+     */
+    private $auswertungsbereich5;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

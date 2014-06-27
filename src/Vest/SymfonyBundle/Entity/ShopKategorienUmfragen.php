@@ -6,23 +6,35 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * ShopKategorienUmfragen
+ *
+ * @ORM\Table(name="shop_kategorien_umfragen", indexes={@ORM\Index(name="fk_shop_kategorien_umfragen_shop_kategorien1", columns={"kategorie_id"})})
+ * @ORM\Entity
  */
 class ShopKategorienUmfragen
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kategorie_id", type="integer", nullable=true)
      */
     private $kategorieId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="umfrage_id", type="integer", nullable=true)
      */
     private $umfrageId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kategorie_umfrage_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $kategorieUmfrageId;
+
 
 
     /**

@@ -6,28 +6,42 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * RbacGruppenAddrKontakte
+ *
+ * @ORM\Table(name="rbac_gruppen_addr_kontakte")
+ * @ORM\Entity
  */
 class RbacGruppenAddrKontakte
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="gruppe_id", type="bigint", nullable=false)
      */
     private $gruppeId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=false)
      */
     private $kontaktId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kontaktspezifisch_id", type="bigint", nullable=false)
      */
     private $kontaktspezifischId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="gruppe_kontakt_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $gruppeKontaktId;
+
 
 
     /**

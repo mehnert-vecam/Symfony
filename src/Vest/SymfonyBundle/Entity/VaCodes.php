@@ -6,33 +6,49 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * VaCodes
+ *
+ * @ORM\Table(name="va_codes")
+ * @ORM\Entity
  */
 class VaCodes
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="user_id", type="string", length=45, nullable=true)
      */
     private $userId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="event_code_value", type="string", length=45, nullable=true)
      */
     private $eventCodeValue;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="veranstaltung_tag", type="string", length=45, nullable=true)
      */
     private $veranstaltungTag;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datum_id", type="bigint", nullable=true)
      */
     private $datumId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="event_codes_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $eventCodesId;
+
 
 
     /**

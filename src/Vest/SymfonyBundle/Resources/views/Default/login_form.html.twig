@@ -1,0 +1,50 @@
+{# src/Acme/TaskBundle/Resources/views/Default/new.html.twig #}
+<!DOCTYPE HTML >
+
+{% stylesheets '../src/Vest/SymfonyBundle/css/bootstrap.css' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+
+<div class="form_wrapper">
+   
+  {{ form_start(form) }}      <!-- Start des Formularbereits -->
+      {{ form_errors(form) }}  <!-- Ausgabe von Fehler die erzeugt werden. -->
+  
+      <div class="task_wrapper">
+          {{ form_label(form.personEmail, 'E-Mail') }}   <br />
+          {{ form_errors(form.personEmail) }}
+          {{ form_widget(form.personEmail) }}
+      </div>
+      <div class="task_wrapper">
+          {{ form_label(form.personPass, 'Passwort') }}   <br />
+          {{ form_errors(form.personPass) }}
+          {{ form_widget(form.personPass) }}
+      </div>
+      <div class="button_wrapper">
+          {{ form_widget(form.save) }}
+      </div>
+  
+  {{ form_end(form) }}  <!-- Ende des Formularbereits -->
+
+</div>
+
+
+
+<style>  
+.verlinkung{
+  margin: 20px;
+}   
+.form_wrapper{
+  margin: 10px;
+  width: 200px;
+} 
+.task_wrapper{
+  margin: 10px;  
+  text-align: center;
+}
+
+.form_wrapper div{
+  margin: 10px;  
+  text-align: center;
+}
+</style>

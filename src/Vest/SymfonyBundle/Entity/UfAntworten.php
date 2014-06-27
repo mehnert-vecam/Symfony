@@ -6,63 +6,91 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * UfAntworten
+ *
+ * @ORM\Table(name="uf_antworten")
+ * @ORM\Entity
  */
 class UfAntworten
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="frage_id", type="bigint", nullable=false)
      */
     private $frageId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=false)
      */
     private $kontaktId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="antwort_wert", type="text", nullable=false)
      */
     private $antwortWert;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="antwort_benutzerdefiniert", type="text", nullable=false)
      */
     private $antwortBenutzerdefiniert;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="antwort_benutzerdefiniert2", type="string", length=100, nullable=false)
      */
     private $antwortBenutzerdefiniert2;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datum_id", type="bigint", nullable=false)
      */
     private $datumId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="person_id", type="bigint", nullable=false)
      */
     private $personId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="event_tag", type="string", length=100, nullable=false)
      */
     private $eventTag;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="antwort_token", type="string", length=255, nullable=false)
      */
     private $antwortToken;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="antwort_datum", type="datetime", nullable=false)
      */
     private $antwortDatum;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="antwort_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $antwortId;
+
 
 
     /**

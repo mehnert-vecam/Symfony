@@ -6,38 +6,56 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * NsNews
+ *
+ * @ORM\Table(name="ns_news")
+ * @ORM\Entity
  */
 class NsNews
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="news_name", type="string", length=255, nullable=true)
      */
     private $newsName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="news_datum", type="string", length=45, nullable=true)
      */
     private $newsDatum;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="news_teaser", type="text", nullable=true)
      */
     private $newsTeaser;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="news_url", type="string", length=255, nullable=true)
      */
     private $newsUrl;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_id", type="string", length=45, nullable=true)
      */
     private $kontaktId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="news_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $newsId;
+
 
 
     /**

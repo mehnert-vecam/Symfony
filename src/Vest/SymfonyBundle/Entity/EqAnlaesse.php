@@ -6,18 +6,28 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * EqAnlaesse
+ *
+ * @ORM\Table(name="eq_anlaesse")
+ * @ORM\Entity
  */
 class EqAnlaesse
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="anlass_objekt", type="string", length=200, nullable=true)
      */
     private $anlassObjekt;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="anlass_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $anlassId;
+
 
 
     /**

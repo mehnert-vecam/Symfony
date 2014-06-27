@@ -6,33 +6,49 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * SaleRabatte
+ *
+ * @ORM\Table(name="sale_rabatte")
+ * @ORM\Entity
  */
 class SaleRabatte
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="rabatt_name", type="text", nullable=true)
      */
     private $rabattName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="rabatt_beschreibung", type="text", nullable=true)
      */
     private $rabattBeschreibung;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_id", type="string", length=45, nullable=true)
      */
     private $kontaktId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="rabatttyp_id", type="string", length=45, nullable=true)
      */
     private $rabatttypId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="rabatt_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $rabattId;
+
 
 
     /**

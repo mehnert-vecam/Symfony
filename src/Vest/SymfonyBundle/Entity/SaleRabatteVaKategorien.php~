@@ -1,0 +1,39 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SaleRabatteVaKategorien
+ *
+ * @ORM\Table(name="sale_rabatte_va_kategorien")
+ * @ORM\Entity
+ */
+class SaleRabatteVaKategorien
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rabatte_id", type="integer", nullable=true)
+     */
+    private $rabatteId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="kategorie_id", type="integer", nullable=true)
+     */
+    private $kategorieId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rabatt_kategorie", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $rabattKategorie;
+
+
+}

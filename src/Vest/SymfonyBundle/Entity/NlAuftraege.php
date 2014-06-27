@@ -6,53 +6,77 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * NlAuftraege
+ *
+ * @ORM\Table(name="nl_auftraege")
+ * @ORM\Entity
  */
 class NlAuftraege
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="template_id", type="integer", nullable=true)
      */
     private $templateId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="auftrag_name", type="string", length=255, nullable=true)
      */
     private $auftragName;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="auftrag_start", type="datetime", nullable=true)
      */
     private $auftragStart;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="integer", nullable=true)
      */
     private $kontaktId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="auftrag_news_anzahl", type="integer", nullable=true)
      */
     private $auftragNewsAnzahl;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="auftrag_seminare_anzahl", type="integer", nullable=true)
      */
     private $auftragSeminareAnzahl;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="auftrag_banner_anzahl", type="integer", nullable=true)
      */
     private $auftragBannerAnzahl;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="auftrag_identifikation", type="string", length=45, nullable=true)
      */
     private $auftragIdentifikation;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="auftrag_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $auftragId;
+
 
 
     /**

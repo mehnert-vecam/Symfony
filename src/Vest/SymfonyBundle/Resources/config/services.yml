@@ -1,7 +1,9 @@
 parameters:
-#    vest_symfony.example.class: Vest\SymfonyBundle\Example
+    user_provider.class: Vest\SymfonyBundle\Security\User\UserProvider
 
 services:
 #    vest_symfony.example:
 #        class: %vest_symfony.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    user_provider:
+        class: "%user_provider.class%"

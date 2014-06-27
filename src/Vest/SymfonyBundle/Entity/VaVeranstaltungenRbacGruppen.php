@@ -6,23 +6,35 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * VaVeranstaltungenRbacGruppen
+ *
+ * @ORM\Table(name="va_veranstaltungen_rbac_gruppen")
+ * @ORM\Entity
  */
 class VaVeranstaltungenRbacGruppen
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="veranstaltungen_tag", type="string", length=50, nullable=false)
      */
     private $veranstaltungenTag;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="gruppe_id", type="bigint", nullable=true)
      */
     private $gruppeId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="veranstaltung_gruppe_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $veranstaltungGruppeId;
+
 
 
     /**

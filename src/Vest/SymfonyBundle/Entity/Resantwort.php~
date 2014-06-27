@@ -1,0 +1,53 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Resantwort
+ *
+ * @ORM\Table(name="resantwort")
+ * @ORM\Entity
+ */
+class Resantwort
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="f_id", type="integer", nullable=false)
+     */
+    private $fId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="antwort", type="text", nullable=false)
+     */
+    private $antwort;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="auswertungsbereich", type="text", nullable=true)
+     */
+    private $auswertungsbereich;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="f_type", type="integer", nullable=false)
+     */
+    private $fType;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

@@ -6,38 +6,56 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * AppAnsichten
+ *
+ * @ORM\Table(name="app_ansichten")
+ * @ORM\Entity
  */
 class AppAnsichten
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="anwendung_id", type="integer", nullable=false)
      */
     private $anwendungId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="ansicht_name", type="string", length=255, nullable=false)
      */
     private $ansichtName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="ansicht_kurzname", type="string", length=255, nullable=false)
      */
     private $ansichtKurzname;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="ansicht_status", type="string", length=10, nullable=false)
      */
     private $ansichtStatus;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="ansicht_prio", type="integer", nullable=false)
      */
     private $ansichtPrio;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="ansicht_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $ansichtId;
+
 
 
     /**

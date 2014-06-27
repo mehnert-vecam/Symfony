@@ -9,16 +9,16 @@
     </id>
     <field name="kontaktId" type="bigint" column="kontakt_id" nullable="false"/>
     <field name="personAnrede" type="string" column="person_anrede" length="25" nullable="false"/>
-    <field name="personTitel" type="string" column="person_titel" length="50" nullable="false"/>
+    <field name="personTitel" type="string" column="person_titel" length="50" nullable="true"/>
     <field name="personVorname" type="string" column="person_vorname" length="50" nullable="false"/>
     <field name="personName" type="string" column="person_name" length="50" nullable="false"/>
-    <field name="personBriefanrede" type="string" column="person_briefanrede" length="75" nullable="false"/>
-    <field name="personZhanrede" type="string" column="person_zhanrede" length="75" nullable="false"/>
+    <field name="personBriefanrede" type="string" column="person_briefanrede" length="75" nullable="true"/>
+    <field name="personZhanrede" type="string" column="person_zhanrede" length="75" nullable="true"/>
     <field name="personTelefon" type="string" column="person_telefon" length="255" nullable="false"/>
     <field name="personEmail" type="string" column="person_email" length="100" nullable="false"/>
-    <field name="personMobil" type="string" column="person_mobil" length="255" nullable="false"/>
+    <field name="personMobil" type="string" column="person_mobil" length="255" nullable="true"/>
     <field name="personPass" type="string" column="person_pass" length="45" nullable="true"/>
-    <field name="personAktualisiert" type="datetime" column="person_aktualisiert" nullable="false"/>
+    <field name="personAktualisiert" type="datetime" column="person_aktualisiert" nullable="true"/>
     <field name="recordStatus" type="boolean" column="record_status" nullable="false"/>
   </entity>
 </doctrine-mapping>

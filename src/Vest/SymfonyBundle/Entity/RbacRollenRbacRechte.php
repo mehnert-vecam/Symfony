@@ -6,23 +6,35 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * RbacRollenRbacRechte
+ *
+ * @ORM\Table(name="rbac_rollen_rbac_rechte", uniqueConstraints={@ORM\UniqueConstraint(name="rollen_rechte_id", columns={"rollen_rechte_id"})})
+ * @ORM\Entity
  */
 class RbacRollenRbacRechte
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="rolle_id", type="bigint", nullable=false)
      */
     private $rolleId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="recht_id", type="bigint", nullable=false)
      */
     private $rechtId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="rollen_rechte_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $rollenRechteId;
+
 
 
     /**

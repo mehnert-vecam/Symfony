@@ -1,0 +1,46 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ShopProdukteAttribute
+ *
+ * @ORM\Table(name="shop_produkte_attribute")
+ * @ORM\Entity
+ */
+class ShopProdukteAttribute
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="product_id", type="integer", nullable=true)
+     */
+    private $productId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="attribut_id", type="integer", nullable=true)
+     */
+    private $attributId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="attribut_value", type="text", nullable=true)
+     */
+    private $attributValue;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="produkt_attribut_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $produktAttributId;
+
+
+}

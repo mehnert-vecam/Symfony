@@ -1,0 +1,39 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * AppAnwendungenLzLizenzen
+ *
+ * @ORM\Table(name="app_anwendungen_lz_lizenzen")
+ * @ORM\Entity
+ */
+class AppAnwendungenLzLizenzen
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="anwendung_id", type="integer", nullable=false)
+     */
+    private $anwendungId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lizenz_id", type="integer", nullable=false)
+     */
+    private $lizenzId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="anwendung_lizenz_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $anwendungLizenzId;
+
+
+}

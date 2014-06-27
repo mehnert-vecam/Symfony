@@ -6,33 +6,49 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * AddrZusatzinfos
+ *
+ * @ORM\Table(name="addr_zusatzinfos")
+ * @ORM\Entity
  */
 class AddrZusatzinfos
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="zusatzinfo_name", type="string", length=255, nullable=true)
      */
     private $zusatzinfoName;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="element_id", type="integer", nullable=false)
      */
     private $elementId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="zusatzinfo_pflicht", type="integer", nullable=false)
      */
     private $zusatzinfoPflicht;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="validierung_id", type="integer", nullable=false)
      */
     private $validierungId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="zusatzinfo_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $zusatzinfoId;
+
 
 
     /**

@@ -6,23 +6,35 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * ShopKategorienAttribute
+ *
+ * @ORM\Table(name="shop_kategorien_attribute")
+ * @ORM\Entity
  */
 class ShopKategorienAttribute
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kategorie_id", type="integer", nullable=true)
      */
     private $kategorieId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="attribut_id", type="integer", nullable=true)
      */
     private $attributId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kategorie_attribut_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $kategorieAttributId;
+
 
 
     /**

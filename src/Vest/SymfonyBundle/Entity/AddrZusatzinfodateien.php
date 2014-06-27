@@ -6,33 +6,49 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * AddrZusatzinfodateien
+ *
+ * @ORM\Table(name="addr_zusatzinfodateien")
+ * @ORM\Entity
  */
 class AddrZusatzinfodateien
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="datei_name", type="string", length=45, nullable=true)
      */
     private $dateiName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="datei_typ", type="string", length=45, nullable=true)
      */
     private $dateiTyp;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="datei_objekt", type="blob", nullable=true)
      */
     private $dateiObjekt;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="zusatzinfowert_id", type="bigint", nullable=false)
      */
     private $zusatzinfowertId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datei_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $dateiId;
+
 
 
     /**

@@ -6,18 +6,28 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * ShopVersandarten
+ *
+ * @ORM\Table(name="shop_versandarten")
+ * @ORM\Entity
  */
 class ShopVersandarten
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="versandart_name", type="string", length=45, nullable=true)
      */
     private $versandartName;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="versandart_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $versandartId;
+
 
 
     /**

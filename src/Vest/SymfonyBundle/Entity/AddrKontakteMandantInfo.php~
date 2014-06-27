@@ -1,0 +1,60 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * AddrKontakteMandantInfo
+ *
+ * @ORM\Table(name="addr_kontakte_mandant_info")
+ * @ORM\Entity
+ */
+class AddrKontakteMandantInfo
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="kontakt_ba_owner", type="string", length=255, nullable=false)
+     */
+    private $kontaktBaOwner;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="kontakt_ba_bank", type="string", length=255, nullable=false)
+     */
+    private $kontaktBaBank;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="kontakt_ba_iban", type="string", length=255, nullable=false)
+     */
+    private $kontaktBaIban;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="kontakt_ba_bic", type="string", length=255, nullable=false)
+     */
+    private $kontaktBaBic;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=false)
+     */
+    private $kontaktId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="kontakt_info_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $kontaktInfoId;
+
+
+}

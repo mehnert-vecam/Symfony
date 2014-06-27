@@ -1,0 +1,67 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * LzVergabe
+ *
+ * @ORM\Table(name="lz_vergabe")
+ * @ORM\Entity
+ */
+class LzVergabe
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lizenz_id", type="bigint", nullable=false)
+     */
+    private $lizenzId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=false)
+     */
+    private $kontaktId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vergabe_public_key", type="string", length=100, nullable=false)
+     */
+    private $vergabePublicKey;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vergabe_private_key", type="string", length=100, nullable=false)
+     */
+    private $vergabePrivateKey;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="vergabe_start", type="datetime", nullable=false)
+     */
+    private $vergabeStart;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="vergabe_ende", type="datetime", nullable=false)
+     */
+    private $vergabeEnde;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="vergabe_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $vergabeId;
+
+
+}

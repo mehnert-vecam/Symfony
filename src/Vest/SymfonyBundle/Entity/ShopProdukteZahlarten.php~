@@ -1,0 +1,39 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ShopProdukteZahlarten
+ *
+ * @ORM\Table(name="shop_produkte_zahlarten", indexes={@ORM\Index(name="fk_shop_produkte_zahlarten_shop_zahlarten1", columns={"zahlart_id"}), @ORM\Index(name="fk_shop_produkte_zahlarten_shop_produkte1", columns={"produkt_id"})})
+ * @ORM\Entity
+ */
+class ShopProdukteZahlarten
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="produkt_id", type="integer", nullable=true)
+     */
+    private $produktId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="zahlart_id", type="integer", nullable=true)
+     */
+    private $zahlartId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="produkt_zahlart_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $produktZahlartId;
+
+
+}

@@ -1,0 +1,60 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Resfrage
+ *
+ * @ORM\Table(name="resfrage")
+ * @ORM\Entity
+ */
+class Resfrage
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="u_id", type="integer", nullable=false)
+     */
+    private $uId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="frage", type="text", nullable=false)
+     */
+    private $frage;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="prio", type="integer", nullable=false)
+     */
+    private $prio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="auswertungsbereich", type="string", length=100, nullable=false)
+     */
+    private $auswertungsbereich;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="type", type="integer", nullable=false)
+     */
+    private $type;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

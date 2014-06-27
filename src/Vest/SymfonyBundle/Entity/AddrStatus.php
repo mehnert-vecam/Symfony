@@ -1,50 +1,65 @@
 <?php
+
 namespace Vest\SymfonyBundle\Entity;
 
-class AddrStatus{
-    protected $task;
-    protected $status_id;
-    protected $statusObjekt;
+use Doctrine\ORM\Mapping as ORM;
 
-    protected $dueDate;
+/**
+ * AddrStatus
+ *
+ * @ORM\Table(name="addr_status")
+ * @ORM\Entity
+ */
+class AddrStatus
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status_objekt", type="string", length=150, nullable=true)
+     */
+    private $statusObjekt;
 
-    public function getStatusId()
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $statusId;
+
+
+
+    /**
+     * Set statusObjekt
+     *
+     * @param string $statusObjekt
+     * @return AddrStatus
+     */
+    public function setStatusObjekt($statusObjekt)
     {
-        return $this->status_id;
+        $this->statusObjekt = $statusObjekt;
+
+        return $this;
     }
 
-    public function setStatusId($status_id)
-    {
-        $this->status_id = $status_id;
-    }
-
+    /**
+     * Get statusObjekt
+     *
+     * @return string 
+     */
     public function getStatusObjekt()
     {
         return $this->statusObjekt;
     }
 
-    public function setStatusObjekt($statusObjekt)
+    /**
+     * Get statusId
+     *
+     * @return integer 
+     */
+    public function getStatusId()
     {
-        $this->statusObjekt = $statusObjekt;
-    }
-
-    public function getTask()
-    {
-        return $this->task;
-    }
-
-    public function setTask($task)
-    {
-        $this->task = $task;
-    }
-
-    public function getDueDate()
-    {
-        return $this->dueDate;
-    }
-
-    public function setDueDate(\DateTime $dueDate = null)
-    {
-        $this->dueDate = $dueDate;
+        return $this->statusId;
     }
 }

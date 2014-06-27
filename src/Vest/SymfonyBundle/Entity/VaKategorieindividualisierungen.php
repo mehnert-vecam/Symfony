@@ -6,43 +6,63 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * VaKategorieindividualisierungen
+ *
+ * @ORM\Table(name="va_kategorieindividualisierungen")
+ * @ORM\Entity
  */
 class VaKategorieindividualisierungen
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kategorie_id", type="bigint", nullable=false)
      */
     private $kategorieId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=false)
      */
     private $kontaktId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kategorieindividualisierung_name", type="string", length=255, nullable=false)
      */
     private $kategorieindividualisierungName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kategorieindividualisierung_anmeldebedingung", type="text", nullable=false)
      */
     private $kategorieindividualisierungAnmeldebedingung;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kategorieindividualisierung_split", type="integer", nullable=false)
      */
     private $kategorieindividualisierungSplit;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kategorieindividualisierung_prio", type="integer", nullable=false)
      */
     private $kategorieindividualisierungPrio;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kategorieindividualisierung_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $kategorieindividualisierungId;
+
 
 
     /**

@@ -6,33 +6,49 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * ShopZahlartenEinstellungen
+ *
+ * @ORM\Table(name="shop_zahlarten_einstellungen", indexes={@ORM\Index(name="fk_shop_zahlarten_einstellungen_shop_zahlarten1", columns={"zahlart_id"})})
+ * @ORM\Entity
  */
 class ShopZahlartenEinstellungen
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="zahlart_id", type="integer", nullable=true)
      */
     private $zahlartId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="zahlart_api_benutzer", type="string", length=45, nullable=true)
      */
     private $zahlartApiBenutzer;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="zahlart_api_passwort", type="string", length=45, nullable=true)
      */
     private $zahlartApiPasswort;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="zahlart_api_signatur", type="string", length=45, nullable=true)
      */
     private $zahlartApiSignatur;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="zahlart_einstellung_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $zahlartEinstellungId;
+
 
 
     /**

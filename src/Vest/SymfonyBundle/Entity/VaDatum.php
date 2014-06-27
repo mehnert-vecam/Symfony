@@ -6,118 +6,168 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * VaDatum
+ *
+ * @ORM\Table(name="va_datum")
+ * @ORM\Entity
  */
 class VaDatum
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="veranstaltung_tag", type="string", length=255, nullable=false)
      */
     private $veranstaltungTag;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="veranstalter_kontakt_id", type="integer", nullable=false)
      */
     private $veranstalterKontaktId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="veranstaltungsort_kontakt_id", type="integer", nullable=true)
      */
     private $veranstaltungsortKontaktId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="moderator_person_id", type="bigint", nullable=false)
      */
     private $moderatorPersonId;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="datum_start", type="datetime", nullable=true)
      */
     private $datumStart;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="datum_ende", type="datetime", nullable=true)
      */
     private $datumEnde;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="datum_dauer", type="text", nullable=false)
      */
     private $datumDauer;
 
     /**
      * @var float
+     *
+     * @ORM\Column(name="datum_preis", type="float", precision=10, scale=0, nullable=false)
      */
     private $datumPreis;
 
     /**
      * @var float
+     *
+     * @ORM\Column(name="datum_mwst", type="float", precision=10, scale=0, nullable=false)
      */
     private $datumMwst;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="datum_frist", type="datetime", nullable=false)
      */
     private $datumFrist;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="datum_storno", type="datetime", nullable=false)
      */
     private $datumStorno;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datum_frist_tage", type="integer", nullable=false)
      */
     private $datumFristTage;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datum_frist_stunden", type="integer", nullable=false)
      */
     private $datumFristStunden;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datum_storno_tage", type="integer", nullable=false)
      */
     private $datumStornoTage;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datum_storno_stunden", type="integer", nullable=false)
      */
     private $datumStornoStunden;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datum_status", type="integer", nullable=false)
      */
     private $datumStatus;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="datum_nviewer", type="string", length=100, nullable=false)
      */
     private $datumNviewer;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datum_report", type="integer", nullable=false)
      */
     private $datumReport;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datum_started", type="integer", nullable=false)
      */
     private $datumStarted;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datum_addvisits", type="integer", nullable=false)
      */
     private $datumAddvisits;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datum_use_account", type="integer", nullable=false)
      */
     private $datumUseAccount;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datum_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $datumId;
+
 
 
     /**

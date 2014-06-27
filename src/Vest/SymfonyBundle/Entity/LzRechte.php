@@ -6,23 +6,35 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * LzRechte
+ *
+ * @ORM\Table(name="lz_rechte")
+ * @ORM\Entity
  */
 class LzRechte
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="recht_modul", type="bigint", nullable=false)
      */
     private $rechtModul;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="recht_id", type="bigint", nullable=true)
      */
     private $rechtId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="lz_rechte_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $lzRechteId;
+
 
 
     /**

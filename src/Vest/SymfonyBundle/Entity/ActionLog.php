@@ -6,58 +6,84 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * ActionLog
+ *
+ * @ORM\Table(name="action_log")
+ * @ORM\Entity
  */
 class ActionLog
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="person_id", type="bigint", nullable=false)
      */
     private $personId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="person_name", type="string", length=255, nullable=false)
      */
     private $personName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_name", type="string", length=255, nullable=false)
      */
     private $kontaktName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="log_action", type="string", length=255, nullable=false)
      */
     private $logAction;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="sql_query", type="text", nullable=false)
      */
     private $sqlQuery;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="sql_table", type="string", length=50, nullable=false)
      */
     private $sqlTable;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="sql_index", type="string", length=50, nullable=false)
      */
     private $sqlIndex;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="sql_index_value", type="bigint", nullable=false)
      */
     private $sqlIndexValue;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="action_date", type="datetime", nullable=false)
      */
     private $actionDate;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="log_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $logId;
+
 
 
     /**

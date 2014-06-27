@@ -6,38 +6,56 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * ShopTermine
+ *
+ * @ORM\Table(name="shop_termine", indexes={@ORM\Index(name="fk_shop_termine_shop_produkte1", columns={"produkt_id"})})
+ * @ORM\Entity
  */
 class ShopTermine
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="produkt_id", type="integer", nullable=true)
      */
     private $produktId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="termin_start", type="string", length=45, nullable=true)
      */
     private $terminStart;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="person_id", type="integer", nullable=true)
      */
     private $personId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="raum_id", type="integer", nullable=true)
      */
     private $raumId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="webinarlizenz_id", type="integer", nullable=true)
      */
     private $webinarlizenzId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="termin_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $terminId;
+
 
 
     /**

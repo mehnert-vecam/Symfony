@@ -1,0 +1,39 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * NsGruppen
+ *
+ * @ORM\Table(name="ns_gruppen")
+ * @ORM\Entity
+ */
+class NsGruppen
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="news_id", type="bigint", nullable=false)
+     */
+    private $newsId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gruppe_id", type="bigint", nullable=true)
+     */
+    private $gruppeId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="news_gruppe_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $newsGruppeId;
+
+
+}

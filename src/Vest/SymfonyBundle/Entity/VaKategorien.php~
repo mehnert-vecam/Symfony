@@ -1,0 +1,67 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * VaKategorien
+ *
+ * @ORM\Table(name="va_kategorien")
+ * @ORM\Entity
+ */
+class VaKategorien
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="kategorie_name", type="string", length=255, nullable=false)
+     */
+    private $kategorieName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="kategorie_anmeldebedingung", type="text", nullable=false)
+     */
+    private $kategorieAnmeldebedingung;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=false)
+     */
+    private $kontaktId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="kategorie_req", type="integer", nullable=false)
+     */
+    private $kategorieReq;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="kategorie_split", type="integer", nullable=false)
+     */
+    private $kategorieSplit;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="kategorie_prio", type="integer", nullable=false)
+     */
+    private $kategoriePrio;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="kategorie_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $kategorieId;
+
+
+}

@@ -1,0 +1,60 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ShopProdukte
+ *
+ * @ORM\Table(name="shop_produkte", indexes={@ORM\Index(name="fk_shop_produkte_shop_kategorien1", columns={"kategorie_id"})})
+ * @ORM\Entity
+ */
+class ShopProdukte
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=true)
+     */
+    private $kontaktId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="produkt_name", type="string", length=255, nullable=true)
+     */
+    private $produktName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="produkt_teaser", type="text", nullable=true)
+     */
+    private $produktTeaser;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="kategorie_id", type="integer", nullable=true)
+     */
+    private $kategorieId;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="produkt_status", type="boolean", nullable=true)
+     */
+    private $produktStatus;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="produkt_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $produktId;
+
+
+}

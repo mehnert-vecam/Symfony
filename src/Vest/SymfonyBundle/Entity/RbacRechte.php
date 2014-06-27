@@ -6,28 +6,42 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * RbacRechte
+ *
+ * @ORM\Table(name="rbac_rechte")
+ * @ORM\Entity
  */
 class RbacRechte
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="recht_name", type="string", length=255, nullable=false)
      */
     private $rechtName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="recht_beschreibung", type="text", nullable=false)
      */
     private $rechtBeschreibung;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="recht_wert", type="string", length=255, nullable=false)
      */
     private $rechtWert;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="recht_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $rechtId;
+
 
 
     /**

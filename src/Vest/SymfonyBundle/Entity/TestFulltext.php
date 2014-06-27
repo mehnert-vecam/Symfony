@@ -6,18 +6,28 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * TestFulltext
+ *
+ * @ORM\Table(name="test_fulltext", indexes={@ORM\Index(name="WERT", columns={"WERT"})})
+ * @ORM\Entity
  */
 class TestFulltext
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="WERT", type="string", length=8000, nullable=false)
      */
     private $wert;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="ID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
+
 
 
     /**

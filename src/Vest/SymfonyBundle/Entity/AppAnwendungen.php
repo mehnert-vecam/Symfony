@@ -6,48 +6,70 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * AppAnwendungen
+ *
+ * @ORM\Table(name="app_anwendungen")
+ * @ORM\Entity
  */
 class AppAnwendungen
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="anwendung_name", type="string", length=255, nullable=false)
      */
     private $anwendungName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="anwendung_beschreibung", type="text", nullable=false)
      */
     private $anwendungBeschreibung;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="anwendung_kurzname", type="string", length=255, nullable=false)
      */
     private $anwendungKurzname;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="anwendung_uber_id", type="integer", nullable=false)
      */
     private $anwendungUberId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="anwendung_anzeige_prio", type="integer", nullable=false)
      */
     private $anwendungAnzeigePrio;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="anwendung_farbcode", type="string", length=255, nullable=false)
      */
     private $anwendungFarbcode;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="anwendung_icon", type="string", length=255, nullable=false)
      */
     private $anwendungIcon;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="anwendung_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $anwendungId;
+
 
 
     /**

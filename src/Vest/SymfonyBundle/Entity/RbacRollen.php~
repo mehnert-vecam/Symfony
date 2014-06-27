@@ -1,0 +1,81 @@
+<?php
+
+namespace Vest\SymfonyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RbacRollen
+ *
+ * @ORM\Table(name="rbac_rollen")
+ * @ORM\Entity
+ */
+class RbacRollen
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=false)
+     */
+    private $kontaktId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rolle_name", type="string", length=255, nullable=false)
+     */
+    private $rolleName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rolle_beschreibung", type="text", nullable=false)
+     */
+    private $rolleBeschreibung;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rolle_parent_id", type="bigint", nullable=false)
+     */
+    private $rolleParentId;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="rolle_kontaktspezifisch", type="boolean", nullable=false)
+     */
+    private $rolleKontaktspezifisch;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rolle_lizenzspezifisch", type="integer", nullable=false)
+     */
+    private $rolleLizenzspezifisch;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="rolle_essentiell", type="boolean", nullable=false)
+     */
+    private $rolleEssentiell;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rolle_schutz", type="integer", nullable=false)
+     */
+    private $rolleSchutz;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rolle_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $rolleId;
+
+
+}

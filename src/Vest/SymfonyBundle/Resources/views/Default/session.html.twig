@@ -1,0 +1,10 @@
+<ul>
+ {% for item in session %}
+    <li>{{ item }}</li>
+{% endfor %}
+</ul>
+
+  <p><a href="{{ path('Security_logout') }}">Ausloggen</a></p>
+  <p><a href="{{ path('Security_login') }}">Einloggen</a></p>
+  <p><a href="{{ path('Responsa_overview') }}">Responsa</a></p>
+	

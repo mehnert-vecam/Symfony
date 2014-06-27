@@ -6,28 +6,42 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * NlReporte
+ *
+ * @ORM\Table(name="nl_reporte")
+ * @ORM\Entity
  */
 class NlReporte
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="auftrag_id", type="bigint", nullable=true)
      */
     private $auftragId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="report_name", type="string", length=45, nullable=true)
      */
     private $reportName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="report_url", type="string", length=45, nullable=true)
      */
     private $reportUrl;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="report_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $reportId;
+
 
 
     /**

@@ -6,78 +6,112 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * VtFlatrates
+ *
+ * @ORM\Table(name="vt_flatrates")
+ * @ORM\Entity
  */
 class VtFlatrates
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="angebot_id", type="bigint", nullable=false)
      */
     private $angebotId;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="flatrate_code", type="string", length=50, nullable=false)
      */
     private $flatrateCode;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=false)
      */
     private $kontaktId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="person_id", type="bigint", nullable=false)
      */
     private $personId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="flatrate_kat", type="integer", nullable=false)
      */
     private $flatrateKat;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="flatrate_nutzung", type="integer", nullable=false)
      */
     private $flatrateNutzung;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="flatrate_anzahl", type="integer", nullable=false)
      */
     private $flatrateAnzahl;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="flatrate_start", type="datetime", nullable=false)
      */
     private $flatrateStart;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="flatrate_ende", type="datetime", nullable=false)
      */
     private $flatrateEnde;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="flatrate_unlimit", type="boolean", nullable=false)
      */
     private $flatrateUnlimit;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="flatratet_erstellen", type="datetime", nullable=false)
      */
     private $flatratetErstellen;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="flatrate_beenden", type="datetime", nullable=false)
      */
     private $flatrateBeenden;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="flatrate_typ", type="integer", nullable=false)
      */
     private $flatrateTyp;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="flatrate_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $flatrateId;
+
 
 
     /**

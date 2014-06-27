@@ -1,0 +1,53 @@
+﻿<div class="warpper">
+<table class="overview">
+	<tr>
+		<th>id</th>
+		<th>name</th>
+		<th>Feld 1</th>
+		<th>Feld 2</th>
+		<th>Feld 3</th>
+		<th>Feld 4</th>
+		<th>Feld 5</th>
+		<th>Auswertungsbereich 1</th>
+		<th>Auswertungsbereich 2</th>
+		<th>Auswertungsbereich 3</th>
+		<th>Auswertungsbereich 4</th>
+		<th>Auswertungsbereich 5</th>
+
+	</tr>
+
+	{% for row in data %}
+		<tr>
+			<td>{{ row.id }}</td>
+			<td>{{ row.name }}</td>
+			<td>{{ row.feld1 }}</td>
+			<td>{{ row.feld2 }}</td>
+			<td>{{ row.feld3 }}</td>
+			<td>{{ row.feld4 }}</td>
+			<td>{{ row.feld5 }}</td>
+			<td>{{ row.auswertungsbereich1 }}</td>
+			<td>{{ row.auswertungsbereich2 }}</td>
+			<td>{{ row.auswertungsbereich3 }}</td>
+			<td>{{ row.auswertungsbereich4 }}</td>
+			<td>{{ row.auswertungsbereich5 }}</td>
+			<td><a href="{{ path('Responsa_edit', {'id': row.id}) }}">bearbeiten</a></td><br />
+			<td><a href="{{ path('Responsa_frage_overview', {'u_id': row.id}) }}">Fragen</a></td>
+			<td><a href="{{ path('Responsa_antwort_alloverview', {'u_id': row.id}) }}">Antworten</a></td>
+			<td><a href="{{ path('Responsa_view_show', {'u_id': row.id,'feld1': row.feld1,'feld2': row.feld2,'feld3': row.feld3,'feld4': row.feld4,'feld5': row.feld5}) }}">Show</a></td>
+			
+			
+		</tr>	
+	{% endfor %}
+
+</table>
+
+  <p><a href="{{ path('Responsa_new') }}">Hinzufügen</a></p>
+</div>
+<style>
+.overview, .overview tr, .overview tr th, .overview tr td{
+	border: 1px solid #888888;
+}
+.warpper{
+	max-width: 90%;
+}
+</style>

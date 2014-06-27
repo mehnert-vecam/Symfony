@@ -6,38 +6,56 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * BnrBanner
+ *
+ * @ORM\Table(name="bnr_banner")
+ * @ORM\Entity
  */
 class BnrBanner
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="banner_name", type="string", length=45, nullable=true)
      */
     private $bannerName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="banner_datei", type="string", length=45, nullable=true)
      */
     private $bannerDatei;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="banner_format", type="string", length=45, nullable=true)
      */
     private $bannerFormat;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="banner_prio", type="bigint", nullable=true)
      */
     private $bannerPrio;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint", nullable=true)
      */
     private $kontaktId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="banner_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $bannerId;
+
 
 
     /**

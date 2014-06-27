@@ -6,113 +6,161 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * AddrKontakte
+ *
+ * @ORM\Table(name="addr_kontakte", indexes={@ORM\Index(name="record_status", columns={"record_status"})})
+ * @ORM\Entity
  */
 class AddrKontakte
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_kdnr", type="string", length=255, nullable=false)
      */
     private $kontaktKdnr;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_typ", type="string", length=50, nullable=false)
      */
     private $kontaktTyp;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_anrede", type="string", length=50, nullable=false)
      */
     private $kontaktAnrede;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_name", type="string", length=100, nullable=false)
      */
     private $kontaktName;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_name2", type="string", length=75, nullable=false)
      */
     private $kontaktName2;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_name3", type="string", length=75, nullable=false)
      */
     private $kontaktName3;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_kurzname", type="string", length=255, nullable=false)
      */
     private $kontaktKurzname;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_strasse", type="string", length=255, nullable=false)
      */
     private $kontaktStrasse;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_plz", type="string", length=10, nullable=false)
      */
     private $kontaktPlz;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_ort", type="string", length=255, nullable=false)
      */
     private $kontaktOrt;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_telefon", type="string", length=100, nullable=false)
      */
     private $kontaktTelefon;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_telefax", type="string", length=100, nullable=false)
      */
     private $kontaktTelefax;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_email", type="string", length=255, nullable=false)
      */
     private $kontaktEmail;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_url", type="string", length=255, nullable=false)
      */
     private $kontaktUrl;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="kontakt_bemerkung", type="text", nullable=false)
      */
     private $kontaktBemerkung;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="kontakt_aktualisiert", type="datetime", nullable=false)
      */
     private $kontaktAktualisiert;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="status_id", type="integer", nullable=false)
      */
     private $statusId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="parent_id", type="bigint", nullable=false)
      */
     private $parentId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="protection_level", type="integer", nullable=false)
      */
     private $protectionLevel;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="record_status", type="boolean", nullable=false)
      */
     private $recordStatus;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="kontakt_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $kontaktId;
+
 
 
     /**

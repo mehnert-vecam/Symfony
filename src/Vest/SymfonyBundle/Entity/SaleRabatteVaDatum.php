@@ -6,23 +6,35 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * SaleRabatteVaDatum
+ *
+ * @ORM\Table(name="sale_rabatte_va_datum")
+ * @ORM\Entity
  */
 class SaleRabatteVaDatum
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="rabatte_id", type="integer", nullable=true)
      */
     private $rabatteId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="datum_id", type="integer", nullable=true)
      */
     private $datumId;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="rabatt_datum_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $rabattDatumId;
+
 
 
     /**
