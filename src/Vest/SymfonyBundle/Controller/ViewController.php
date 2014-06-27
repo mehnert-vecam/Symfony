@@ -27,18 +27,18 @@ class ViewController extends BaseController
 				$repository_fragen = $this->getDoctrine()->getRepository('VestSymfonyBundle:Resfrage');// Baut Doctrine auf 
 				$fragen = $repository_fragen->findBy(array('uId' => $u_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
      				
+				
 				$frage_tmp = array();
 				$f_id_tmp = array();
 				$antwort_tmp = array();
 				foreach($fragen as $frage){
 					$frage_tmp[] = $frage->getFrage();
 					$f_id_tmp[]= $frage->getId();
-					$antwort_tmp[] = '';
+					$antwort_tmp[] = '0';
 				}
 				$frageliste->setFrage($frage_tmp);
 				$frageliste->setFId($f_id_tmp);
 				$frageliste->setAntwort($antwort_tmp);
-				
 				
 				
 				$form = $this->createFormBuilder($frageliste) // Formular wird auf Basis der Person erstellt   
@@ -49,19 +49,41 @@ class ViewController extends BaseController
 					->add('feld3', 'hidden', array('data' => $feld3))
 					->add('feld4', 'hidden', array('data' => $feld4))
 					->add('feld5', 'hidden', array('data' => $feld5));
+					//$form = $form->add('antwort', 'collection', array('type'=> 'text','options'=>array('label' => false)));
 					
-					$form = $form->add('antwort', 'collection', array('type'=> 'text','options'=>array('label' => false)));
-					$form = $form->add('f_id', 'collection', array('type'=> 'hidden'));
+					//$form = $form->add('antwort', 'collection', array('allow_add' => true));
+					$f_id_tmp = array();
+					$ab_tmp = array();
 					
-					// Weiterlesen und passend einbauen: http://symfony.com/doc/current/reference/forms/types/collection.html
-					
-					
+					$count = 1;
+					foreach($fragen as $frage){
 						
-				$form  = $form->add('Speichern', 'submit');
+							if($frage->getType() ==0 ){
+								$form = $form ->add('antwort'.$count, 'choice', array(
+									'choices' => array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '4' => '4', '5' => '5', '6' => '6' ),
+									'expanded' => true,
+									'label' =>$frage->getFrage()
+								));
+							}else{
+								$form = $form ->add('antwort'.$count, 'text', array('label' =>$frage->getFrage()));
+							}
+							
+							$f_id_tmp[]= $frage->getId();
+							$ab_tmp[]= $frage->getAuswertungsbereich();
+							$count++;
+						}
+						$frageliste->setFId($f_id_tmp);
+						$frageliste->setAb($f_id_tmp);
+					
+				
+					$form = $form->add('f_id', 'collection', array('type'=> 'hidden'));
+					$form = $form->add('ab', 'collection', array('type'=> 'hidden'));
+					$form  = $form->add('Speichern', 'submit');
+
 				$form  = $form->getForm();
             
 				return $this->render('VestSymfonyBundle:Default:view_form.html.twig', array(
-					'form' => $form->createView(), 'type' => 'new', 'u_name' =>$u_name, 'fragen' => $frage_tmp
+					'form' => $form->createView(), 'type' => 'new', 'u_name' =>$u_name
 				));
 	}
 	
@@ -77,19 +99,8 @@ class ViewController extends BaseController
 				$frageliste->setU_Name($umfrage->getName());
 				$repository_fragen = $this->getDoctrine()->getRepository('VestSymfonyBundle:Resfrage');// Baut Doctrine auf 
 				$fragen = $repository_fragen->findBy(array('uId' => $u_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
-     				
-				$frage_tmp = array();
-				$f_id_tmp = array();
-				$antwort_tmp = array();
-				foreach($fragen as $frage){
-					$frage_tmp[] = $frage->getFrage();
-					$f_id_tmp[]= $frage->getId();
-				}
-				$frageliste->setFrage($frage_tmp);
-				$frageliste->setFId($f_id_tmp);
-				
-				
-				
+     	
+			
 				$form = $this->createFormBuilder($frageliste) // Formular wird auf Basis der Person erstellt   
 					->setAction($this->generateUrl('Responsa_view_erhalten',array('u_id' => $u_id)))     //nimmt die URL aus der routing.yml 
 					->add('u_id', 'hidden', array('data' => $u_id))
@@ -98,19 +109,58 @@ class ViewController extends BaseController
 					->add('feld3', 'hidden', array('data' => ''))
 					->add('feld4', 'hidden', array('data' => ''))
 					->add('feld5', 'hidden', array('data' => ''));
+					//$form = $form->add('antwort', 'collection', array('type'=> 'text','options'=>array('label' => false)));
 					
-					$form = $form->add('antwort', 'collection', array('type'=> 'text','options'=>array('label' => false)));
-					$form = $form->add('f_id', 'collection', array('type'=> 'hidden'));
-					
-					
+					$form = $form->add('antwort', 'collection', array('allow_add' => true));
+					$test = $form->has('antwort');
+					$f_id_tmp = array();
+					$ab_tmp = array();
+					$type_tmp  = array();
+					$count = 1;
+					foreach($fragen as $frage){
 						
-				$form  = $form->add('Speichern', 'submit');
+							if($frage->getType() ==0 ){
+								$form = $form ->add('antwort'.$count, 'choice', array(
+									'choices' => array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '4' => '4', '5' => '5', '6' => '6' ),
+									'expanded' => true,
+									'label' =>$frage->getFrage()
+								));
+							}else{
+								$form = $form ->add('antwort'.$count, 'text', array('label' =>$frage->getFrage()));
+							}
+							
+							$f_id_tmp[]= $frage->getId();
+							$ab_tmp[]= $frage->getAuswertungsbereich();
+							$type_tmp[] = $frage->getType();
+							$count++;
+						}
+						$frageliste->setFId($f_id_tmp);
+						$frageliste->setAb($f_id_tmp);
+					
+				
+					$form = $form->add('f_id', 'collection', array('type'=> 'hidden'));
+					$form = $form->add('ab', 'collection', array('type'=> 'hidden'));
+					$form  = $form->add('Speichern', 'submit');
+
 				$form  = $form->getForm();
 				
 				$form->handleRequest($request); 
 				if ($form->isValid()) {
+					for($i =1; $i <= sizeof($frageliste->getFId());$i++){
+						$name = 'antwort'.$i;
+						$ant = $form->get($name);
+						$aw = new Resantwort();
+						$aw->setFId($f_id_tmp[$i-1]);
+						$aw->setAntwort($ant->getDATA());
+						$aw->setAuswertungsbereich($ab_tmp[$i-1]);
+						$aw->setFType($type_tmp[$i-1]);
+							$em = $this->getDoctrine()->getManager();
+							$em->persist($aw);
+							$em->flush();
+					}
+				/*
 					$count = 0;
-					foreach($frageliste.antwort as $aw){
+					foreach($frageliste->getAntwort() as $aw){
 						$ant = new Resantwort();
 						$ant->setAntwort($aw);
 						$ant->setFId($f_id_tmp[$count]);
@@ -124,6 +174,9 @@ class ViewController extends BaseController
 					
 						$count ++;
 					}
+					
+					*/
+					
 					return $this->render('VestSymfonyBundle:Default:view_eingetragen.html.twig', array(
 						'eingetragen' => true
 					));

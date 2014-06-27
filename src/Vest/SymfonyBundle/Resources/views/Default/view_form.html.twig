@@ -10,19 +10,85 @@
   {{ form_start(form) }}      <!-- Start des Formularbereits -->
       {{ form_errors(form) }}  <!-- Ausgabe von Fehler die erzeugt werden. -->
   
-			{% for item in form.antwort %}
+				{% if form.antwort1 is defined %}
+				<div class="task_wrapper">
+							{{ form_label(form.antwort1) }}
+							{{ form_errors(form.antwort1) }} <br />
+							{{ form_widget(form.antwort1) }}
+				</div>
+				{% endif %}
+				{% if form.antwort2 is defined %}
+				<div class="task_wrapper">
+							{{ form_label(form.antwort2) }}
+							{{ form_errors(form.antwort2) }} <br />
+							{{ form_widget(form.antwort2) }}
+				</div>
+				{% endif %}
+				{% if form.antwort3 is defined %}
+				<div class="task_wrapper">
+							{{ form_label(form.antwort3) }}
+							{{ form_errors(form.antwort3) }} <br />
+							{{ form_widget(form.antwort3) }}
+				</div>
+				{% endif %}
+				{% if form.antwort4 is defined %}
+				<div class="task_wrapper">
+							{{ form_label(form.antwort4) }}
+							{{ form_errors(form.antwort4) }} <br />
+							{{ form_widget(form.antwort4) }}
+				</div>
+				{% endif %}
+				{% if form.antwort5 is defined %}
+				<div class="task_wrapper">
+							{{ form_label(form.antwort5) }}
+							{{ form_errors(form.antwort5) }} <br />
+							{{ form_widget(form.antwort5) }}
+				</div>
+				{% endif %}
+				{% if form.antwort6 is defined %}
+				<div class="task_wrapper">
+							{{ form_label(form.antwort6) }}
+							{{ form_errors(form.antwort6) }} <br />
+							{{ form_widget(form.antwort6) }}
+				</div>
+				{% endif %}
+				{% if form.antwort7 is defined %}
+				<div class="task_wrapper">
+							{{ form_label(form.antwort7) }}
+							{{ form_errors(form.antwort7) }} <br />
+							{{ form_widget(form.antwort7) }}
+				</div>
+				{% endif %}
+				{% if form.antwort8 is defined %}
+				<div class="task_wrapper">
+							{{ form_label(form.antwort8) }}
+							{{ form_errors(form.antwort8) }} <br />
+							{{ form_widget(form.antwort8) }}
+				</div>
+				{% endif %}
+				{% if form.antwort9 is defined %}
+				<div class="task_wrapper">
+							{{ form_label(form.antwort9) }}
+							{{ form_errors(form.antwort9) }} <br />
+							{{ form_widget(form.antwort9) }}
+				</div>
+				{% endif %}
+				{% if form.antwort10 is defined %}
+				<div class="task_wrapper">
+							{{ form_label(form.antwort10) }}
+							{{ form_errors(form.antwort10) }} <br />
+							{{ form_widget(form.antwort10) }}
+				</div>
+				{% endif %}
 				
-      <div class="task_wrapper">
-				{{fragen[loop.index0]}} <br />
-						{{ form_errors(item) }}
-						{{ form_widget(item) }}
-      </div>
-			{% endfor %}
-			
-			<div class="task_wrapper">
-						{{ form_errors(form.f_id) }}
-						{{ form_widget(form.f_id) }}
-      </div>
+				<div class="task_wrapper">
+							{{ form_errors(form.f_id) }}
+							{{ form_widget(form.f_id) }}
+				</div>
+				<div class="task_wrapper">
+							{{ form_errors(form.ab) }}
+							{{ form_widget(form.ab) }}
+				</div>
 			
 			
       <div class="button_wrapper">
@@ -35,7 +101,10 @@
 
 
 
-<style>  
+<style>
+input , label{
+  margin: 5px;
+}  
 .verlinkung{
   margin: 20px;
 }   
