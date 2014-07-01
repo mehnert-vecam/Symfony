@@ -1,0 +1,74 @@
+Vest\ResponsaBundle\Entity\RbacGruppen:
+    type: entity
+    table: rbac_gruppen
+    id:
+        gruppeId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: gruppe_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        kontaktId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kontakt_id
+        gruppeTypId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: gruppe_typ_id
+        gruppeZugriffsstufeId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: gruppe_zugriffsstufe_id
+        gruppeName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: gruppe_name
+        gruppeBeschreibung:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: gruppe_beschreibung
+        gruppeParentId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: gruppe_parent_id
+        gruppeKontaktspezifisch:
+            type: boolean
+            nullable: false
+            comment: ''
+            column: gruppe_kontaktspezifisch
+        gruppeLizenzspezifisch:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: gruppe_lizenzspezifisch
+        gruppeEssentiell:
+            type: boolean
+            nullable: false
+            comment: ''
+            column: gruppe_essentiell
+        gruppeSchutz:
+            type: boolean
+            nullable: false
+            comment: ''
+            column: gruppe_schutz
+    lifecycleCallbacks: {  }

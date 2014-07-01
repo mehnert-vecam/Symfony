@@ -1,0 +1,7 @@
+parameters:
+#    vest_responsa.example.class: Vest\ResponsaBundle\Example
+
+services:
+#    vest_responsa.example:
+#        class: %vest_responsa.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

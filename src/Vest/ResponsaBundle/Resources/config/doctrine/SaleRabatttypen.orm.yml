@@ -1,0 +1,22 @@
+Vest\ResponsaBundle\Entity\SaleRabatttypen:
+    type: entity
+    table: sale_rabatttypen
+    id:
+        rabatttypId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: rabatttyp_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        rabatttypName:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: rabatttyp_name
+    lifecycleCallbacks: {  }

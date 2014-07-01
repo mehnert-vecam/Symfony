@@ -1,0 +1,89 @@
+{% extends '::base.html.twig' %}
+
+
+
+{% block body -%}
+    <h1>AddrKontakte list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Kontaktkdnr</th>
+                <th>Kontakttyp</th>
+                <th>Kontaktanrede</th>
+                <th>Kontaktname</th>
+                <th>Kontaktname2</th>
+                <th>Kontaktname3</th>
+                <th>Kontaktkurzname</th>
+                <th>Kontaktstrasse</th>
+                <th>Kontaktplz</th>
+                <th>Kontaktort</th>
+                <th>Kontakttelefon</th>
+                <th>Kontakttelefax</th>
+                <th>Kontaktemail</th>
+                <th>Kontakturl</th>
+                <th>Kontaktbemerkung</th>
+                <th>Kontaktaktualisiert</th>
+                <th>Statusid</th>
+                <th>Parentid</th>
+                <th>Protectionlevel</th>
+                <th>Recordstatus</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('kontakte_show', { 'id': entity.kontaktId }) }}">{{ entity.kontaktId }}</a></td>
+                <td>{{ entity.kontaktKdnr }} {{ entity.addrpersonen|length }}</td>
+                <td>{{ entity.kontaktTyp }}</td>
+                <td>{{ entity.kontaktAnrede }}</td>
+                <td>{{ entity.kontaktName }}</td>
+                <td>{{ entity.kontaktName2 }}</td>
+                <td>{{ entity.kontaktName3 }}</td>
+                <td>{{ entity.kontaktKurzname }}</td>
+                <td>{{ entity.kontaktStrasse }}</td>
+                <td>{{ entity.kontaktPlz }}</td>
+                <td>{{ entity.kontaktOrt }}</td>
+                <td>{{ entity.kontaktTelefon }}</td>
+                <td>{{ entity.kontaktTelefax }}</td>
+                <td>{{ entity.kontaktEmail }}</td>
+                <td>{{ entity.kontaktUrl }}</td>
+                <td>{{ entity.kontaktBemerkung }}</td>
+                <td>{% if entity.kontaktAktualisiert %}{{ entity.kontaktAktualisiert|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.statusId }}</td>
+                <td>{{ entity.parentId }}</td>
+                <td>{{ entity.protectionLevel }}</td>
+                <td>{{ entity.recordStatus }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('kontakte_show', { 'id': entity.kontaktId }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('kontakte_edit', { 'id': entity.kontaktId }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('kontakte_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+
+
+    {% block testb -%}
+        <br>
+        TestBLOCK1 - {{ "now"|date(null, "Europe/Paris") }}
+    {% endblock -%}
+
+
+{% endblock %}

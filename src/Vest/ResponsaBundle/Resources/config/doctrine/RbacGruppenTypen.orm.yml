@@ -1,0 +1,22 @@
+Vest\ResponsaBundle\Entity\RbacGruppenTypen:
+    type: entity
+    table: rbac_gruppen_typen
+    id:
+        gruppeTypId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: gruppe_typ_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        gruppeTypName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: gruppe_typ_name
+    lifecycleCallbacks: {  }

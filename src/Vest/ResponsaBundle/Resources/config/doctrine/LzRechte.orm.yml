@@ -1,0 +1,27 @@
+Vest\ResponsaBundle\Entity\LzRechte:
+    type: entity
+    table: lz_rechte
+    id:
+        lzRechteId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: lz_rechte_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        rechtModul:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: recht_modul
+        rechtId:
+            type: bigint
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: recht_id
+    lifecycleCallbacks: {  }

@@ -1,17 +1,19 @@
-{# src/Acme/TaskBundle/Resources/views/Default/login.html.twig #}
 
+{% extends "base.html.twig" %}
+{% block body %}
 <p>
   <!-- Gibt aus ob das eintragen erfolgreich war oder nicht -->
   {% if ergebnis == 1 %}
     Login erfolgreich.
 		Hallo {{ mail }}
-		
-		
+
+
   <p><a href="{{ path('Security_Session') }}">Session auswerten</a></p>
-		
+
   {% else %}
-	
+
 	Login fehlgeschlagen
   {% endif %}
- 
+
 <p>
+{% endblock %}

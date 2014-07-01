@@ -1,39 +1,38 @@
-﻿{# src/Acme/TaskBundle/Resources/views/Default/new.html.twig #}
-<!DOCTYPE HTML >
+﻿
+{% extends "base.html.twig" %}
+{% block body %}
 
-{% stylesheets '../src/Vest/SymfonyBundle/css/bootstrap.css' filter='cssrewrite' %}
-    <link rel="stylesheet" href="{{ asset_url }}" />
-{% endstylesheets %}
 
 {% if eingetragen %}
 <p>Erfolgreich Eingetragen</p>
 {% else %}
  <p>Fehler beim eintragen</p>
- 
+
  {% for error in errors %}
-				
+
 	<p>{{error}}</p>
 	{% endfor %}
- 
+
 {% endif %}
 
 
   <p><a href="{{ path('Responsa_overview') }}">Zurück zur Übersicht</a></p>
-<style>  
+<style>
 .verlinkung{
   margin: 20px;
-}   
+}
 .form_wrapper{
   margin: 10px;
   width: 400px;
-} 
+}
 .task_wrapper{
-  margin: 10px;  
+  margin: 10px;
   text-align: center;
 }
 
 .form_wrapper div{
-  margin: 10px;  
+  margin: 10px;
   text-align: center;
 }
 </style>
+{% endblock %}

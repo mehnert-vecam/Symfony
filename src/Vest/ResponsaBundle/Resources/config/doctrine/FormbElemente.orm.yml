@@ -1,0 +1,43 @@
+Vest\ResponsaBundle\Entity\FormbElemente:
+    type: entity
+    table: formb_elemente
+    id:
+        elementId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: element_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        elementName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: element_name
+        elementApp:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: element_app
+        elementMethode:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: element_methode
+        elementParameter:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: element_parameter
+    lifecycleCallbacks: {  }

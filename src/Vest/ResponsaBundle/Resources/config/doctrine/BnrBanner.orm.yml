@@ -1,0 +1,48 @@
+Vest\ResponsaBundle\Entity\BnrBanner:
+    type: entity
+    table: bnr_banner
+    id:
+        bannerId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: banner_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        bannerName:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: banner_name
+        bannerDatei:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: banner_datei
+        bannerFormat:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: banner_format
+        bannerPrio:
+            type: bigint
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: banner_prio
+        kontaktId:
+            type: bigint
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: kontakt_id
+    lifecycleCallbacks: {  }

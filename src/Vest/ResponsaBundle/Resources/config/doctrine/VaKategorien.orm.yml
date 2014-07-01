@@ -1,0 +1,53 @@
+Vest\ResponsaBundle\Entity\VaKategorien:
+    type: entity
+    table: va_kategorien
+    id:
+        kategorieId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: kategorie_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        kategorieName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: kategorie_name
+        kategorieAnmeldebedingung:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: kategorie_anmeldebedingung
+        kontaktId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kontakt_id
+        kategorieReq:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kategorie_req
+        kategorieSplit:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kategorie_split
+        kategoriePrio:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kategorie_prio
+    lifecycleCallbacks: {  }

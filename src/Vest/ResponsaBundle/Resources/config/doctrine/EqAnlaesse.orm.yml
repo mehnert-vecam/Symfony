@@ -1,0 +1,22 @@
+Vest\ResponsaBundle\Entity\EqAnlaesse:
+    type: entity
+    table: eq_anlaesse
+    id:
+        anlassId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: anlass_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        anlassObjekt:
+            type: string
+            nullable: true
+            length: 200
+            fixed: false
+            comment: ''
+            column: anlass_objekt
+    lifecycleCallbacks: {  }

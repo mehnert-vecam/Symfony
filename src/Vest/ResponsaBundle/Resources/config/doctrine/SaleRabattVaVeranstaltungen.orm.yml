@@ -1,0 +1,28 @@
+Vest\ResponsaBundle\Entity\SaleRabattVaVeranstaltungen:
+    type: entity
+    table: sale_rabatt_va_veranstaltungen
+    id:
+        rabattVeranstaltungId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: rabatt_veranstaltung_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        rabattId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: rabatt_id
+        veranstaltungId:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: veranstaltung_id
+    lifecycleCallbacks: {  }

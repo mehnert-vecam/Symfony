@@ -1,0 +1,42 @@
+Vest\ResponsaBundle\Entity\AddrZusatzinfodateien:
+    type: entity
+    table: addr_zusatzinfodateien
+    id:
+        dateiId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: datei_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        dateiName:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: datei_name
+        dateiTyp:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: datei_typ
+        dateiObjekt:
+            type: blob
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: datei_objekt
+        zusatzinfowertId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: zusatzinfowert_id
+    lifecycleCallbacks: {  }

@@ -1,0 +1,35 @@
+Vest\ResponsaBundle\Entity\RbacMandantGruppen:
+    type: entity
+    table: rbac_mandant_gruppen
+    id:
+        mandantGruppeId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: mandant_gruppe_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        mandantGruppeTemplate:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '1'
+            column: mandant_gruppe_template
+        mandantGruppeName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: mandant_gruppe_name
+        mandantGruppeRollen:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: mandant_gruppe_rollen
+    lifecycleCallbacks: {  }

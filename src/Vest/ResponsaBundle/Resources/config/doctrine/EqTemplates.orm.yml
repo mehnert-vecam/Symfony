@@ -1,0 +1,41 @@
+Vest\ResponsaBundle\Entity\EqTemplates:
+    type: entity
+    table: eq_templates
+    id:
+        templateId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: template_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        templateObjekt:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: template_objekt
+        templateStatus:
+            type: string
+            nullable: true
+            length: 200
+            fixed: false
+            comment: ''
+            column: template_status
+        anlassId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: anlass_id
+        kontaktId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kontakt_id
+    lifecycleCallbacks: {  }

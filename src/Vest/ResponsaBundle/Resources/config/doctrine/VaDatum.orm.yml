@@ -1,0 +1,143 @@
+Vest\ResponsaBundle\Entity\VaDatum:
+    type: entity
+    table: va_datum
+    id:
+        datumId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: datum_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        veranstaltungTag:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: veranstaltung_tag
+        veranstalterKontaktId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: veranstalter_kontakt_id
+        veranstaltungsortKontaktId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: veranstaltungsort_kontakt_id
+        moderatorPersonId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: moderator_person_id
+        datumStart:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: datum_start
+        datumEnde:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: datum_ende
+        datumDauer:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: datum_dauer
+        datumPreis:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+            column: datum_preis
+        datumMwst:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+            column: datum_mwst
+        datumFrist:
+            type: datetime
+            nullable: false
+            comment: ''
+            column: datum_frist
+        datumStorno:
+            type: datetime
+            nullable: false
+            comment: ''
+            column: datum_storno
+        datumFristTage:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: datum_frist_tage
+        datumFristStunden:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: datum_frist_stunden
+        datumStornoTage:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: datum_storno_tage
+        datumStornoStunden:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: datum_storno_stunden
+        datumStatus:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: datum_status
+        datumNviewer:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            column: datum_nviewer
+        datumReport:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+            column: datum_report
+        datumStarted:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: datum_started
+        datumAddvisits:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: datum_addvisits
+        datumUseAccount:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: datum_use_account
+    lifecycleCallbacks: {  }

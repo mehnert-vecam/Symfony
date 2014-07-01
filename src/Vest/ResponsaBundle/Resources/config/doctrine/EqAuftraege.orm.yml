@@ -1,0 +1,51 @@
+Vest\ResponsaBundle\Entity\EqAuftraege:
+    type: entity
+    table: eq_auftraege
+    id:
+        auftragId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: auftrag_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        auftragStartdatum:
+            type: datetime
+            nullable: true
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: auftrag_startdatum
+        auftragEnddatum:
+            type: date
+            nullable: true
+            comment: ''
+            column: auftrag_enddatum
+        auftragStatus:
+            type: string
+            nullable: true
+            length: 200
+            fixed: false
+            comment: ''
+            column: auftrag_status
+        anlassId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: anlass_id
+        personId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: person_id
+        datumId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: datum_id
+    lifecycleCallbacks: {  }

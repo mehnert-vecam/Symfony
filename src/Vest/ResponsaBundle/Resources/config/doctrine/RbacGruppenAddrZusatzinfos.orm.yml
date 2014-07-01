@@ -1,0 +1,40 @@
+Vest\ResponsaBundle\Entity\RbacGruppenAddrZusatzinfos:
+    type: entity
+    table: rbac_gruppen_addr_zusatzinfos
+    id:
+        gruppeZusatzinfoId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: gruppe_zusatzinfo_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        gruppeId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: gruppe_id
+        zusatzinfoId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: zusatzinfo_id
+        zusatzinfoAnzeigename:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: zusatzinfo_anzeigename
+        zusatzinfoTypId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: zusatzinfo_typ_id
+    lifecycleCallbacks: {  }

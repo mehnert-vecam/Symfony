@@ -1,0 +1,15 @@
+vest_responsa_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: VestResponsaBundle:Default:index }
+
+
+
+vest_responsa_test1:
+    pattern:  /testa
+    defaults: { _controller: VestResponsaBundle:Default:testa }
+
+
+
+VestResponsaBundle_kontakte:
+        resource: "@VestResponsaBundle/Resources/config/routing/addrkontakte.yml"
+        prefix:   /kontakte

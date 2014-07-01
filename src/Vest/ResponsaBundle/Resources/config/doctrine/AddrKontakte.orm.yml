@@ -1,0 +1,163 @@
+Vest\ResponsaBundle\Entity\AddrKontakte:
+    type: entity
+    table: addr_kontakte
+    indexes:
+        record_status:
+            columns:
+                - record_status
+    id:
+        kontaktId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: kontakt_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        kontaktKdnr:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: kontakt_kdnr
+        kontaktTyp:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: kontakt_typ
+        kontaktAnrede:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: kontakt_anrede
+        kontaktName:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            column: kontakt_name
+        kontaktName2:
+            type: string
+            nullable: false
+            length: 75
+            fixed: false
+            comment: ''
+            column: kontakt_name2
+        kontaktName3:
+            type: string
+            nullable: false
+            length: 75
+            fixed: false
+            comment: ''
+            column: kontakt_name3
+        kontaktKurzname:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: kontakt_kurzname
+        kontaktStrasse:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: kontakt_strasse
+        kontaktPlz:
+            type: string
+            nullable: false
+            length: 10
+            fixed: false
+            comment: ''
+            column: kontakt_plz
+        kontaktOrt:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: kontakt_ort
+        kontaktTelefon:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            column: kontakt_telefon
+        kontaktTelefax:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            column: kontakt_telefax
+        kontaktEmail:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: kontakt_email
+        kontaktUrl:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: kontakt_url
+        kontaktBemerkung:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: kontakt_bemerkung
+        kontaktAktualisiert:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: kontakt_aktualisiert
+        statusId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '1'
+            column: status_id
+        parentId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: parent_id
+        protectionLevel:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: protection_level
+        recordStatus:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '1'
+            column: record_status
+    oneToMany:
+        addrpersonen:
+            targetEntity: AddrPersonen
+            cascade: {  }
+            mappedBy: addrkontakte
+            inversedBy: null
+            orphanRemoval: false
+            orderBy: null
+    lifecycleCallbacks: {  }

@@ -1,0 +1,28 @@
+Vest\ResponsaBundle\Entity\TestKontakt:
+    type: entity
+    table: test_kontakt
+    id:
+        id:
+            type: boolean
+            nullable: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        wert:
+            type: string
+            nullable: false
+            length: 8000
+            fixed: false
+            comment: ''
+            column: WERT
+    oneToMany:
+        testkontaktepersonen:
+            targetEntity: TestKontaktePersonen
+            cascade: {  }
+            mappedBy: testkontakt
+            inversedBy: null
+            orphanRemoval: false
+            orderBy: null
+    lifecycleCallbacks: {  }

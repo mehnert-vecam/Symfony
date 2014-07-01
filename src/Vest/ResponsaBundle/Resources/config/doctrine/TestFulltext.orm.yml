@@ -1,0 +1,26 @@
+Vest\ResponsaBundle\Entity\TestFulltext:
+    type: entity
+    table: test_fulltext
+    indexes:
+        WERT:
+            columns:
+                - WERT
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        wert:
+            type: string
+            nullable: false
+            length: 8000
+            fixed: false
+            comment: ''
+            column: WERT
+    lifecycleCallbacks: {  }

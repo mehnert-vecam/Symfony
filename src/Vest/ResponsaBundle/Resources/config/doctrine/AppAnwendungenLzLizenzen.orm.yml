@@ -1,0 +1,27 @@
+Vest\ResponsaBundle\Entity\AppAnwendungenLzLizenzen:
+    type: entity
+    table: app_anwendungen_lz_lizenzen
+    id:
+        anwendungLizenzId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: anwendung_lizenz_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        anwendungId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: anwendung_id
+        lizenzId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: lizenz_id
+    lifecycleCallbacks: {  }

@@ -1,0 +1,35 @@
+Vest\ResponsaBundle\Entity\AddrPersonenZusatzinfowerte:
+    type: entity
+    table: addr_personen_zusatzinfowerte
+    id:
+        zusatzinfowertId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: zusatzinfowert_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        gruppePersonId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: gruppe_person_id
+        zusatzinfowertObjekt:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: zusatzinfowert_objekt
+        zusatzinfoId:
+            type: string
+            nullable: false
+            length: 45
+            fixed: false
+            comment: ''
+            column: zusatzinfo_id
+    lifecycleCallbacks: {  }

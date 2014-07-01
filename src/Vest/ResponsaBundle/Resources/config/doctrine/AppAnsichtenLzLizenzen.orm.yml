@@ -1,0 +1,27 @@
+Vest\ResponsaBundle\Entity\AppAnsichtenLzLizenzen:
+    type: entity
+    table: app_ansichten_lz_lizenzen
+    id:
+        ansichtLizenzId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: ansicht_lizenz_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        lizenzId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: lizenz_id
+        ansichtId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: ansicht_id
+    lifecycleCallbacks: {  }

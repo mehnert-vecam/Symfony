@@ -1,4 +1,7 @@
-﻿{% if leer %}
+﻿
+{% extends "base.html.twig" %}
+{% block body %}
+{% if leer %}
     <h3>Zu dieser Umfrage gibt es noch keine Fragen!</h3>
 {% else %}
 <h3> {{ u_name }}</h3>
@@ -23,7 +26,7 @@
 			<td>{{ row.type }}</td>
 			<td><a href="{{ path('Responsa_frage_edit', {'u_id': row.u_id , 'id': row.id}) }}">bearbeiten</a></td>
 			<td><a href="{{ path('Responsa_antwort_overview', {'f_id': row.id}) }}">Antworten</a></td>
-		</tr>	
+		</tr>
 	{% endfor %}
 
 </table>
@@ -37,3 +40,4 @@
 	padding: 2px;
 }
 </style>
+{% endblock %}

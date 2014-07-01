@@ -1,0 +1,38 @@
+Vest\ResponsaBundle\Entity\TestKontaktePersonen:
+    type: entity
+    table: test_kontakte_personen
+    indexes:
+        INDEX_KP_KONTAKT:
+            columns:
+                - kontakt1_id
+        INDEX_KP_PERSON:
+            columns:
+                - personen_id
+    id:
+        id:
+            type: boolean
+            nullable: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        testkontakt:
+            targetEntity: TestKontakt
+            cascade: {  }
+            mappedBy: null
+            inversedBy: testkontaktepersonen
+            joinColumns:
+                kontakt1_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        testpersonen:
+            targetEntity: TestPersonen
+            cascade: {  }
+            mappedBy: null
+            inversedBy: testkontaktepersonen
+            joinColumns:
+                personen_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

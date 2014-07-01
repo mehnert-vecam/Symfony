@@ -1,0 +1,30 @@
+kontakte:
+    pattern:  /
+    defaults: { _controller: "VestResponsaBundle:AddrKontakte:index" }
+
+kontakte_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "VestResponsaBundle:AddrKontakte:show" }
+
+kontakte_new:
+    pattern:  /new
+    defaults: { _controller: "VestResponsaBundle:AddrKontakte:new" }
+
+kontakte_create:
+    pattern:  /create
+    defaults: { _controller: "VestResponsaBundle:AddrKontakte:create" }
+    requirements: { _method: post }
+
+kontakte_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "VestResponsaBundle:AddrKontakte:edit" }
+
+kontakte_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "VestResponsaBundle:AddrKontakte:update" }
+    requirements: { _method: post|put }
+
+kontakte_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "VestResponsaBundle:AddrKontakte:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,27 @@
+Vest\ResponsaBundle\Entity\ShopKategorienVersandarten:
+    type: entity
+    table: shop_kategorien_versandarten
+    id:
+        kategorieVersandartId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: kategorie_versandart_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        kategorieId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: kategorie_id
+        versandartId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: versandart_id
+    lifecycleCallbacks: {  }

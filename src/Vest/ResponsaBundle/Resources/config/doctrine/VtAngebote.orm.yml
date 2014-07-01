@@ -1,0 +1,64 @@
+Vest\ResponsaBundle\Entity\VtAngebote:
+    type: entity
+    table: vt_angebote
+    id:
+        angebotId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: angebot_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        kontaktId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kontakt_id
+        angebotName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: angebot_name
+        angebotBeschreibung:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: angebot_beschreibung
+        angebotNutzung:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: angebot_nutzung
+        angebotDauer:
+            type: string
+            nullable: false
+            length: 25
+            fixed: false
+            comment: ''
+            column: angebot_dauer
+        angebotCat:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: angebot_cat
+        angebotReqPerson:
+            type: boolean
+            nullable: false
+            comment: ''
+            column: angebot_req_person
+        angebotIntern:
+            type: boolean
+            nullable: false
+            comment: ''
+            column: angebot_intern
+    lifecycleCallbacks: {  }

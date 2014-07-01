@@ -1,55 +1,54 @@
-{# src/Acme/TaskBundle/Resources/views/Default/new.html.twig #}
-<!DOCTYPE HTML >
 
-{% stylesheets '../src/Vest/SymfonyBundle/css/bootstrap.css' filter='cssrewrite' %}
-    <link rel="stylesheet" href="{{ asset_url }}" />
-{% endstylesheets %}
+{% extends "base.html.twig" %}
+{% block body %}
+
 
    <h3>{{u_name}}</h3>
 <div class="form_wrapper">
   {{ form_start(form) }}      <!-- Start des Formularbereits -->
       {{ form_errors(form) }}  <!-- Ausgabe von Fehler die erzeugt werden. -->
-  
+
 			{% for item in form.antwort %}
-				
+
       <div class="task_wrapper">
 				{{fragen[loop.index0]}} <br />
 						{{ form_errors(item) }}
 						{{ form_widget(item) }}
       </div>
 			{% endfor %}
-			
+
 			<div class="task_wrapper">
 						{{ form_errors(form.f_id) }}
 						{{ form_widget(form.f_id) }}
       </div>
-			
-			
+
+
       <div class="button_wrapper">
           {{ form_widget(form.Speichern) }}
       </div>
-  
+
   {{ form_end(form) }}  <!-- Ende des Formularbereits -->
 
 </div>
 
 
 
-<style>  
+<style>
 .verlinkung{
   margin: 20px;
-}   
+}
 .form_wrapper{
   margin: 10px;
   width: 400px;
-} 
+}
 .task_wrapper{
-  margin: 10px;  
+  margin: 10px;
   text-align: center;
 }
 
 .form_wrapper div{
-  margin: 10px;  
+  margin: 10px;
   text-align: center;
 }
 </style>
+{% endblock %}

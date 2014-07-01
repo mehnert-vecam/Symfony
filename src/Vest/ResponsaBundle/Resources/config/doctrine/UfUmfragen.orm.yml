@@ -1,0 +1,43 @@
+Vest\ResponsaBundle\Entity\UfUmfragen:
+    type: entity
+    table: uf_umfragen
+    id:
+        umfrageId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: umfrage_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        umfrageName:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: umfrage_name
+        umfrageBeschreibung:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: umfrage_beschreibung
+        umfrageTyp:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            column: umfrage_typ
+        lizenzId:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: lizenz_id
+    lifecycleCallbacks: {  }

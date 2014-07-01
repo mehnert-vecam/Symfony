@@ -1,0 +1,31 @@
+Vest\ResponsaBundle\Entity\ShopKategorienUmfragen:
+    type: entity
+    table: shop_kategorien_umfragen
+    indexes:
+        fk_shop_kategorien_umfragen_shop_kategorien1:
+            columns:
+                - kategorie_id
+    id:
+        kategorieUmfrageId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: kategorie_umfrage_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        kategorieId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: kategorie_id
+        umfrageId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: umfrage_id
+    lifecycleCallbacks: {  }

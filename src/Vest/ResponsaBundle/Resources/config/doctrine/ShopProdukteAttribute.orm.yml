@@ -1,0 +1,34 @@
+Vest\ResponsaBundle\Entity\ShopProdukteAttribute:
+    type: entity
+    table: shop_produkte_attribute
+    id:
+        produktAttributId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: produkt_attribut_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        productId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: product_id
+        attributId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: attribut_id
+        attributValue:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: attribut_value
+    lifecycleCallbacks: {  }

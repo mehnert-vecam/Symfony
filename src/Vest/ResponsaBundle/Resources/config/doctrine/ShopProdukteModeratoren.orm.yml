@@ -1,0 +1,31 @@
+Vest\ResponsaBundle\Entity\ShopProdukteModeratoren:
+    type: entity
+    table: shop_produkte_moderatoren
+    indexes:
+        fk_shop_produkte_moderatoren_shop_produkte1:
+            columns:
+                - produkt_id
+    id:
+        produkteModeratorId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: produkte_moderator_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        personId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: person_id
+        produktId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: produkt_id
+    lifecycleCallbacks: {  }

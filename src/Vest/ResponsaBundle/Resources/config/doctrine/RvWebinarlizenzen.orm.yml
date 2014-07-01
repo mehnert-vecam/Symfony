@@ -1,0 +1,22 @@
+Vest\ResponsaBundle\Entity\RvWebinarlizenzen:
+    type: entity
+    table: rv_webinarlizenzen
+    id:
+        webinarlizenzId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: webinarlizenz_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        webinarlizenzName:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: webinarlizenz_name
+    lifecycleCallbacks: {  }

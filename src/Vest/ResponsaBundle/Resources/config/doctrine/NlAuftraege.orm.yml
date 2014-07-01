@@ -1,0 +1,64 @@
+Vest\ResponsaBundle\Entity\NlAuftraege:
+    type: entity
+    table: nl_auftraege
+    id:
+        auftragId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: auftrag_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        templateId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: template_id
+        auftragName:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: auftrag_name
+        auftragStart:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: auftrag_start
+        kontaktId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: kontakt_id
+        auftragNewsAnzahl:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: auftrag_news_anzahl
+        auftragSeminareAnzahl:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: auftrag_seminare_anzahl
+        auftragBannerAnzahl:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: auftrag_banner_anzahl
+        auftragIdentifikation:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: auftrag_identifikation
+    lifecycleCallbacks: {  }

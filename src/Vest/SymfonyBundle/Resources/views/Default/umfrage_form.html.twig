@@ -1,15 +1,12 @@
-{# src/Acme/TaskBundle/Resources/views/Default/new.html.twig #}
-<!DOCTYPE HTML >
 
-{% stylesheets '../src/Vest/SymfonyBundle/css/bootstrap.css' filter='cssrewrite' %}
-    <link rel="stylesheet" href="{{ asset_url }}" />
-{% endstylesheets %}
+{% extends "base.html.twig" %}
+{% block body %}
 
    <h3>Neue Umfrage erstellen</h3>
 <div class="form_wrapper">
   {{ form_start(form) }}      <!-- Start des Formularbereits -->
       {{ form_errors(form) }}  <!-- Ausgabe von Fehler die erzeugt werden. -->
-  
+
       <div class="task_wrapper">
           {{ form_label(form.name, 'Name') }}   <br />
           {{ form_errors(form.name) }}
@@ -40,7 +37,7 @@
           {{ form_errors(form.feld5) }}
           {{ form_widget(form.feld5) }}
       </div>
-			
+
       <div class="task_wrapper">
           {{ form_label(form.auswertungsbereich1, 'Auswertungsbereich 1') }}   <br />
           {{ form_errors(form.auswertungsbereich1) }}
@@ -66,32 +63,33 @@
           {{ form_errors(form.auswertungsbereich5) }}
           {{ form_widget(form.auswertungsbereich5) }}
       </div>
-			
+
       <div class="button_wrapper">
           {{ form_widget(form.Speichern) }}
       </div>
-  
+
   {{ form_end(form) }}  <!-- Ende des Formularbereits -->
 
 </div>
 
 
 
-<style>  
+<style>
 .verlinkung{
   margin: 20px;
-}   
+}
 .form_wrapper{
   margin: 10px;
   width: 200px;
-} 
+}
 .task_wrapper{
-  margin: 10px;  
+  margin: 10px;
   text-align: center;
 }
 
 .form_wrapper div{
-  margin: 10px;  
+  margin: 10px;
   text-align: center;
 }
 </style>
+{% endblock %}

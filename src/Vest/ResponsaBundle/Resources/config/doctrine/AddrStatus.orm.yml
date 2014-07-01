@@ -1,0 +1,22 @@
+Vest\ResponsaBundle\Entity\AddrStatus:
+    type: entity
+    table: addr_status
+    id:
+        statusId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: status_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        statusObjekt:
+            type: string
+            nullable: true
+            length: 150
+            fixed: false
+            comment: ''
+            column: status_objekt
+    lifecycleCallbacks: {  }
