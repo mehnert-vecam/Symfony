@@ -1,0 +1,49 @@
+Vest\SharedBundle\Entity\AddrKontakteMandantInfo:
+    type: entity
+    table: addr_kontakte_mandant_info
+    id:
+        kontaktInfoId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: kontakt_info_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        kontaktBaOwner:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: kontakt_ba_owner
+        kontaktBaBank:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: kontakt_ba_bank
+        kontaktBaIban:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: kontakt_ba_iban
+        kontaktBaBic:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: kontakt_ba_bic
+        kontaktId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kontakt_id
+    lifecycleCallbacks: {  }

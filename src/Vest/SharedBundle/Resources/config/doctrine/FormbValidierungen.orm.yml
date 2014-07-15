@@ -1,0 +1,43 @@
+Vest\SharedBundle\Entity\FormbValidierungen:
+    type: entity
+    table: formb_validierungen
+    id:
+        validierungId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: validierung_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        validierungName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: validierung_name
+        validierungBeschreibung:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: validierung_beschreibung
+        validierungKlasse:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: validierung_klasse
+        validierungMethode:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: validierung_methode
+    lifecycleCallbacks: {  }

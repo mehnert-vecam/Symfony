@@ -1,0 +1,27 @@
+Vest\SharedBundle\Entity\AppAnsichtenRbacRechte:
+    type: entity
+    table: app_ansichten_rbac_rechte
+    id:
+        ansichtRechtId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: ansicht_recht_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        ansichtId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: ansicht_id
+        rechtId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: recht_id
+    lifecycleCallbacks: {  }

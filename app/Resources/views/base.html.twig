@@ -38,15 +38,9 @@
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
  {% endstylesheets %}
 {% endblock %}
-
-
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block testblock %}
-        	<div class="csstest1">TEST1</div>
-			<div class="csstest2">TEST2</div>
-        {% endblock %}
     </body>
 </html>

@@ -1,0 +1,27 @@
+Vest\SharedBundle\Entity\NlAuftraegeRbacGruppen:
+    type: entity
+    table: nl_auftraege_rbac_gruppen
+    id:
+        auftragGruppeId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: auftrag_gruppe_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        auftragId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: auftrag_id
+        gruppeId:
+            type: bigint
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: gruppe_id
+    lifecycleCallbacks: {  }

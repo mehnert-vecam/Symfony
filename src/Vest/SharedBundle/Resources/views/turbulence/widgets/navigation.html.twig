@@ -1,0 +1,41 @@
+{% block navigation %}
+<nav class="main-menu" data-step='2' data-intro='This is the extendable Main Navigation Menu.' data-position='right'>
+    <ul>
+        {% for item in navigation %}
+        <li class="">
+        <a href="?app={{ item.kurzname }}">
+            <i class="{{ item.icon }} nav-icon" style="color: {{ item.farbe }}"></i>
+                <span class="nav-text">
+                    {{ item.name }}
+                </span>
+            {% if item.viewcount > 1  %}
+            <i class="icon-angle-right"></i>
+            {% endif %}
+
+        </a>
+            {% if item.viewcount > 1  %}
+            <ul>
+                {% for view in item.views %}
+                <li><a class="subnav-text" href="?app={{ loop.parent.item.kurzname }}&view={{ view.kurzname }}">{{ view.name }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    <ul class="logout">
+        <li>
+            <p class="anmeldeinfo">
+                Sie sind eingeloggt als:<br>
+                {{ user.getPersonVorname }} {{ user.getPersonName }} von {{ user.getKontakt.getKontaktKurzname }}
+               </p>
+            <a href="?logout=1">
+                <i class="icon-off nav-icon"></i>
+                    <span class="nav-text">
+                        Logout
+                    </span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{%  endblock %}

@@ -1,0 +1,41 @@
+Vest\SharedBundle\Entity\RbacRechte:
+    type: entity
+    table: rbac_rechte
+    id:
+        rechtId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: recht_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        rechtName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: recht_name
+        rechtBeschreibung:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: recht_beschreibung
+        rechtWert:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: recht_wert
+
+    manyToMany:
+          rollen:
+            targetEntity: Vest\SharedBundle\Entity\RbacRollen
+            mappedBy: rechte
+    lifecycleCallbacks: {  }

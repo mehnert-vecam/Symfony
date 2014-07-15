@@ -1,0 +1,27 @@
+Vest\SharedBundle\Entity\SaleRabatteVaKategorien:
+    type: entity
+    table: sale_rabatte_va_kategorien
+    id:
+        rabattKategorie:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: rabatt_kategorie
+            generator:
+                strategy: IDENTITY
+    fields:
+        rabatteId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: rabatte_id
+        kategorieId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: kategorie_id
+    lifecycleCallbacks: {  }

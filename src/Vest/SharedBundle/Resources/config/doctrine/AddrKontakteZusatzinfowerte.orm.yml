@@ -1,0 +1,35 @@
+Vest\SharedBundle\Entity\AddrKontakteZusatzinfowerte:
+    type: entity
+    table: addr_kontakte_zusatzinfowerte
+    id:
+        zusatzinfowertId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: zusatzinfowert_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        gruppeKontaktId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: gruppe_kontakt_id
+        zusatzinfowertObjekt:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: zusatzinfowert_objekt
+        zusatzinfoId:
+            type: string
+            nullable: false
+            length: 45
+            fixed: false
+            comment: ''
+            column: zusatzinfo_id
+    lifecycleCallbacks: {  }

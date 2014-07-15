@@ -1,0 +1,138 @@
+Vest\SharedBundle\Entity\AddrPersonen:
+    type: entity
+    table: addr_personen
+    indexes:
+        record_status:
+            columns:
+                - record_status
+    id:
+        id:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: person_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        kontaktId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kontakt_id
+        personAnrede:
+            type: string
+            nullable: false
+            length: 25
+            fixed: false
+            comment: ''
+            column: person_anrede
+        personTitel:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: person_titel
+        personVorname:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: person_vorname
+        personName:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: person_name
+        personBriefanrede:
+            type: string
+            nullable: false
+            length: 75
+            fixed: false
+            comment: ''
+            column: person_briefanrede
+        personZhanrede:
+            type: string
+            nullable: false
+            length: 75
+            fixed: false
+            comment: ''
+            column: person_zhanrede
+        personTelefon:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: person_telefon
+        personEmail:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            column: person_email
+        personMobil:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: person_mobil
+        personPass:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: person_pass
+        personAktualisiert:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: person_aktualisiert
+        recordStatus:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '1'
+            column: record_status
+    manyToOne:
+      kontakt:
+        targetEntity: Vest\SharedBundle\Entity\AddrKontakte
+        inversedBy: personen
+        joinColumn:
+          name: kontakt_id
+          referencedColumnName: kontakt_id
+    manyToMany:
+      gruppen:
+        targetEntity: Vest\SharedBundle\Entity\RbacGruppen
+        inversedBy: personen
+        joinTable:
+          name: rbac_gruppen_addr_personen
+          joinColumns:
+            person_id:
+              referencedColumnName: person_id
+          inverseJoinColumns:
+            gruppe_id:
+              referencedColumnName: gruppe_id
+
+      rollen:
+        targetEntity: Vest\SharedBundle\Entity\RbacRollen
+        inversedBy: personen
+        joinTable:
+          name: rbac_rollen_addr_personen
+          joinColumns:
+            person_id:
+              referencedColumnName: person_id
+          inverseJoinColumns:
+            rolle_id:
+              referencedColumnName: rolle_id
+    lifecycleCallbacks: {  }

@@ -1,0 +1,17 @@
+.spinners {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.spinners li {
+  display: inline-block;
+  float: left;
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
+  text-align: center;
+  margin: 10px;
+}
+.spinners img {
+  max-width: 50%;
+}

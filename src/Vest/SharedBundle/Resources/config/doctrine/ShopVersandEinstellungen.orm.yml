@@ -1,0 +1,25 @@
+Vest\SharedBundle\Entity\ShopVersandEinstellungen:
+    type: entity
+    table: shop_versand_einstellungen
+    indexes:
+        fk_shop_versand_einstellungen_shop_versandarten1:
+            columns:
+                - versand_id
+    id:
+        versandEinstellungId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: versand_einstellung_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        versandId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: versand_id
+    lifecycleCallbacks: {  }

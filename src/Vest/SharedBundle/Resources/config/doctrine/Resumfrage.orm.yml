@@ -1,0 +1,89 @@
+Vest\SharedBundle\Entity\Resumfrage:
+    type: entity
+    table: resumfrage
+    uniqueConstraints:
+        name:
+            columns:
+                - name
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+        feld1:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            default: '-'
+        feld2:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            default: '-'
+        feld3:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            default: '-'
+        feld4:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            default: '-'
+        feld5:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            default: '-'
+        auswertungsbereich1:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+        auswertungsbereich2:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+        auswertungsbereich3:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+        auswertungsbereich4:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+        auswertungsbereich5:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

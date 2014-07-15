@@ -1,4 +1,8 @@
+vest_layout:
+    resource: "@VestSharedBundle/Resources/config/routing.yml"
+    prefix:   /
+
 vest_symfony:
-    resource: "@VestSymfonyBundle/Resources/config/routing.yml"
+    resource: "@VestResponsaBundle/Resources/config/routing.yml"
     prefix:   /
 

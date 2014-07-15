@@ -1,0 +1,21 @@
+Vest\SharedBundle\Entity\TestFkT3:
+    type: entity
+    table: test_fk_t3
+    id:
+        pk:
+            type: boolean
+            nullable: false
+            comment: ''
+            id: true
+            column: PK
+            generator:
+                strategy: IDENTITY
+    fields:
+        wert:
+            type: string
+            nullable: false
+            length: 8000
+            fixed: false
+            comment: ''
+            column: WERT
+    lifecycleCallbacks: {  }

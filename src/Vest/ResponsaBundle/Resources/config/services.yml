@@ -1,7 +1,9 @@
 parameters:
-#    vest_responsa.example.class: Vest\ResponsaBundle\Example
+    user_provider.class: Vest\ResponsaBundle\Security\User\UserProvider
 
 services:
-#    vest_responsa.example:
-#        class: %vest_responsa.example.class%
+#    vest_symfony.example:
+#        class: %vest_symfony.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    user_provider:
+        class: "%user_provider.class%"

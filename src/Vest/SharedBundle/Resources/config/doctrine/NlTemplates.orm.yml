@@ -1,0 +1,35 @@
+Vest\SharedBundle\Entity\NlTemplates:
+    type: entity
+    table: nl_templates
+    id:
+        templateId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: template_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        templateName:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: template_name
+        templateObjekt:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: template_objekt
+        kontaktId:
+            type: bigint
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: kontakt_id
+    lifecycleCallbacks: {  }

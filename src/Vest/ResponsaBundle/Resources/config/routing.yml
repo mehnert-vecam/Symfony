@@ -1,15 +1,84 @@
-vest_responsa_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: VestResponsaBundle:Default:index }
+Formular-add:
+    pattern:  /form/
+    defaults: { _controller: VestResponsaBundle:Formular:index }
+Formular-edit:
+    pattern:  /form/{id}
+    defaults: { _controller: VestResponsaBundle:Formular:index }
+Formular-save:
+    pattern:  /form/save
+    defaults: { _controller: VestResponsaBundle:Formular:save }
+task_success:
+    pattern:  /form/erfolg{ergebnis}
+    defaults: { _controller: VestResponsaBundle:Formular:erfolg }
+task_fail:
+    pattern:  /form/fail{ergebnis}
+    defaults: { _controller: VestResponsaBundle:Formular:erfolg }
+    
+AddrPerson-add:
+    pattern:  /person/
+    defaults: { _controller: VestResponsaBundle:AddrPerson:index }
+AddrPerson-edit:
+    pattern:  /person/{id}
+    defaults: { _controller: VestResponsaBundle:AddrPerson:index }
+AddrPerson-save:
+    pattern:  /person/save/
+    defaults: { _controller: VestResponsaBundle:AddrPerson:save }
+
+Security_login:
+    pattern:  /login/
+    defaults: { _controller: VestResponsaBundle:Login:Login }
+Security_log-me-in:
+    pattern:  /login/check/
+    defaults: { _controller: VestResponsaBundle:Login:logincheck }
+Security_Session:
+    pattern:  /session/
+    defaults: { _controller: VestResponsaBundle:Login:sessioncheck	 }
+Security_logout:
+    pattern:  /logout/
+    defaults: { _controller: VestResponsaBundle:Base:Logout	 }
 
 
+Responsa_default:
+    pattern:  /
+    defaults: { _controller: VestResponsaBundle:Umfrage:overview	 }
 
-vest_responsa_test1:
-    pattern:  /testa
-    defaults: { _controller: VestResponsaBundle:Default:testa }
+Responsa_overview:
+    pattern:  /responsa/overview/
+    defaults: { _controller: VestResponsaBundle:Umfrage:overview	 }
+Responsa_new:
+    pattern:  /responsa/new/
+    defaults: { _controller: VestResponsaBundle:Umfrage:new	 }
+Responsa_save:
+    pattern:  /responsa/save/{id}
+    defaults: { _controller: VestResponsaBundle:Umfrage:save	 }
+Responsa_edit:
+    pattern:  /responsa/edit/{id}
+    defaults: { _controller: VestResponsaBundle:Umfrage:new, id: 0 }
+
+Responsa_frage_overview:
+    pattern:  /responsa/frage/overview/{u_id}
+    defaults: { _controller: VestResponsaBundle:Frage:overview	 }
+Responsa_frage_new:
+    pattern:  /responsa/frage/new/{u_id}
+    defaults: { _controller: VestResponsaBundle:Frage:new	 }
+Responsa_frage_save:
+    pattern:  /responsa/frage/save/{u_id}.{id}
+    defaults: { _controller: VestResponsaBundle:Frage:save	 }
+Responsa_frage_edit:
+    pattern:  /responsa/frage/edit/{u_id}.{id}
+    defaults: { _controller: VestResponsaBundle:Frage:new, id: 0 }
 
 
+Responsa_antwort_overview:
+    pattern:  /responsa/antwort/overview/{f_id}
+    defaults: { _controller: VestResponsaBundle:Antwort:overview	 }
+Responsa_antwort_alloverview:
+    pattern:  /responsa/antwort/overview_all/{u_id}
+    defaults: { _controller: VestResponsaBundle:Antwort:alloverview	 }
 
-VestResponsaBundle_kontakte:
-        resource: "@VestResponsaBundle/Resources/config/routing/addrkontakte.yml"
-        prefix:   /kontakte
+Responsa_view_show:
+    pattern:  /responsa/view/show/{u_id}.{feld1}.{feld2}.{feld3}.{feld4}.{feld5}
+    defaults: { _controller: VestResponsaBundle:View:show }
+Responsa_view_erhalten:
+    pattern:  /responsa/view/erhalten/{u_id}
+    defaults: { _controller: VestResponsaBundle:View:erhalten }

@@ -1,0 +1,227 @@
+// bootstrap base customization:
+@import "proton-variables.less";
+@import "proton-mixins.less";
+
+
+
+.custom_footer {
+  position:absolute;
+  bottom:0;
+  a {
+    color:#3699D2 !important;
+  }
+}
+
+.buttonlist {
+    margin-bottom:20px;
+}
+
+.no-border {
+    .table-header-row {
+      border: none;
+    }
+}
+.well {
+    background:#fff;
+}
+
+.dataTables_wrapper table {
+  margin-bottom: 20px!important;
+}
+
+button.btn.btn-primary,
+a.btn.btn-primary {
+    background:#52A3E7 !important;
+}
+
+.no-top-border .table-header-row {
+    border-top:none;
+    padding:0 0 10px 0;
+}
+
+#merkmenge{
+    line-height:1;
+}
+
+
+#tableSortable input {
+    height:14px;
+    margin:0;
+}
+.custom_logobar {
+  background-color: #333333;
+}
+
+.custom_widgetsize4, .custom_widgetsize4 > div {
+  width: 400px;
+}
+
+.logo {
+//    background:#333;
+    height:100%;
+}
+
+.logo-nav {
+    display:none;
+}
+@media (min-width: @screen-sm) {
+    .logo-nav {
+        display:block;
+        position:absolute;
+        top:-2px;
+        right:0;
+    }
+}
+
+.anmeldeinfo {
+    color:#999;
+    margin: 5px 0 5px 60px;
+}
+
+
+
+.display_width{
+    position:absolute;
+    bottom:0;
+    right:0;
+    background:#333;
+    color:#fff;
+}
+
+.pflichtfeld_marke {
+    color: #f45d4e;
+}
+
+.pflichtfeld_text{
+    font-size:@font-size-small;
+}
+
+
+
+#box {
+    position:absolute;
+//     top:50px; left:50px;
+    z-index:3;
+}
+
+#box a {
+    color: #00000;
+    display:inline;
+    padding:5px;;
+    width: 30px;
+}
+
+#box a:hover {
+    color:black;
+    width:30px;}
+
+#box a span {display:none;}
+
+#box a:hover span {
+    position:absolute;
+    color:black;
+    background:#EEEEEE;
+    display:block;
+    padding:10px;
+    z-index:5;
+
+    }
+
+
+.panel-body {
+    & .h4,
+    &>div.h4 {
+        color: #075292;
+        font-weight: bold;
+    }
+    & table{
+        background:transparent;
+    }
+}
+
+
+.no-padding {
+    padding:0;
+}
+
+
+
+
+
+.big-icon .panel-heading a{
+    margin:-10px -15px 0 0;
+    padding:10px 15px;
+    &:hover{
+        background:rgba(0,0,0,0.1);
+    }
+}
+
+.panel-transparent {
+    background:transparent;
+    box-shadow:none;
+}
+
+
+.person-picture {
+    width: 150px;
+    height: 200px;
+    float: left;
+    margin-right: 20px;
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
+
+
+.person-info {
+    float:left;
+    margin-right:40px;
+}
+.person-vita {
+    float:left;
+
+}
+
+.panel-footer.social-icons{
+    padding:5px 15px;
+    .social-icon{
+        float:right;
+        font-size:20px;
+        width: 30px;
+        margin-right:10px;
+        text-align: center;
+        @twitter_color:#55ACEE;
+        @xing_color:#09828D;
+        @facebook_color:#3B5998;
+        &.icon-twitter {color:@twitter_color; &:hover{color:darken(@twitter_color,10%); }}
+        &.icon-xing {color:@xing_color; &:hover{color:darken(@xing_color,10%); }}
+        &.icon-facebook {color:@facebook_color; &:hover{color:darken(@facebook_color,10%); } margin-right:0;}
+
+    }
+}
+
+
+.with-stars {
+    padding-right:110px;
+    position:relative;
+}
+ul.stars {
+    position:absolute;
+    top:0;
+    right:0;
+    font-family: 'Glyphicons Halflings';
+    color: #e3b033;
+
+
+    li{
+        float:left;
+        list-style-type: none;
+        margin-top:1px;
+        &:before { content: "\e007"; }
+        &.active{
+            margin-top:0;
+            &:before { content: "\e006"; }
+        }
+}
+}

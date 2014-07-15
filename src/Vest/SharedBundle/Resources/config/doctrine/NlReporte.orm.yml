@@ -1,0 +1,35 @@
+Vest\SharedBundle\Entity\NlReporte:
+    type: entity
+    table: nl_reporte
+    id:
+        reportId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: report_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        auftragId:
+            type: bigint
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: auftrag_id
+        reportName:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: report_name
+        reportUrl:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: report_url
+    lifecycleCallbacks: {  }

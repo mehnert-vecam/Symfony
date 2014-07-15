@@ -1,0 +1,31 @@
+Vest\SharedBundle\Entity\RbacGruppenRbacRollen:
+    type: entity
+    table: rbac_gruppen_rbac_rollen
+    indexes:
+        gruppenid:
+            columns:
+                - gruppe_id
+    id:
+        gruppenRollenId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: gruppen_rollen_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        gruppeId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: gruppe_id
+        rolleId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: rolle_id
+    lifecycleCallbacks: {  }

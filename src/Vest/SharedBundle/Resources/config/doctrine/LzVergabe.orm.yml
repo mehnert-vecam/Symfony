@@ -1,0 +1,52 @@
+Vest\SharedBundle\Entity\LzVergabe:
+    type: entity
+    table: lz_vergabe
+    id:
+        vergabeId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: vergabe_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        lizenzId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: lizenz_id
+        kontaktId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kontakt_id
+        vergabePublicKey:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            column: vergabe_public_key
+        vergabePrivateKey:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            column: vergabe_private_key
+        vergabeStart:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: vergabe_start
+        vergabeEnde:
+            type: datetime
+            nullable: false
+            comment: ''
+            column: vergabe_ende
+    lifecycleCallbacks: {  }

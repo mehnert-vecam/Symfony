@@ -1,0 +1,27 @@
+Vest\SharedBundle\Entity\SaleRabattRbacGruppen:
+    type: entity
+    table: sale_rabatt_rbac_gruppen
+    id:
+        rabattGruppeId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: rabatt_gruppe_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        rabattId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: rabatt_id
+        gruppeId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: gruppe_id
+    lifecycleCallbacks: {  }

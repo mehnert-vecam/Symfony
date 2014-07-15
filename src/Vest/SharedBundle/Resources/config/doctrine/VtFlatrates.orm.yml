@@ -1,0 +1,90 @@
+Vest\SharedBundle\Entity\VtFlatrates:
+    type: entity
+    table: vt_flatrates
+    id:
+        flatrateId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: flatrate_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        angebotId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: angebot_id
+        flatrateCode:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: flatrate_code
+        kontaktId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kontakt_id
+        personId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: person_id
+        flatrateKat:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: flatrate_kat
+        flatrateNutzung:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: flatrate_nutzung
+        flatrateAnzahl:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: flatrate_anzahl
+        flatrateStart:
+            type: datetime
+            nullable: false
+            comment: ''
+            column: flatrate_start
+        flatrateEnde:
+            type: datetime
+            nullable: false
+            comment: ''
+            column: flatrate_ende
+        flatrateUnlimit:
+            type: boolean
+            nullable: false
+            comment: ''
+            column: flatrate_unlimit
+        flatratetErstellen:
+            type: datetime
+            nullable: false
+            comment: ''
+            column: flatratet_erstellen
+        flatrateBeenden:
+            type: datetime
+            nullable: false
+            comment: ''
+            column: flatrate_beenden
+        flatrateTyp:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '1'
+            column: flatrate_typ
+    lifecycleCallbacks: {  }

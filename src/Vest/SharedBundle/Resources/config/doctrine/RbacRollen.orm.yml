@@ -1,0 +1,87 @@
+Vest\SharedBundle\Entity\RbacRollen:
+    type: entity
+    table: rbac_rollen
+    id:
+        id:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: rolle_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        kontaktId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kontakt_id
+        rolleName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: rolle_name
+        rolleBeschreibung:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: rolle_beschreibung
+        rolleParentId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: rolle_parent_id
+        rolleKontaktspezifisch:
+            type: boolean
+            nullable: false
+            comment: ''
+            column: rolle_kontaktspezifisch
+        rolleLizenzspezifisch:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: rolle_lizenzspezifisch
+        rolleEssentiell:
+            type: boolean
+            nullable: false
+            comment: ''
+            column: rolle_essentiell
+        rolleSchutz:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: rolle_schutz
+    manyToMany:
+      anwendungen:
+        targetEntity: Vest\SharedBundle\Entity\AppAnwendungen
+        mappedBy: rollen
+
+      gruppen:
+        targetEntity: Vest\SharedBundle\Entity\RbacGruppen
+        mappedBy: rollen
+
+      personen:
+        targetEntity: Vest\SharedBundle\Entity\AddrPersonen
+        mappedBy: rollen
+
+      rechte:
+        targetEntity: Vest\SharedBundle\Entity\RbacRechte
+        inversedBy: rollen
+        joinTable:
+          name: rbac_rollen_rbac_rechte
+          joinColumns:
+            rolle_id:
+              referencedColumnName: rolle_id
+          inverseJoinColumns:
+            recht_id:
+              referencedColumnName: recht_id
+    lifecycleCallbacks: {  }

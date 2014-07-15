@@ -1,0 +1,75 @@
+Vest\SharedBundle\Entity\ActionLog:
+    type: entity
+    table: action_log
+    id:
+        logId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: log_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        personId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: person_id
+        personName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: person_name
+        kontaktName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: kontakt_name
+        logAction:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: log_action
+        sqlQuery:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: sql_query
+        sqlTable:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: sql_table
+        sqlIndex:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: sql_index
+        sqlIndexValue:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: sql_index_value
+        actionDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: action_date
+    lifecycleCallbacks: {  }

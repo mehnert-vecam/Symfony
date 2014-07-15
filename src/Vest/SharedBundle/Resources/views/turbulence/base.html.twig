@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    {% block meta %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    {% endblock %}
+
+    {% block javascripts %}
+        {% javascripts '@jquery_js' '@bootstrap_js' '@turbulence_js' filter='?yui_js' combine=false %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {% stylesheets '@bootstrap_css' '@turbulence_css' combine=false %}
+        <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+        {% endstylesheets %}
+    {% endblock %}
+</head>
+<body>
+
+{% block content %}
+    {% block navigation %}
+        {% include "VestSharedBundle:turbulence/widgets:navigation.html.twig" with navigation %}
+    {% endblock %}
+    {% block headline %}
+      {#  {% include "VestSharedBundle:turbulence/widgets:title.html.twig" with titlebar %}#}
+    {% endblock %}
+    {% block contentinner %}
+    {% endblock %}
+{% endblock %}
+</body>
+</html>

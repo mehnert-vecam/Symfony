@@ -1,0 +1,29 @@
+Vest\SharedBundle\Entity\ShopProdukteVersandarten:
+    type: entity
+    table: shop_produkte_versandarten
+    id:
+        produktVersandartId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: produkt_versandart_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        produktId:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: produkt_id
+        versandartId:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: versandart_id
+    lifecycleCallbacks: {  }

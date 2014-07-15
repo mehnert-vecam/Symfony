@@ -1,0 +1,53 @@
+Vest\SharedBundle\Entity\VaKategorieindividualisierungen:
+    type: entity
+    table: va_kategorieindividualisierungen
+    id:
+        kategorieindividualisierungId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: kategorieindividualisierung_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        kategorieId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kategorie_id
+        kontaktId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kontakt_id
+        kategorieindividualisierungName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: kategorieindividualisierung_name
+        kategorieindividualisierungAnmeldebedingung:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: kategorieindividualisierung_anmeldebedingung
+        kategorieindividualisierungSplit:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kategorieindividualisierung_split
+        kategorieindividualisierungPrio:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: kategorieindividualisierung_prio
+    lifecycleCallbacks: {  }

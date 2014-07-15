@@ -1,0 +1,40 @@
+Vest\SharedBundle\Entity\UfFragen:
+    type: entity
+    table: uf_fragen
+    id:
+        frageId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: frage_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        umfrageId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: umfrage_id
+        frageText:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: frage_text
+        frageTyp:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: frage_typ
+        fragePrio:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: frage_prio
+    lifecycleCallbacks: {  }

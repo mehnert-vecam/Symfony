@@ -1,0 +1,35 @@
+Vest\SharedBundle\Entity\SaleRabattwerte:
+    type: entity
+    table: sale_rabattwerte
+    id:
+        rabattwerteId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: rabattwerte_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        rabattoptionId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: rabattoption_id
+        rabattwerteObjekt:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: rabattwerte_objekt
+        rabattId:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: rabatt_id
+    lifecycleCallbacks: {  }

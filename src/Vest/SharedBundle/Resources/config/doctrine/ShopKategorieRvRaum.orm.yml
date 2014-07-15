@@ -1,0 +1,27 @@
+Vest\SharedBundle\Entity\ShopKategorieRvRaum:
+    type: entity
+    table: shop_kategorie_rv_raum
+    id:
+        kategorieRaumId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: kategorie_raum_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        raumId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: raum_id
+        kategorieId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: kategorie_id
+    lifecycleCallbacks: {  }

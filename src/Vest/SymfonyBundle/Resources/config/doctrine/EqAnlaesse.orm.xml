@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="Vest\SymfonyBundle\Entity\EqAnlaesse" table="eq_anlaesse">
-    <id name="anlassId" type="bigint" column="anlass_id">
-      <generator strategy="IDENTITY"/>
-    </id>
-    <field name="anlassObjekt" type="string" column="anlass_objekt" length="200" nullable="true"/>
-  </entity>
-</doctrine-mapping>

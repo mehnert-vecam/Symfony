@@ -1,0 +1,28 @@
+Vest\SharedBundle\Entity\VaVeranstaltungenAddrPersonen:
+    type: entity
+    table: va_veranstaltungen_addr_personen
+    id:
+        veranstaltungPersonId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: veranstaltung_person_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        veranstaltungTag:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: veranstaltung_tag
+        personId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: person_id
+    lifecycleCallbacks: {  }

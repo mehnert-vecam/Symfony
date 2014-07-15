@@ -1,0 +1,38 @@
+Vest\SharedBundle\Entity\Resantwort:
+    type: entity
+    table: resantwort
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        fId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: f_id
+        antwort:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+        auswertungsbereich:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        fType:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: f_type
+    lifecycleCallbacks: {  }

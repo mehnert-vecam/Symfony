@@ -1,0 +1,27 @@
+Vest\SharedBundle\Entity\ShopKategorienRvWebinarlizenzen:
+    type: entity
+    table: shop_kategorien_rv_webinarlizenzen
+    id:
+        kategorieWebinarlizenzId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: kategorie_webinarlizenz_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        kategorieId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: kategorie_id
+        webinarlizenzId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: webinarlizenz_id
+    lifecycleCallbacks: {  }

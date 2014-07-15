@@ -1,0 +1,7 @@
+parameters:
+#    vest_layout.example.class: Vest\SharedBundle\Example
+
+services:
+#    vest_layout.example:
+#        class: %vest_layout.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

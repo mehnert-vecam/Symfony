@@ -1,0 +1,43 @@
+Vest\SharedBundle\Entity\TestFkT2:
+    type: entity
+    table: test_fk_t2
+    indexes:
+        T1_FK:
+            columns:
+                - T1_FK
+                - T3_FK
+        T3_FK:
+            columns:
+                - T3_FK
+        IDX_D3CD270663EB18C4:
+            columns:
+                - T1_FK
+    id:
+        pk:
+            type: boolean
+            nullable: false
+            comment: ''
+            id: true
+            column: PK
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        t1Fk:
+            targetEntity: TestFkT1
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                T1_FK:
+                    referencedColumnName: PK
+            orphanRemoval: false
+        t3Fk:
+            targetEntity: TestFkT3
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                T3_FK:
+                    referencedColumnName: PK
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,75 @@
+{% extends "base.html.twig" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+    <div class="row dashboard-page">
+        <div class="row custom_logobar">
+            <img src="/portal/img/disciplina_logo.png" class="pull-right">
+        </div>
+        <div class="col-xs-4 col-xs-offset-4">
+            <div class="center-block">
+                <form class="form-horizontal" action="?" method="post">
+                    <div id="" class="proton-widget lit custom_widgetsize4">
+                        <div class="panel front" style="border-color: #76B6EC">
+                            <div class="panel-heading" style="background-color: #76B6EC">
+                                <i class="icon-lock"></i><span>Login</span><i class="icon-cog toggle-widget-setup"></i>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-control-static">
+                                    <label class="col-xs-3 control-label">Benutzer:</label>
+                                    <div class="col-xs-9">
+                                        <input class="form-control" type="text" name="user" value="">
+                                    </div>
+                                </div>
+
+                                <div class="form-control-static">
+                                    <label class="col-xs-3 control-label">Quicklogin:</label>
+                                    <div class="col-xs-9">
+                                        <select class="form-control" name="user2">
+                                            <option value="">---</option>
+                                            <option value="bengl@vecam.de">Super Admin</option>
+                                            <option value="vest@vecam.de">Mandantenverwalter</option>
+                                            <option value="bengel@vecam.de">Mandant: Bengl AG</option>
+                                            <option value="roman@bengl.com">Mandant: Bengl GmbH & Co. KG</option>
+
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-control-static">
+                                    <label class="col-xs-3 control-label">Passwort:</label>
+                                    <div class="col-xs-9">
+                                        <input class="form-control" type="password" name="pass" value="123">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="panel-footer custom_footer btn-group btn-group-justified">
+
+                                <div class="col-xs-9 pull-right">
+                                    <button class="btn btn-primary" type="submit" value="Login">Einloggen</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default back">
+                            <div class="panel-heading"><i class="icon-cog"></i> <span>Optionen</span><div class="toggle-widget-setup"><i class="icon-ok"></i><span>Ok</span></div></div>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    ToDo: "Passwort vergessen"-Funktion
+                                </li>
+                                <li class="list-group-item">
+                                    ToDo: Abstände Formularfelder
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

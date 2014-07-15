@@ -1,0 +1,22 @@
+Vest\SharedBundle\Entity\ShopZahlarten:
+    type: entity
+    table: shop_zahlarten
+    id:
+        zahlartId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: zahlart_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        zahlartName:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: zahlart_name
+    lifecycleCallbacks: {  }

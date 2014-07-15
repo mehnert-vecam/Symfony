@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\Resumfrage" table="resumfrage">
+    <unique-constraints>
+      <unique-constraint name="name" columns="name"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="100" nullable="false"/>
+    <field name="feld1" type="string" column="feld1" length="100" nullable="false"/>
+    <field name="feld2" type="string" column="feld2" length="100" nullable="false"/>
+    <field name="feld3" type="string" column="feld3" length="100" nullable="false"/>
+    <field name="feld4" type="string" column="feld4" length="100" nullable="false"/>
+    <field name="feld5" type="string" column="feld5" length="100" nullable="false"/>
+    <field name="auswertungsbereich1" type="string" column="auswertungsbereich1" length="100" nullable="true"/>
+    <field name="auswertungsbereich2" type="string" column="auswertungsbereich2" length="100" nullable="true"/>
+    <field name="auswertungsbereich3" type="string" column="auswertungsbereich3" length="100" nullable="true"/>
+    <field name="auswertungsbereich4" type="string" column="auswertungsbereich4" length="100" nullable="true"/>
+    <field name="auswertungsbereich5" type="string" column="auswertungsbereich5" length="100" nullable="true"/>
+  </entity>
+</doctrine-mapping>

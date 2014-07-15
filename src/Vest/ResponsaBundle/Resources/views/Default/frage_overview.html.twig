@@ -1,0 +1,43 @@
+
+{% extends "base.html.twig" %}
+{% block body %}
+{% if leer %}
+    <h3>Zu dieser Umfrage gibt es noch keine Fragen!</h3>
+{% else %}
+<h3> {{ u_name }}</h3>
+<table class="overview">
+	<tr>
+		<th>id</th>
+		<th>U_Id</th>
+		<th>Frage</th>
+		<th>Priorität</th>
+		<th>Auswertungsbereich</th>
+		<th>Fragentyp</th>
+
+	</tr>
+
+	{% for row in data %}
+		<tr>
+			<td>{{ row.id }}</td>
+			<td>{{ row.u_id }}</td>
+			<td>{{ row.frage }}</td>
+			<td>{{ row.prio }}</td>
+			<td>{{ row.auswertungsbereich }}</td>
+			<td>{{ row.type }}</td>
+			<td><a href="{{ path('Responsa_frage_edit', {'u_id': row.u_id , 'id': row.id}) }}">bearbeiten</a></td>
+			<td><a href="{{ path('Responsa_antwort_overview', {'f_id': row.id}) }}">Antworten</a></td>
+		</tr>
+	{% endfor %}
+
+</table>
+{% endif %}
+  <p><a href="{{ path('Responsa_frage_new', {'u_id': u_id}) }}">Hinzufügen</a></p>
+  <p><a href="{{ path('Responsa_overview') }}">Zurück zur Übersicht</a></p>
+
+<style>
+.overview, .overview tr, .overview tr th, .overview tr td{
+	border: 1px solid #888888;
+	padding: 2px;
+}
+</style>
+{% endblock %}

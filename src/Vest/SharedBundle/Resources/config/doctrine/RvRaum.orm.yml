@@ -1,0 +1,22 @@
+Vest\SharedBundle\Entity\RvRaum:
+    type: entity
+    table: rv_raum
+    id:
+        raumId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: raum_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        kontaktId:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: kontakt_id
+    lifecycleCallbacks: {  }

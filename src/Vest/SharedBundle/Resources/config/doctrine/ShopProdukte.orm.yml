@@ -1,0 +1,50 @@
+Vest\SharedBundle\Entity\ShopProdukte:
+    type: entity
+    table: shop_produkte
+    indexes:
+        fk_shop_produkte_shop_kategorien1:
+            columns:
+                - kategorie_id
+    id:
+        produktId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: produkt_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        kontaktId:
+            type: bigint
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: kontakt_id
+        produktName:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: produkt_name
+        produktTeaser:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: produkt_teaser
+        kategorieId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: kategorie_id
+        produktStatus:
+            type: boolean
+            nullable: true
+            comment: ''
+            column: produkt_status
+    lifecycleCallbacks: {  }

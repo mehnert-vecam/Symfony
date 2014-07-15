@@ -1,0 +1,27 @@
+Vest\SharedBundle\Entity\AppAnwendungenRbacRechte:
+    type: entity
+    table: app_anwendungen_rbac_rechte
+    id:
+        anwendungenRechteId:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: anwendungen_rechte_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        anwendungId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: anwendung_id
+        rechtId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: recht_id
+    lifecycleCallbacks: {  }

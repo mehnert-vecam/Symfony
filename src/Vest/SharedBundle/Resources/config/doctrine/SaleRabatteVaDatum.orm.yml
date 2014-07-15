@@ -1,0 +1,27 @@
+Vest\SharedBundle\Entity\SaleRabatteVaDatum:
+    type: entity
+    table: sale_rabatte_va_datum
+    id:
+        rabattDatumId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: rabatt_datum_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        rabatteId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: rabatte_id
+        datumId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: datum_id
+    lifecycleCallbacks: {  }

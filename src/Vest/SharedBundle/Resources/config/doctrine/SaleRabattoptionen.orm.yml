@@ -1,0 +1,28 @@
+Vest\SharedBundle\Entity\SaleRabattoptionen:
+    type: entity
+    table: sale_rabattoptionen
+    id:
+        rabattoptionId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: rabattoption_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        rabattoptionName:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: rabattoption_name
+        rabatttypId:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: rabatttyp_id
+    lifecycleCallbacks: {  }

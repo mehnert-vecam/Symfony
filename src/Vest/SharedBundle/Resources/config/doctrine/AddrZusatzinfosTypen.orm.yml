@@ -1,0 +1,22 @@
+Vest\SharedBundle\Entity\AddrZusatzinfosTypen:
+    type: entity
+    table: addr_zusatzinfos_typen
+    id:
+        zusatzinfoTypId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: zusatzinfo_typ_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        zusatzinfoTypName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: zusatzinfo_typ_name
+    lifecycleCallbacks: {  }
