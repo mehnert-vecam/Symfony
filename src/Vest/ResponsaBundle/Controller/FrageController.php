@@ -30,8 +30,11 @@ class FrageController extends BaseController
 		}
 		$repository_umfrage = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
 		$umfragen = $repository_umfrage->findoneBy(array('id' => $u_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
-		
+		if($umfragen){
 					$u_name = $umfragen->getName();
+		}else{
+			$u_name = '';
+		}
 		
     return $this->renderTemplate('VestResponsaBundle:Default:frage_overview.html.twig', array(
 			'data' => $uebergabe,
@@ -58,20 +61,22 @@ class FrageController extends BaseController
 				$repo = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
 				$umfrage = $repo->findOneBy(array('id' => $u_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 				$ab = array();
-				if($tmp = $umfrage->getAuswertungsbereich1()){
-					$ab[$tmp] = $tmp;
-				}
-				if($tmp = $umfrage->getAuswertungsbereich2()){
-					$ab[$tmp] = $tmp;
-				}
-				if($tmp = $umfrage->getAuswertungsbereich3()){
-					$ab[$tmp] = $tmp;
-				}
-				if($tmp = $umfrage->getAuswertungsbereich4()){
-					$ab[$tmp] = $tmp;
-				}
-				if($tmp = $umfrage->getAuswertungsbereich5()){
-					$ab[$tmp] = $tmp;
+				if($umfrage){
+					if($tmp = $umfrage->getAuswertungsbereich1()){
+						$ab[$tmp] = $tmp;
+					}
+					if($tmp = $umfrage->getAuswertungsbereich2()){
+						$ab[$tmp] = $tmp;
+					}
+					if($tmp = $umfrage->getAuswertungsbereich3()){
+						$ab[$tmp] = $tmp;
+					}
+					if($tmp = $umfrage->getAuswertungsbereich4()){
+						$ab[$tmp] = $tmp;
+					}
+					if($tmp = $umfrage->getAuswertungsbereich5()){
+						$ab[$tmp] = $tmp;
+					}
 				}
 				
         
@@ -136,6 +141,17 @@ class FrageController extends BaseController
 				}
 				
 				return $this->redirect($this->generateUrl('Responsa_frage_overview',array('u_id' => $u_id)));
+	}
+	
+	public function DeleteAction($f_id, $u_id){
+				$em = $this->getDoctrine()->getManager();
+				$query = $em->createQuery(
+						"DELETE FROM VestResponsaBundle:Resfrage f 
+						WHERE f.id =".$f_id
+				);
+				$result = $query->getResult();
+				return $this->forward('VestResponsaBundle:frage:Overview', array('u_id' =>$u_id));
+	
 	}
 	
 }

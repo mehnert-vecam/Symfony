@@ -6,6 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+				
     {% endblock %}
 
     {% block javascripts %}
@@ -16,12 +17,14 @@
 
     {% block stylesheets %}
         {% stylesheets '@bootstrap_css' '@turbulence_css' combine=false %}
-				#{% endstylesheets %}
+				{% endstylesheets %}
         <link href="/css/bootstrap.css" type="text/css" rel="stylesheet" />
         <link href="/css/proton.css" type="text/css" rel="stylesheet" />
 				<link href="/css/custom.css" type="text/css" rel="stylesheet" />
         
     {% endblock %}
+		
+		<link rel="shortcut icon" href="{{ asset('/bundles/vestsymfony/images/favicon.ico') }}" />
 	   
 </head>
 <body>

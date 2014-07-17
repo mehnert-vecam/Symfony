@@ -8,13 +8,13 @@ class AuswertungController extends BaseController
 { 
 	public function OverviewAction(){
 		$session = $this->get("session");
-		$person_id = $session->get('id');
+		$kontakt_id = $session->get('kontakt_id');
 		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:Resantwort');// Baut Doctrine auf
 		$antworten = $repository->findBy(array());  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 	
 			//foreach($antworten as $antwort){}
 		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
-		$umfragen = $repository->findBy(array('ersteller' => $person_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
+		$umfragen = $repository->findBy(array('kontaktId' => $kontakt_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 	
 			$auswertungsbereiche = array();
 			foreach($umfragen as $ant){

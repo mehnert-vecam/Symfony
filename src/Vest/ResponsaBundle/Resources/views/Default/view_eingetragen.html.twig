@@ -1,22 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    {% block meta %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    {% endblock %}
 
-{% extends "base.html.twig" %}
-{% block body %}
+    {% block javascripts %}
+        {% javascripts '@jquery_js' '@bootstrap_js' '@turbulence_js' filter='?yui_js' combine=false %}
+        <script src="{{ asset_url }}"></script>
+				{% endjavascripts %}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {% stylesheets '@bootstrap_css' '@turbulence_css' combine=false %}
+				{% endstylesheets %}
+        <link href="/css/bootstrap.css" type="text/css" rel="stylesheet" />
+        <link href="/css/proton.css" type="text/css" rel="stylesheet" />
+				<link href="/css/custom.css" type="text/css" rel="stylesheet" />
+        
+    {% endblock %}
+	   
+</head>
+<body>
 
 
-{% if eingetragen %}
-<p>Erfolgreich Eingetragen</p>
-{% else %}
- <p>Fehler beim eintragen</p>
+<div class="body_wrapper">
+	<div class="panel panel-default">
+		{% if eingetragen %}
+			<div class="panel-heading">
+				Vielen Dank für ihre Teilnahme
+			</div>
+			<div class="panel-body">
+				<p>{{umfrage.danketext}}</p>
+		{% else %}
+				<div class="panel-heading">
+					Fehler beim Auswerten Ihrer Umfrage.
+				</div>
+				<div class="panel-body">
+				 <p>Bitte versuchen Sie es zu einem späteren Zeitpunkt nochmal.</p>
 
- {% for error in errors %}
+				 {% for error in errors %}
 
-	<p>{{error}}</p>
-	{% endfor %}
+					<p>{{error}}</p>
+					{% endfor %}
 
-{% endif %}
+		{% endif %}
 
 
-  <p><a href="{{ path('Responsa_overview') }}">Zurück zur Übersicht</a></p>
+					<p><a href="{{ path('Responsa_overview') }}">Zurück zur Übersicht</a></p>
+				
+		</div>
+	</div>
+</div>
 <style>
 .verlinkung{
   margin: 20px;
@@ -34,5 +72,18 @@
   margin: 10px;
   text-align: center;
 }
-</style>
-{% endblock %}
+		.body_wrapper{
+			margin-left: 20px;
+			margin-top: 20px;
+		}
+		.task_wrapper, .button_wrapper{    
+			text-align: left;
+		}
+		.task_wrapper textarea{
+			width: 45%;
+			height: 200px;
+			resize: none;
+		}
+		</style>
+</body>
+</html>

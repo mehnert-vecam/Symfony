@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    {% block meta %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    {% endblock %}
+
+    {% block javascripts %}
+        {% javascripts '@jquery_js' '@bootstrap_js' '@turbulence_js' filter='?yui_js' combine=false %}
+        <script src="{{ asset_url }}"></script>
+				{% endjavascripts %}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {% stylesheets '@bootstrap_css' '@turbulence_css' combine=false %}
+				{% endstylesheets %}
+        <link href="/css/bootstrap.css" type="text/css" rel="stylesheet" />
+        <link href="/css/proton.css" type="text/css" rel="stylesheet" />
+				<link href="/css/custom.css" type="text/css" rel="stylesheet" />
+        
+    {% endblock %}
+	   
+</head>
+<body>
+
+		<div class="body_wrapper">
+		
+			<div class="row">
+				<div class="col-md-12">
+								{% block contentinner %}
+
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h3>{{u_name}}</h3>
+									</div>
+									<div class="panel-body">
+									<div class="well">{{einleitungstext}}</div>
+										{{ form_start(form) }}      <!-- Start des Formularbereits -->
+												{{ form_errors(form) }}  <!-- Ausgabe von Fehler die erzeugt werden. -->
+
+												{% for item in form.s_antwort %}
+
+												<div class="task_wrapper skalar_frage">
+													{{fragen[loop.index0]}} <br />
+															{{ form_errors(item) }}
+															{{ form_widget(item) }}
+												</div>
+												{% endfor %}
+												
+												{% for item in form.f_antwort %}
+
+												<div class="task_wrapper">
+													{{fragen[loop.index0]}} <br />
+															{{ form_errors(item) }}
+															{{ form_widget(item) }}
+												</div>
+												{% endfor %}
+
+												<div class="task_wrapper">
+															{{ form_errors(form.s_f_id) }}
+															{{ form_widget(form.s_f_id) }}
+												</div>
+												<div class="task_wrapper">
+															{{ form_errors(form.f_f_id) }}
+															{{ form_widget(form.f_f_id) }}
+												</div>
+
+
+												<div class="button_wrapper">
+														{{ form_widget(form.Speichern) }}
+												</div>
+
+										{{ form_end(form) }}  <!-- Ende des Formularbereits -->
+
+									</div>
+								</div>
+
+								{% endblock %}
+													</div>
+			</div>
+		</div>
+		
+		<style>
+		.body_wrapper{
+			margin-left: 20px;
+			margin-top: 20px;
+		}
+		.task_wrapper, .button_wrapper{    
+			text-align: left;
+		}
+		.task_wrapper textarea{
+			width: 45%;
+			height: 200px;
+			resize: none;
+		}
+		</style>
+</body>
+</html>

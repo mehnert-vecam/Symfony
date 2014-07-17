@@ -54,6 +54,9 @@ Responsa_save:
 Responsa_edit:
     pattern:  /responsa/edit/{id}
     defaults: { _controller: VestResponsaBundle:Umfrage:new, id: 0 }
+Responsa_delete:
+    pattern:  /responsa/delete/{u_id}
+    defaults: { _controller: VestResponsaBundle:Umfrage:delete }
 
 Responsa_frage_overview:
     pattern:  /responsa/frage/overview/{u_id}
@@ -67,6 +70,9 @@ Responsa_frage_save:
 Responsa_frage_edit:
     pattern:  /responsa/frage/edit/{u_id}.{id}
     defaults: { _controller: VestResponsaBundle:Frage:new, id: 0 }
+Responsa_frage_delete:
+    pattern:  /responsa/frage/delete/{f_id}.{u_id}
+    defaults: { _controller: VestResponsaBundle:Frage:delete}
 
 
 Responsa_antwort_overview:
@@ -78,10 +84,10 @@ Responsa_antwort_alloverview:
 
 Responsa_view_show:
     pattern:  /responsa/view/show/{u_id}.{feld1}.{feld2}.{feld3}.{feld4}.{feld5}
-    defaults: { _controller: VestResponsaBundle:View:show }
+    defaults: { _controller: VestResponsaBundle:ViewPublic:show, feld1:- , feld2: - , feld3: - , feld4: - , feld5: -   }
 Responsa_view_erhalten:
-    pattern:  /responsa/view/erhalten/{u_id}.{feld1}.{feld2}.{feld3}.{feld4}.{feld5}
-    defaults: { _controller: VestResponsaBundle:View:erhalten }
+    pattern:  /responsa/view/erhalten/{u_id}.{feld1}.{feld2}.{feld3}.{feld4}.{feld5}.{token}
+    defaults: { _controller: VestResponsaBundle:ViewPublic:erhalten, feld1:- , feld2: - , feld3: - , feld4: - , feld5: -  }
 
 Responsa_help:
     pattern:  /responsa/help/

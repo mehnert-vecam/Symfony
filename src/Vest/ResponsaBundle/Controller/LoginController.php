@@ -48,6 +48,7 @@ class LoginController extends Controller
 					$session = $this->get("session");
 					$session->set('personEmail', $person->getPersonEmail());
 					$session->set('id', $person->getId());
+					$session->set('kontakt_id', $person->getKontaktId());
                     $session->set('user', array('person_id'=>$person->getId())); //TODO: aufräumen
 					$result = 1;
 				}else{

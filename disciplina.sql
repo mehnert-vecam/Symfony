@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 17. Jul 2014 um 11:29
+-- Erstellungszeit: 17. Jul 2014 um 17:47
 -- Server Version: 5.6.17
 -- PHP-Version: 5.5.12
 
@@ -30,37 +30,41 @@ DROP TABLE IF EXISTS `resantwort`;
 CREATE TABLE IF NOT EXISTS `resantwort` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `f_id` int(11) NOT NULL,
+  `u_id` int(11) NOT NULL,
   `antwort` text NOT NULL,
   `auswertungsbereich` text,
   `f_type` int(11) NOT NULL,
+  `datum` date NOT NULL,
+  `feld1` int(11) DEFAULT NULL,
+  `feld2` int(11) DEFAULT NULL,
+  `feld3` int(11) DEFAULT NULL,
+  `feld4` int(11) DEFAULT NULL,
+  `feld5` int(11) DEFAULT NULL,
+  `token` varchar(255) NOT NULL DEFAULT 'asd',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
 
 --
 -- Daten für Tabelle `resantwort`
 --
 
-INSERT INTO `resantwort` (`id`, `f_id`, `antwort`, `auswertungsbereich`, `f_type`) VALUES
-(1, 3, 'Dies ist eine Test-Anwort', 'Test', 1),
-(2, 1, 'Hier könnte ihre Antwort stehen', 'Derp', 1),
-(3, 1, '1', 'Test', 0),
-(4, 2, '12', 'Test', 1),
-(5, 3, '123', 'Test', 1),
-(6, 4, '1234', 'Test', 1),
-(7, 1, 'Test', 'Derp', 1),
-(8, 2, 'Test2', 'AB 2', 1),
-(9, 3, '5', 'AB 1', 0),
-(10, 4, 'asd', 'Test', 1),
-(11, 5, '4', NULL, 0),
-(12, 6, 'Derp', NULL, 1),
-(13, 3, '3', 'AB 1', 0),
-(14, 3, '5', 'AB 1', 0),
-(15, 1, 'Test', 'Derp', 1),
-(16, 2, 'Test2', 'AB 2', 1),
-(17, 1, 'Test', 'Derp', 1),
-(18, 2, 'Test2', 'AB 2', 1),
-(19, 3, '4', 'AB 1', 0),
-(20, 4, '2', 'Test', 0);
+INSERT INTO `resantwort` (`id`, `f_id`, `u_id`, `antwort`, `auswertungsbereich`, `f_type`, `datum`, `feld1`, `feld2`, `feld3`, `feld4`, `feld5`, `token`) VALUES
+(25, 1, 1, 'Test1', NULL, 1, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'cefd39597771d25cf64347cac5a72dc4'),
+(26, 2, 1, 'Test1', NULL, 1, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'cefd39597771d25cf64347cac5a72dc4'),
+(27, 3, 1, '1', 'AB 1', 0, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'cefd39597771d25cf64347cac5a72dc4'),
+(28, 4, 1, '1', 'Test', 0, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'cefd39597771d25cf64347cac5a72dc4'),
+(29, 1, 1, 'Test1', NULL, 1, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'cefd39597771d25cf64347cac5a72dc4'),
+(30, 2, 1, 'Test1', NULL, 1, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'cefd39597771d25cf64347cac5a72dc4'),
+(31, 3, 1, '1', 'AB 1', 0, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'cefd39597771d25cf64347cac5a72dc4'),
+(32, 4, 1, '1', 'Test', 0, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'cefd39597771d25cf64347cac5a72dc4'),
+(33, 1, 1, 'Test', NULL, 1, '2014-07-17', NULL, NULL, NULL, NULL, NULL, '7aae4e9141afbe902f60a68d96c766b2'),
+(34, 2, 1, 'Test', NULL, 1, '2014-07-17', NULL, NULL, NULL, NULL, NULL, '7aae4e9141afbe902f60a68d96c766b2'),
+(35, 3, 1, '3', 'AB 1', 0, '2014-07-17', NULL, NULL, NULL, NULL, NULL, '7aae4e9141afbe902f60a68d96c766b2'),
+(36, 4, 1, '3', 'Test', 0, '2014-07-17', NULL, NULL, NULL, NULL, NULL, '7aae4e9141afbe902f60a68d96c766b2'),
+(37, 1, 1, 'Test', NULL, 1, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'ca8cfed8324a33606e5f6b6252e50aee'),
+(38, 2, 1, 'Test', NULL, 1, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'ca8cfed8324a33606e5f6b6252e50aee'),
+(39, 3, 1, '4', 'AB 1', 0, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'ca8cfed8324a33606e5f6b6252e50aee'),
+(40, 4, 1, '4', 'Test', 0, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'ca8cfed8324a33606e5f6b6252e50aee');
 
 -- --------------------------------------------------------
 
@@ -77,19 +81,20 @@ CREATE TABLE IF NOT EXISTS `resfrage` (
   `auswertungsbereich` varchar(100) DEFAULT '-',
   `type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Daten für Tabelle `resfrage`
 --
 
 INSERT INTO `resfrage` (`id`, `u_id`, `frage`, `prio`, `auswertungsbereich`, `type`) VALUES
-(1, 1, 'Hier könnte Ihre Frage stehen.', 17, 'Derp', 1),
-(2, 1, 'Mögen Sie diese Frage?', 12, 'AB 2', 1),
+(1, 1, 'Hier könnte Ihre Frage stehen.', 17, NULL, 1),
+(2, 1, 'Mögen Sie diese Frage?', 12, NULL, 1),
 (3, 1, 'Ich bin eine Frage!', 9, 'AB 1', 0),
 (4, 1, 'Das ist eine Aussage', 9, 'Test', 0),
 (5, 2, 'Frage zu Umfrage 2', 1, NULL, 0),
-(6, 2, 'Frage zu Umfrage 2 nochmal', 12, NULL, 1);
+(6, 2, 'Frage zu Umfrage 2 nochmal', 12, NULL, 1),
+(7, 11, 'Mögen sie diese umfrage??', 1, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -100,6 +105,7 @@ INSERT INTO `resfrage` (`id`, `u_id`, `frage`, `prio`, `auswertungsbereich`, `ty
 DROP TABLE IF EXISTS `resumfrage`;
 CREATE TABLE IF NOT EXISTS `resumfrage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `danketext` text,
   `name` varchar(100) NOT NULL,
   `feld1` varchar(100) DEFAULT NULL,
   `feld2` varchar(100) DEFAULT NULL,
@@ -113,20 +119,22 @@ CREATE TABLE IF NOT EXISTS `resumfrage` (
   `auswertungsbereich5` varchar(100) DEFAULT NULL,
   `einleitungstext` text NOT NULL,
   `teilnehmerzahl` int(11) NOT NULL DEFAULT '0',
-  `ersteller` int(11) NOT NULL,
+  `kontakt_id` int(11) NOT NULL,
+  `farbe1` varchar(7) DEFAULT NULL,
+  `farbe2` varchar(7) DEFAULT NULL,
+  `farbe4` varchar(7) DEFAULT NULL,
+  `bild` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Daten für Tabelle `resumfrage`
 --
 
-INSERT INTO `resumfrage` (`id`, `name`, `feld1`, `feld2`, `feld3`, `feld4`, `feld5`, `auswertungsbereich1`, `auswertungsbereich2`, `auswertungsbereich3`, `auswertungsbereich4`, `auswertungsbereich5`, `einleitungstext`, `teilnehmerzahl`, `ersteller`) VALUES
-(1, 'Testumfrage1', 'Bearbeitender', 'Mitarbeiter', 'Moderator', 'ServiceID', '', 'Test', '', 'AB 1', 'AB 2', '', 'Dies ist ein Eileitungstext. Viel Spaß mit der Umfrage! :)', 0, 10000),
-(2, 'Testumfrage2', '', 'Testfeld 1', 'Geändertes Feld', '', 'Testfeld XYZ', '', '', '', '', '', '', 0, 10000),
-(3, 'Form_Test', '12a', '', '', '', '', '', '', '', '', '', '', 0, 10000),
-(5, 'Form_Test2', 'a', 'b', 'c', '', '', 'Hund', 'Hase', 'Maus', 'Esel', 'Tiger', '', 0, 10000);
+INSERT INTO `resumfrage` (`id`, `danketext`, `name`, `feld1`, `feld2`, `feld3`, `feld4`, `feld5`, `auswertungsbereich1`, `auswertungsbereich2`, `auswertungsbereich3`, `auswertungsbereich4`, `auswertungsbereich5`, `einleitungstext`, `teilnehmerzahl`, `kontakt_id`, `farbe1`, `farbe2`, `farbe4`, `bild`) VALUES
+(1, 'Vielen Dank, dass SIe an dieser Testumfrage teilgenommen haben!\r\n\r\nIhre Teilnahme wird uns dabei helfen die Umfrage-Software weiter zu verbessern.', 'Testumfrage1', 'Bearbeitender', 'Mitarbeiter', 'Moderator', 'ServiceID', NULL, 'Test', NULL, 'AB 1', 'AB 2', NULL, 'Dies ist ein Eileitungstext. Viel Spaß mit der Umfrage! :)', 0, 10000, NULL, NULL, NULL, NULL),
+(11, NULL, 'Testumfrage2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Testumfrage2', 0, 10000, NULL, NULL, NULL, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -474,4 +474,60 @@ class Resumfrage
     {
         return $this->ersteller;
     }
+    /**
+     * @var integer
+     */
+    private $kontaktId;
+
+
+    /**
+     * Set kontaktId
+     *
+     * @param integer $kontaktId
+     * @return Resumfrage
+     */
+    public function setKontaktId($kontaktId)
+    {
+        $this->kontaktId = $kontaktId;
+
+        return $this;
+    }
+
+    /**
+     * Get kontaktId
+     *
+     * @return integer 
+     */
+    public function getKontaktId()
+    {
+        return $this->kontaktId;
+    }
+    /**
+     * @var string
+     */
+    private $danketext;
+
+
+    /**
+     * Set danketext
+     *
+     * @param string $danketext
+     * @return Resumfrage
+     */
+    public function setDanketext($danketext)
+    {
+        $this->danketext = $danketext;
+
+        return $this;
+    }
+
+    /**
+     * Get danketext
+     *
+     * @return string 
+     */
+    public function getDanketext()
+    {
+        return $this->danketext;
+    }
 }

@@ -1,21 +1,26 @@
 
 {% extends "VestSharedBundle:turbulence:base.html.twig" %}
 {% block contentinner %}
-{% if leer %}
-    <h3>Zu dieser Umfrage gibt es noch keine Fragen!</h3>
-		<a href="{{ path('Responsa_frage_new', {'u_id': u_id}) }}"><span class="glyphicon glyphicon-plus-sign"></span>Frage Hinzufügen</a>
-{% else %}
 
 
 <div class="panel panel-default">
 		<div class="panel-heading">
 			<h3 style="float:left"> {{ u_name }}</h3>
-			<div style="float:right;"><a href="{{ path('Responsa_edit', {'id': umfrage.id}) }}"><span class="glyphicon glyphicon-retweet"></span>Bearbeiten</a></div>
+			<div style="float:right;">
+				
+				<a href="{{ path('Responsa_edit', {'id': umfrage.id}) }}"><span class="glyphicon glyphicon-retweet"></span>Bearbeiten</a>
+				<a href="{{ path('Responsa_delete', {'u_id': umfrage.id}) }}"><span class="glyphicon glyphicon-minus-sign"></span> löschen</a>
+				
+			</div>
 			<div style="clear:both"></div>
 		</div>
   <div class="panel-body">
-		
+		<h4>Einleitungstext:</h4>
 		<div class="well">{{ umfrage.einleitungstext }}</div>
+		<h4>Text der nach Teilnahme angezeigt wird:</h4>
+		<div class="well">{{ umfrage.danketext }}</div>
+		
+		
 		<div class="row">
 			<div class="col-md-6">
 			<h4>Parameter</h4>
@@ -41,40 +46,47 @@
 		
   </div>
 </div>
-<div class="table-responsive">
-	<table class="table table-bordered table-hover">
-		<tr>
-			<th>ID</th>
-			<th>Frage</th>
-			<th>Priorität</th>
-			<th>Auswertungsbereich</th>
-			<th>Fragentyp</th>
-			<th>
-				<a href="{{ path('Responsa_frage_new', {'u_id': u_id}) }}"><span class="glyphicon glyphicon-plus-sign"></span>Hinzufügen</a>
-			</th>
-
-		</tr>
-
-		{% for row in data %}
+{% if leer %}
+    <h3>Zu dieser Umfrage gibt es noch keine Fragen!</h3>
+		<a href="{{ path('Responsa_frage_new', {'u_id': u_id}) }}"><span class="glyphicon glyphicon-plus-sign"></span>Frage Hinzufügen</a>
+{% else %}
+	<div class="table-responsive">
+		<table class="table table-bordered table-hover">
 			<tr>
-				<td>{{ row.id }}</td>
-				<td>{{ row.frage }}</td>
-				<td>{{ row.prio }}</td>
-				<td>{{ row.auswertungsbereich }}</td>
-				<td>
-					{% if row.type == 0 %}
-					Skalar 1-6
-					{% else %}
-					Freitext
-					{% endif %}
-				</td>
-				<td><a href="{{ path('Responsa_frage_edit', {'u_id': row.u_id , 'id': row.id}) }}"><span class="glyphicon glyphicon-retweet"></span>bearbeiten</a></td>
-			</tr>
-		{% endfor %}
+				<th>ID</th>
+				<th>Frage</th>
+				<th>Priorität</th>
+				<th>Auswertungsbereich</th>
+				<th>Fragentyp</th>
+				<th>
+					<a href="{{ path('Responsa_frage_new', {'u_id': u_id}) }}"><span class="glyphicon glyphicon-plus-sign"></span>Hinzufügen</a>
+				</th>
 
+			</tr>
+
+			{% for row in data %}
+				<tr>
+					<td>{{ row.id }}</td>
+					<td>{{ row.frage }}</td>
+					<td>{{ row.prio }}</td>
+					<td>{{ row.auswertungsbereich }}</td>
+					<td>
+						{% if row.type == 0 %}
+						Skalar 1-6
+						{% else %}
+						Freitext
+						{% endif %}
+					</td>
+					<td>
+						<a href="{{ path('Responsa_frage_edit', {'u_id': row.u_id , 'id': row.id}) }}"><span class="glyphicon glyphicon-retweet"></span>bearbeiten</a>
+						<a href="{{ path('Responsa_frage_delete', {'u_id': row.u_id , 'f_id': row.id}) }}"><span class="glyphicon glyphicon-minus-sign"></span>löschen</a>
+					</td>
+				</tr>
+			{% endfor %}
+
+{% endif %}
 	</table>
 </div>
-{% endif %}
 
 <style>
 .overview, .overview tr, .overview tr th, .overview tr td{

@@ -7,6 +7,7 @@
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
+    <field name="danketext" type="text" column="danketext" nullable="true"/>
     <field name="name" type="string" column="name" length="100" nullable="false"/>
     <field name="feld1" type="string" column="feld1" length="100" nullable="true"/>
     <field name="feld2" type="string" column="feld2" length="100" nullable="true"/>
@@ -20,6 +21,10 @@
     <field name="auswertungsbereich5" type="string" column="auswertungsbereich5" length="100" nullable="true"/>
     <field name="einleitungstext" type="text" column="einleitungstext" nullable="false"/>
     <field name="teilnehmerzahl" type="integer" column="teilnehmerzahl" nullable="false"/>
-    <field name="ersteller" type="integer" column="ersteller" nullable="false"/>
+    <field name="kontaktId" type="integer" column="kontakt_id" nullable="false"/>
+    <field name="farbe1" type="string" column="farbe1" length="7" nullable="true"/>
+    <field name="farbe2" type="string" column="farbe2" length="7" nullable="true"/>
+    <field name="farbe4" type="string" column="farbe4" length="7" nullable="true"/>
+    <field name="bild" type="string" column="bild" length="100" nullable="true"/>
   </entity>
 </doctrine-mapping>

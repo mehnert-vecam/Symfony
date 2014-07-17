@@ -6,9 +6,10 @@ use Symfony\Component\HttpFoundation\Request;   // Zeigt dem Controller wo er di
 class UmfrageController extends BaseController
 { 
 	public function OverviewAction(){
+        $session = $this->get("session");
 		$uebergabe = array();
 		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
-		$umfragen = $repository->findBy(array());  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
+		$umfragen = $repository->findBy(array('kontaktId' =>$session->get('kontakt_id')));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 		/*
 		foreach($umfragen as $umfrage){
 			$tmp = array(
@@ -55,6 +56,7 @@ class UmfrageController extends BaseController
             ->add('auswertungsbereich4', 'text', array('required'  => false))
             ->add('auswertungsbereich5', 'text', array('required'  => false))
             ->add('einleitungstext', 'textarea', array('required'  => false))
+            ->add('danketext', 'textarea', array('required'  => false))
             ->add('Speichern', 'submit');
             $form  = $form ->getForm();
             
@@ -64,6 +66,7 @@ class UmfrageController extends BaseController
 	}
 	
 	public function SaveAction(Request $request, $id){
+        $session = $this->get("session");
 				
 				if($id > 0){ // Wenn eine ID übergeben wurde, wird dir passende Umfrage aus der DB gehohlt, um sie zu bearbeiten.
 					$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
@@ -86,17 +89,35 @@ class UmfrageController extends BaseController
             ->add('auswertungsbereich4', 'text', array('required'  => false))
             ->add('auswertungsbereich5', 'text', array('required'  => false))
             ->add('einleitungstext', 'textarea', array('required'  => false))
+            ->add('danketext', 'textarea', array('required'  => false))
             ->add('Speichern', 'submit')
             ->getForm();
         $form->handleRequest($request);  
+				$umfrage->setKontaktID($session->get('kontakt_id'));
+				$umfrage->setTeilnehmerzahl(0);
 				
 				if ($form->isValid()) {
           $em = $this->getDoctrine()->getManager();
           $em->persist($umfrage);
           $em->flush();
 				}
-				
-				return $this->forward('VestResponsaBundle:Frage:Overview', array('u_id' =>$id));
+				if($id > 0){
+					return $this->forward('VestResponsaBundle:Frage:Overview', array('u_id' =>$id));
+				}else{
+					return $this->forward('VestResponsaBundle:Umfrage:Overview', array());
+				}
+	}
+	
+	
+	public function DeleteAction($u_id){
+				$em = $this->getDoctrine()->getManager();
+				$query = $em->createQuery(
+						"DELETE FROM VestResponsaBundle:Resumfrage u 
+						WHERE u.id =".$u_id
+				);
+				$result = $query->getResult();
+				return $this->forward('VestResponsaBundle:Umfrage:Overview', array());
+	
 	}
 	
 }

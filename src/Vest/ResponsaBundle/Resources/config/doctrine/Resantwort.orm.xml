@@ -5,8 +5,16 @@
       <generator strategy="IDENTITY"/>
     </id>
     <field name="fId" type="integer" column="f_id" nullable="false"/>
+    <field name="uId" type="integer" column="u_id" nullable="false"/>
     <field name="antwort" type="text" column="antwort" nullable="false"/>
     <field name="auswertungsbereich" type="text" column="auswertungsbereich" nullable="true"/>
     <field name="fType" type="integer" column="f_type" nullable="false"/>
+    <field name="datum" type="date" column="datum" nullable="false"/>
+    <field name="feld1" type="integer" column="feld1" nullable="true"/>
+    <field name="feld2" type="integer" column="feld2" nullable="true"/>
+    <field name="feld3" type="integer" column="feld3" nullable="true"/>
+    <field name="feld4" type="integer" column="feld4" nullable="true"/>
+    <field name="feld5" type="integer" column="feld5" nullable="true"/>
+    <field name="token" type="string" column="token" length="255" nullable="false"/>
   </entity>
 </doctrine-mapping>
