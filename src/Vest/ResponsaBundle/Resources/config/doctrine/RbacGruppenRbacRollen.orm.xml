@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\RbacGruppenRbacRollen" table="rbac_gruppen_rbac_rollen">
+    <indexes>
+      <index name="gruppenid" columns="gruppe_id"/>
+    </indexes>
+    <id name="gruppenRollenId" type="bigint" column="gruppen_rollen_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="gruppeId" type="bigint" column="gruppe_id" nullable="false"/>
+    <field name="rolleId" type="bigint" column="rolle_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

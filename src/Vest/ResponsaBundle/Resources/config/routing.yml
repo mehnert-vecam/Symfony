@@ -82,3 +82,10 @@ Responsa_view_show:
 Responsa_view_erhalten:
     pattern:  /responsa/view/erhalten/{u_id}
     defaults: { _controller: VestResponsaBundle:View:erhalten }
+
+Responsa_help:
+    pattern:  /responsa/help/
+    defaults: { _controller: VestResponsaBundle:Help:overview }
+Responsa_Auswertung:
+    pattern:  /responsa/auswertung/
+    defaults: { _controller: VestResponsaBundle:Auswertung:overview }

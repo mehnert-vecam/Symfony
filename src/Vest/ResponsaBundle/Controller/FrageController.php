@@ -26,12 +26,21 @@ class FrageController extends BaseController
 					);
 				$uebergabe[] = $tmp;
 				}
-					$repository_umfrage = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
-					$umfragen = $repository_umfrage->findoneBy(array('id' => $u_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
+					
+		}
+		$repository_umfrage = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
+		$umfragen = $repository_umfrage->findoneBy(array('id' => $u_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 		
 					$u_name = $umfragen->getName();
-		}
-    return $this->renderTemplate('VestResponsaBundle:Default:frage_overview.html.twig', array('data' => $uebergabe, 'u_id' => $u_id, 'leer' => $leer, 'u_name' => $u_name));
+		
+    return $this->renderTemplate('VestResponsaBundle:Default:frage_overview.html.twig', array(
+			'data' => $uebergabe,
+			'u_id' => $u_id,
+			'leer' => $leer,
+			'u_name' => $u_name,
+			'title' => 'Fragen Übersicht',
+			'umfrage' => $umfragen
+		));
            
 	}
 	
@@ -42,8 +51,10 @@ class FrageController extends BaseController
 				if($id > 0){ // Wenn eine ID übergeben wurde, wird dir passende Umfrage aus der DB gehohlt, um sie zu bearbeiten.
 					$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:Resfrage');// Baut Doctrine auf
 					$frage = $repository->findOneBy(array('id' => $id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
-        }	
-				
+        	$new = false;
+				}else{
+					$new = true;
+				}
 				$repo = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
 				$umfrage = $repo->findOneBy(array('id' => $u_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 				$ab = array();
@@ -76,7 +87,7 @@ class FrageController extends BaseController
             ->getForm();
             
 				return $this->renderTemplate('VestResponsaBundle:Default:frage_form.html.twig', array(
-						'form' => $form->createView(), 'type' => 'new', 'title' => 'Neue Frage'
+						'form' => $form->createView(), 'new' => $new, 'title' => 'Neue Frage'
 				));
 	}
 	

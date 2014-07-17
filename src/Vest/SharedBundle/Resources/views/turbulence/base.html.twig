@@ -11,14 +11,18 @@
     {% block javascripts %}
         {% javascripts '@jquery_js' '@bootstrap_js' '@turbulence_js' filter='?yui_js' combine=false %}
         <script src="{{ asset_url }}"></script>
-        {% endjavascripts %}
+				{% endjavascripts %}
     {% endblock %}
 
     {% block stylesheets %}
         {% stylesheets '@bootstrap_css' '@turbulence_css' combine=false %}
-        <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
-        {% endstylesheets %}
+				#{% endstylesheets %}
+        <link href="/css/bootstrap.css" type="text/css" rel="stylesheet" />
+        <link href="/css/proton.css" type="text/css" rel="stylesheet" />
+				<link href="/css/custom.css" type="text/css" rel="stylesheet" />
+        
     {% endblock %}
+	   
 </head>
 <body>
 
@@ -29,8 +33,15 @@
     {% block headline %}
       {#  {% include "VestSharedBundle:turbulence/widgets:title.html.twig" with titlebar %}#}
     {% endblock %}
-    {% block contentinner %}
-    {% endblock %}
+		<div class="body_wrapper">
+		
+			<div class="row">
+				<div class="col-md-12">
+						{% block contentinner %}
+						{% endblock %}
+						</div>
+			</div>
+		</div>
 {% endblock %}
 </body>
 </html>

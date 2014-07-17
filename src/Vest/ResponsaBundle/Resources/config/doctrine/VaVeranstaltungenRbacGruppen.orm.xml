@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\VaVeranstaltungenRbacGruppen" table="va_veranstaltungen_rbac_gruppen">
+    <id name="veranstaltungGruppeId" type="integer" column="veranstaltung_gruppe_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="veranstaltungenTag" type="string" column="veranstaltungen_tag" length="50" nullable="false"/>
+    <field name="gruppeId" type="bigint" column="gruppe_id" nullable="true"/>
+  </entity>
+</doctrine-mapping>

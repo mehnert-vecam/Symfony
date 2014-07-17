@@ -8,15 +8,18 @@
       <generator strategy="IDENTITY"/>
     </id>
     <field name="name" type="string" column="name" length="100" nullable="false"/>
-    <field name="feld1" type="string" column="feld1" length="100" nullable="false"/>
-    <field name="feld2" type="string" column="feld2" length="100" nullable="false"/>
-    <field name="feld3" type="string" column="feld3" length="100" nullable="false"/>
-    <field name="feld4" type="string" column="feld4" length="100" nullable="false"/>
-    <field name="feld5" type="string" column="feld5" length="100" nullable="false"/>
+    <field name="feld1" type="string" column="feld1" length="100" nullable="true"/>
+    <field name="feld2" type="string" column="feld2" length="100" nullable="true"/>
+    <field name="feld3" type="string" column="feld3" length="100" nullable="true"/>
+    <field name="feld4" type="string" column="feld4" length="100" nullable="true"/>
+    <field name="feld5" type="string" column="feld5" length="100" nullable="true"/>
     <field name="auswertungsbereich1" type="string" column="auswertungsbereich1" length="100" nullable="true"/>
     <field name="auswertungsbereich2" type="string" column="auswertungsbereich2" length="100" nullable="true"/>
     <field name="auswertungsbereich3" type="string" column="auswertungsbereich3" length="100" nullable="true"/>
     <field name="auswertungsbereich4" type="string" column="auswertungsbereich4" length="100" nullable="true"/>
     <field name="auswertungsbereich5" type="string" column="auswertungsbereich5" length="100" nullable="true"/>
+    <field name="einleitungstext" type="text" column="einleitungstext" nullable="false"/>
+    <field name="teilnehmerzahl" type="integer" column="teilnehmerzahl" nullable="false"/>
+    <field name="ersteller" type="integer" column="ersteller" nullable="false"/>
   </entity>
 </doctrine-mapping>

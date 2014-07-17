@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\ShopProdukte" table="shop_produkte">
+    <indexes>
+      <index name="fk_shop_produkte_shop_kategorien1" columns="kategorie_id"/>
+    </indexes>
+    <id name="produktId" type="bigint" column="produkt_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="kontaktId" type="bigint" column="kontakt_id" nullable="true"/>
+    <field name="produktName" type="string" column="produkt_name" length="255" nullable="true"/>
+    <field name="produktTeaser" type="text" column="produkt_teaser" nullable="true"/>
+    <field name="kategorieId" type="integer" column="kategorie_id" nullable="true"/>
+    <field name="produktStatus" type="boolean" column="produkt_status" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\RbacGruppenAddrZusatzinfos" table="rbac_gruppen_addr_zusatzinfos">
+    <id name="gruppeZusatzinfoId" type="bigint" column="gruppe_zusatzinfo_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="gruppeId" type="bigint" column="gruppe_id" nullable="false"/>
+    <field name="zusatzinfoId" type="bigint" column="zusatzinfo_id" nullable="false"/>
+    <field name="zusatzinfoAnzeigename" type="string" column="zusatzinfo_anzeigename" length="255" nullable="false"/>
+    <field name="zusatzinfoTypId" type="integer" column="zusatzinfo_typ_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

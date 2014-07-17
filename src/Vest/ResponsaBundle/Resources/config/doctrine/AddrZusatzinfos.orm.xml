@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\AddrZusatzinfos" table="addr_zusatzinfos">
+    <id name="zusatzinfoId" type="bigint" column="zusatzinfo_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="zusatzinfoName" type="string" column="zusatzinfo_name" length="255" nullable="true"/>
+    <field name="elementId" type="integer" column="element_id" nullable="false"/>
+    <field name="zusatzinfoPflicht" type="integer" column="zusatzinfo_pflicht" nullable="false"/>
+    <field name="validierungId" type="integer" column="validierung_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\VaKategorieindividualisierungen" table="va_kategorieindividualisierungen">
+    <id name="kategorieindividualisierungId" type="bigint" column="kategorieindividualisierung_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="kategorieId" type="bigint" column="kategorie_id" nullable="false"/>
+    <field name="kontaktId" type="bigint" column="kontakt_id" nullable="false"/>
+    <field name="kategorieindividualisierungName" type="string" column="kategorieindividualisierung_name" length="255" nullable="false"/>
+    <field name="kategorieindividualisierungAnmeldebedingung" type="text" column="kategorieindividualisierung_anmeldebedingung" nullable="false"/>
+    <field name="kategorieindividualisierungSplit" type="integer" column="kategorieindividualisierung_split" nullable="false"/>
+    <field name="kategorieindividualisierungPrio" type="integer" column="kategorieindividualisierung_prio" nullable="false"/>
+  </entity>
+</doctrine-mapping>

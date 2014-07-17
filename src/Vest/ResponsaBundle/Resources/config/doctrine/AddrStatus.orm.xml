@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\AddrStatus" table="addr_status">
+    <id name="statusId" type="integer" column="status_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="statusObjekt" type="string" column="status_objekt" length="150" nullable="true"/>
+  </entity>
+</doctrine-mapping>

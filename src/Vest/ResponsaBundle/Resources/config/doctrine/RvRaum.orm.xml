@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\RvRaum" table="rv_raum">
+    <id name="raumId" type="integer" column="raum_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="kontaktId" type="string" column="kontakt_id" length="45" nullable="true"/>
+  </entity>
+</doctrine-mapping>

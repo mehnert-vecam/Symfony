@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\RbacGruppen" table="rbac_gruppen">
+    <id name="gruppeId" type="bigint" column="gruppe_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="kontaktId" type="bigint" column="kontakt_id" nullable="false"/>
+    <field name="gruppeTypId" type="integer" column="gruppe_typ_id" nullable="true"/>
+    <field name="gruppeZugriffsstufeId" type="integer" column="gruppe_zugriffsstufe_id" nullable="false"/>
+    <field name="gruppeName" type="string" column="gruppe_name" length="255" nullable="false"/>
+    <field name="gruppeBeschreibung" type="text" column="gruppe_beschreibung" nullable="false"/>
+    <field name="gruppeParentId" type="bigint" column="gruppe_parent_id" nullable="false"/>
+    <field name="gruppeKontaktspezifisch" type="boolean" column="gruppe_kontaktspezifisch" nullable="false"/>
+    <field name="gruppeLizenzspezifisch" type="integer" column="gruppe_lizenzspezifisch" nullable="false"/>
+    <field name="gruppeEssentiell" type="boolean" column="gruppe_essentiell" nullable="false"/>
+    <field name="gruppeSchutz" type="boolean" column="gruppe_schutz" nullable="false"/>
+  </entity>
+</doctrine-mapping>

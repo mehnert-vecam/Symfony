@@ -78,6 +78,42 @@ class BaseController extends Controller
     }
 
     private function navigationInitialized() {
+        
+
+            $navitem['name']='Umfragen';
+            $navitem['kurzname']='Responsa_overview';
+            $navitem['icon']='icon-home nav-icon';
+            $navitem['farbe']='#000099';
+            $navitem['viewcount']=0;
+            $this->navigation[]=$navitem;
+						
+            $navitem['name']='Auswertung';
+            $navitem['kurzname']='Responsa_Auswertung';
+            $navitem['icon']='icon-home nav-icon';
+            $navitem['farbe']='#000099';
+            $navitem['viewcount']=0;
+            $this->navigation[]=$navitem;
+						
+            $navitem['name']='Profil';
+            $navitem['kurzname']='Responsa_overview';
+            $navitem['icon']='icon-home nav-icon';
+            $navitem['farbe']='#000099';
+            $navitem['viewcount']=0;
+            $this->navigation[]=$navitem;
+						
+            $navitem['name']='Hilfe';
+            $navitem['kurzname']='Responsa_help';
+            $navitem['icon']='icon-home nav-icon';
+            $navitem['farbe']='#000099';
+            $navitem['viewcount']=0;
+            $this->navigation[]=$navitem;
+						
+						
+						
+    }
+
+		/*
+    private function navigationInitializedDisciplina() {
         $repository=$this->getDoctrine()->getRepository('VestSharedBundle:AppAnwendungen');
 
         $apps=$repository->findBy(array('anwendungUberId'=>0),array('anwendungAnzeigePrio'=>'ASC'));
@@ -109,7 +145,8 @@ class BaseController extends Controller
             unset($navitem);
         }
     }
-
+		*/
+		
     public function LoginAction(){
         $person = new AddrPersonen(); // legt eine neue Person an
         $form = $this->createFormBuilder($person) // Formular wird auf Basis der Person erstellt

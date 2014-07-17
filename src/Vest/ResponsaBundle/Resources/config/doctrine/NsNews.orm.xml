@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\NsNews" table="ns_news">
+    <id name="newsId" type="integer" column="news_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="newsName" type="string" column="news_name" length="255" nullable="true"/>
+    <field name="newsDatum" type="string" column="news_datum" length="45" nullable="true"/>
+    <field name="newsTeaser" type="text" column="news_teaser" nullable="true"/>
+    <field name="newsUrl" type="string" column="news_url" length="255" nullable="true"/>
+    <field name="kontaktId" type="string" column="kontakt_id" length="45" nullable="true"/>
+  </entity>
+</doctrine-mapping>

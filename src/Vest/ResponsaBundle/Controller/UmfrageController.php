@@ -2,7 +2,7 @@
 
 use Vest\ResponsaBundle\Entity\Resumfrage;     // Zeigt dem Controller, wo er die Entität findet (verwendet in Zeilte 17)
 use Symfony\Component\HttpFoundation\Request;   // Zeigt dem Controller wo er die Funktionen für Requests findet.
-              
+  
 class UmfrageController extends BaseController
 { 
 	public function OverviewAction(){
@@ -28,7 +28,7 @@ class UmfrageController extends BaseController
 			$uebergabe[] = $tmp;
 		}
 		*/
-    return $this->renderTemplate('VestResponsaBundle:Default:umfrage_overview.html.twig', array('data' => $umfragen));
+    return $this->renderTemplate('VestResponsaBundle:Default:umfrage_overview.html.twig', array('data' => $umfragen, 'title' => 'Umfragen Übersicht'));
            
 	}
 	public function NewAction($id = 0){
@@ -36,7 +36,10 @@ class UmfrageController extends BaseController
 				if($id > 0){ // Wenn eine ID übergeben wurde, wird dir passende Umfrage aus der DB gehohlt, um sie zu bearbeiten.
 					$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
 					$umfrage = $repository->findOneBy(array('id' => $id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
-        }	
+					$new = false;
+				}else{
+					$new = true;
+				}
 				
 				$form = $this->createFormBuilder($umfrage)
 						->setAction($this->generateUrl('Responsa_save',array('id' => $id)))     //nimmt die URL aus der routing.yml 
@@ -51,11 +54,12 @@ class UmfrageController extends BaseController
             ->add('auswertungsbereich3', 'text', array('required'  => false))
             ->add('auswertungsbereich4', 'text', array('required'  => false))
             ->add('auswertungsbereich5', 'text', array('required'  => false))
+            ->add('einleitungstext', 'textarea', array('required'  => false))
             ->add('Speichern', 'submit');
             $form  = $form ->getForm();
             
 				return $this->renderTemplate('VestResponsaBundle:Default:umfrage_form.html.twig', array(
-						'form' => $form->createView(), 'type' => 'new'
+						'form' => $form->createView(), 'new' => $new, 'title' => 'Neue Umfrage'
 				));
 	}
 	
@@ -81,6 +85,7 @@ class UmfrageController extends BaseController
             ->add('auswertungsbereich3', 'text', array('required'  => false))
             ->add('auswertungsbereich4', 'text', array('required'  => false))
             ->add('auswertungsbereich5', 'text', array('required'  => false))
+            ->add('einleitungstext', 'textarea', array('required'  => false))
             ->add('Speichern', 'submit')
             ->getForm();
         $form->handleRequest($request);  
@@ -91,7 +96,7 @@ class UmfrageController extends BaseController
           $em->flush();
 				}
 				
-				return $this->redirect($this->generateUrl('Responsa_overview'));
+				return $this->forward('VestResponsaBundle:Frage:Overview', array('u_id' =>$id));
 	}
 	
 }

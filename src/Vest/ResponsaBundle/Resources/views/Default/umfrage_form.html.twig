@@ -1,95 +1,95 @@
+{% extends "VestSharedBundle:turbulence:base.html.twig" %}
+{% block contentinner %}
 
-{% extends "base.html.twig" %}
-{% block body %}
+<div class="panel panel-default">
+	<div class="panel-heading">
+		{% if new == true%}
+			<h3>Umfrage bearbeiten</h3>
+		{% else%}
+			<h3>Neue Umfrage erstellen</h3>
+		{% endif %}
+	</div>
+	<div class="panel-body">
+			<div class="col-md-3">
+				{{ form_start(form) }}      <!-- Start des Formularbereits -->
+					{{ form_errors(form) }}  <!-- Ausgabe von Fehler die erzeugt werden. -->
 
-   <h3>Neue Umfrage erstellen</h3>
-<div class="form_wrapper">
-  {{ form_start(form) }}      <!-- Start des Formularbereits -->
-      {{ form_errors(form) }}  <!-- Ausgabe von Fehler die erzeugt werden. -->
+					<div class="task_wrapper">
+							{{ form_label(form.name, 'Name') }}   <br />
+							{{ form_errors(form.name) }}
+							{{ form_widget(form.name) }}
+					</div>
+					<div class="task_wrapper">
+							{{ form_label(form.feld1, 'Parameter 1') }}   <br />
+							{{ form_errors(form.feld1) }}
+							{{ form_widget(form.feld1) }}
+					</div>
+					<div class="task_wrapper">
+							{{ form_label(form.feld2, 'Parameter 2') }}   <br />
+							{{ form_errors(form.feld2) }}
+							{{ form_widget(form.feld2) }}
+					</div>
+					<div class="task_wrapper">
+							{{ form_label(form.feld3, 'Parameter 3') }}   <br />
+							{{ form_errors(form.feld3) }}
+							{{ form_widget(form.feld3) }}
+					</div>
+					<div class="task_wrapper">
+							{{ form_label(form.feld4, 'Parameter 4') }}   <br />
+							{{ form_errors(form.feld4) }}
+							{{ form_widget(form.feld4) }}
+					</div>
+					<div class="task_wrapper">
+							{{ form_label(form.feld5, 'Parameter 5') }}   <br />
+							{{ form_errors(form.feld5) }}
+							{{ form_widget(form.feld5) }}
+					</div>
+			</div>
+			<div class="col-md-3">
+			<br /><br /><br />
+					<div class="task_wrapper">
+							{{ form_label(form.auswertungsbereich1, 'Auswertungsbereich 1') }}   <br />
+							{{ form_errors(form.auswertungsbereich1) }}
+							{{ form_widget(form.auswertungsbereich1) }}
+					</div>
+					<div class="task_wrapper">
+							{{ form_label(form.auswertungsbereich2, 'Auswertungsbereich 2') }}   <br />
+							{{ form_errors(form.auswertungsbereich2) }}
+							{{ form_widget(form.auswertungsbereich2) }}
+					</div>
+					<div class="task_wrapper">
+							{{ form_label(form.auswertungsbereich3, 'Auswertungsbereich 3') }}   <br />
+							{{ form_errors(form.auswertungsbereich3) }}
+							{{ form_widget(form.auswertungsbereich3) }}
+					</div>
+					<div class="task_wrapper">
+							{{ form_label(form.auswertungsbereich4, 'Auswertungsbereich 4') }}   <br />
+							{{ form_errors(form.auswertungsbereich4) }}
+							{{ form_widget(form.auswertungsbereich4) }}
+					</div>
+					<div class="task_wrapper">
+							{{ form_label(form.auswertungsbereich5, 'Auswertungsbereich 5') }}   <br />
+							{{ form_errors(form.auswertungsbereich5) }}
+							{{ form_widget(form.auswertungsbereich5) }}
+					</div>
 
-      <div class="task_wrapper">
-          {{ form_label(form.name, 'Name') }}   <br />
-          {{ form_errors(form.name) }}
-          {{ form_widget(form.name) }}
-      </div>
-      <div class="task_wrapper">
-          {{ form_label(form.feld1, 'Feld 1') }}   <br />
-          {{ form_errors(form.feld1) }}
-          {{ form_widget(form.feld1) }}
-      </div>
-      <div class="task_wrapper">
-          {{ form_label(form.feld2, 'Feld 2') }}   <br />
-          {{ form_errors(form.feld2) }}
-          {{ form_widget(form.feld2) }}
-      </div>
-      <div class="task_wrapper">
-          {{ form_label(form.feld3, 'Feld 3') }}   <br />
-          {{ form_errors(form.feld3) }}
-          {{ form_widget(form.feld3) }}
-      </div>
-      <div class="task_wrapper">
-          {{ form_label(form.feld4, 'Feld 4') }}   <br />
-          {{ form_errors(form.feld4) }}
-          {{ form_widget(form.feld4) }}
-      </div>
-      <div class="task_wrapper">
-          {{ form_label(form.feld5, 'Feld 5') }}   <br />
-          {{ form_errors(form.feld5) }}
-          {{ form_widget(form.feld5) }}
-      </div>
+			</div>
+			
+			
+			<div class="col-md-6">
+					<div class="task_wrapper" id="einleitungstext">
+							{{ form_label(form.einleitungstext, 'Einleitungstext') }}   <br />
+							{{ form_errors(form.einleitungstext) }}
+							{{ form_widget(form.einleitungstext) }}
+					</div>
+					<div class="button_wrapper">
+							{{ form_widget(form.Speichern) }}
+					</div>
+			</div>
+			{{ form_end(form) }}  <!-- Ende des Formularbereits -->
 
-      <div class="task_wrapper">
-          {{ form_label(form.auswertungsbereich1, 'Auswertungsbereich 1') }}   <br />
-          {{ form_errors(form.auswertungsbereich1) }}
-          {{ form_widget(form.auswertungsbereich1) }}
-      </div>
-      <div class="task_wrapper">
-          {{ form_label(form.auswertungsbereich2, 'Auswertungsbereich 2') }}   <br />
-          {{ form_errors(form.auswertungsbereich2) }}
-          {{ form_widget(form.auswertungsbereich2) }}
-      </div>
-      <div class="task_wrapper">
-          {{ form_label(form.auswertungsbereich3, 'Auswertungsbereich 3') }}   <br />
-          {{ form_errors(form.auswertungsbereich3) }}
-          {{ form_widget(form.auswertungsbereich3) }}
-      </div>
-      <div class="task_wrapper">
-          {{ form_label(form.auswertungsbereich4, 'Auswertungsbereich 4') }}   <br />
-          {{ form_errors(form.auswertungsbereich4) }}
-          {{ form_widget(form.auswertungsbereich4) }}
-      </div>
-      <div class="task_wrapper">
-          {{ form_label(form.auswertungsbereich5, 'Auswertungsbereich 5') }}   <br />
-          {{ form_errors(form.auswertungsbereich5) }}
-          {{ form_widget(form.auswertungsbereich5) }}
-      </div>
-
-      <div class="button_wrapper">
-          {{ form_widget(form.Speichern) }}
-      </div>
-
-  {{ form_end(form) }}  <!-- Ende des Formularbereits -->
-
+					
+	</div>
 </div>
 
-
-
-<style>
-.verlinkung{
-  margin: 20px;
-}
-.form_wrapper{
-  margin: 10px;
-  width: 200px;
-}
-.task_wrapper{
-  margin: 10px;
-  text-align: center;
-}
-
-.form_wrapper div{
-  margin: 10px;
-  text-align: center;
-}
-</style>
 {% endblock %}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\NlAuftraege" table="nl_auftraege">
+    <id name="auftragId" type="bigint" column="auftrag_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="templateId" type="integer" column="template_id" nullable="true"/>
+    <field name="auftragName" type="string" column="auftrag_name" length="255" nullable="true"/>
+    <field name="auftragStart" type="datetime" column="auftrag_start" nullable="true"/>
+    <field name="kontaktId" type="integer" column="kontakt_id" nullable="true"/>
+    <field name="auftragNewsAnzahl" type="integer" column="auftrag_news_anzahl" nullable="true"/>
+    <field name="auftragSeminareAnzahl" type="integer" column="auftrag_seminare_anzahl" nullable="true"/>
+    <field name="auftragBannerAnzahl" type="integer" column="auftrag_banner_anzahl" nullable="true"/>
+    <field name="auftragIdentifikation" type="string" column="auftrag_identifikation" length="45" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\VtFlatrates" table="vt_flatrates">
+    <id name="flatrateId" type="bigint" column="flatrate_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="angebotId" type="bigint" column="angebot_id" nullable="false"/>
+    <field name="flatrateCode" type="string" column="flatrate_code" length="50" nullable="false"/>
+    <field name="kontaktId" type="bigint" column="kontakt_id" nullable="false"/>
+    <field name="personId" type="bigint" column="person_id" nullable="false"/>
+    <field name="flatrateKat" type="integer" column="flatrate_kat" nullable="false"/>
+    <field name="flatrateNutzung" type="integer" column="flatrate_nutzung" nullable="false"/>
+    <field name="flatrateAnzahl" type="integer" column="flatrate_anzahl" nullable="false"/>
+    <field name="flatrateStart" type="datetime" column="flatrate_start" nullable="false"/>
+    <field name="flatrateEnde" type="datetime" column="flatrate_ende" nullable="false"/>
+    <field name="flatrateUnlimit" type="boolean" column="flatrate_unlimit" nullable="false"/>
+    <field name="flatratetErstellen" type="datetime" column="flatratet_erstellen" nullable="false"/>
+    <field name="flatrateBeenden" type="datetime" column="flatrate_beenden" nullable="false"/>
+    <field name="flatrateTyp" type="integer" column="flatrate_typ" nullable="false"/>
+  </entity>
+</doctrine-mapping>

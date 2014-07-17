@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\VaVeranstaltungenAddrPersonen" table="va_veranstaltungen_addr_personen">
+    <id name="veranstaltungPersonId" type="integer" column="veranstaltung_person_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="veranstaltungTag" type="string" column="veranstaltung_tag" length="50" nullable="false"/>
+    <field name="personId" type="bigint" column="person_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

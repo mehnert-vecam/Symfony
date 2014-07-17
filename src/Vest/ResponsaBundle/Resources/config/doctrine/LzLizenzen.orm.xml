@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\LzLizenzen" table="lz_lizenzen">
+    <id name="lizenzId" type="bigint" column="lizenz_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="anwendungId" type="integer" column="anwendung_id" nullable="false"/>
+    <field name="ansichtId" type="integer" column="ansicht_id" nullable="false"/>
+    <field name="lizenzName" type="string" column="lizenz_name" length="45" nullable="true"/>
+    <field name="lizenzBeschreibung" type="text" column="lizenz_beschreibung" nullable="true"/>
+    <field name="lizenzPreis" type="string" column="lizenz_preis" length="45" nullable="true"/>
+    <field name="typId" type="integer" column="typ_id" nullable="true"/>
+    <field name="lizenzKeysZeigen" type="integer" column="lizenz_keys_zeigen" nullable="false"/>
+    <field name="lizenzEventCatId" type="integer" column="lizenz_event_cat_id" nullable="false"/>
+    <field name="lizenzEventMenge" type="integer" column="lizenz_event_menge" nullable="false"/>
+    <field name="lizenzDauer" type="string" column="lizenz_dauer" length="10" nullable="false"/>
+    <field name="lizenzAbo" type="integer" column="lizenz_abo" nullable="false"/>
+  </entity>
+</doctrine-mapping>

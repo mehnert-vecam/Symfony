@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\AppAnwendungenRbacRollen" table="app_anwendungen_rbac_rollen">
+    <id name="anwendungenRollenId" type="bigint" column="anwendungen_rollen_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="anwendungId" type="integer" column="anwendung_id" nullable="false"/>
+    <field name="rolleId" type="integer" column="rolle_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

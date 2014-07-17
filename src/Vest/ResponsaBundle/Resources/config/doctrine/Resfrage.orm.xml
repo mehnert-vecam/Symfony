@@ -7,7 +7,7 @@
     <field name="uId" type="integer" column="u_id" nullable="false"/>
     <field name="frage" type="text" column="frage" nullable="false"/>
     <field name="prio" type="integer" column="prio" nullable="false"/>
-    <field name="auswertungsbereich" type="string" column="auswertungsbereich" length="100" nullable="false"/>
+    <field name="auswertungsbereich" type="string" column="auswertungsbereich" length="100" nullable="true"/>
     <field name="type" type="integer" column="type" nullable="false"/>
   </entity>
 </doctrine-mapping>

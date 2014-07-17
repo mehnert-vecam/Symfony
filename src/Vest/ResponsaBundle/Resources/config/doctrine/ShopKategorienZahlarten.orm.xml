@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\ShopKategorienZahlarten" table="shop_kategorien_zahlarten">
+    <indexes>
+      <index name="fk_shop_kategorie_zahlarten_shop_kategorien1" columns="kategorie_id"/>
+      <index name="fk_shop_kategorie_zahlarten_shop_zahlarten1" columns="zahlart_id"/>
+    </indexes>
+    <id name="kategorieZahlartId" type="integer" column="kategorie_zahlart_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="kategorieId" type="integer" column="kategorie_id" nullable="true"/>
+    <field name="zahlartId" type="integer" column="zahlart_id" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\UfAntworten" table="uf_antworten">
+    <id name="antwortId" type="bigint" column="antwort_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="frageId" type="bigint" column="frage_id" nullable="false"/>
+    <field name="kontaktId" type="bigint" column="kontakt_id" nullable="false"/>
+    <field name="antwortWert" type="text" column="antwort_wert" nullable="false"/>
+    <field name="antwortBenutzerdefiniert" type="text" column="antwort_benutzerdefiniert" nullable="false"/>
+    <field name="antwortBenutzerdefiniert2" type="string" column="antwort_benutzerdefiniert2" length="100" nullable="false"/>
+    <field name="datumId" type="bigint" column="datum_id" nullable="false"/>
+    <field name="personId" type="bigint" column="person_id" nullable="false"/>
+    <field name="eventTag" type="string" column="event_tag" length="100" nullable="false"/>
+    <field name="antwortToken" type="string" column="antwort_token" length="255" nullable="false"/>
+    <field name="antwortDatum" type="datetime" column="antwort_datum" nullable="false"/>
+  </entity>
+</doctrine-mapping>

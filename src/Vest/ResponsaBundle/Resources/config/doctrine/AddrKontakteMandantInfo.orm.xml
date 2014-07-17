@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\AddrKontakteMandantInfo" table="addr_kontakte_mandant_info">
+    <id name="kontaktInfoId" type="bigint" column="kontakt_info_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="kontaktBaOwner" type="string" column="kontakt_ba_owner" length="255" nullable="false"/>
+    <field name="kontaktBaBank" type="string" column="kontakt_ba_bank" length="255" nullable="false"/>
+    <field name="kontaktBaIban" type="string" column="kontakt_ba_iban" length="255" nullable="false"/>
+    <field name="kontaktBaBic" type="string" column="kontakt_ba_bic" length="255" nullable="false"/>
+    <field name="kontaktId" type="bigint" column="kontakt_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

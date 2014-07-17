@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\ShopKategorienUmfragen" table="shop_kategorien_umfragen">
+    <indexes>
+      <index name="fk_shop_kategorien_umfragen_shop_kategorien1" columns="kategorie_id"/>
+    </indexes>
+    <id name="kategorieUmfrageId" type="integer" column="kategorie_umfrage_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="kategorieId" type="integer" column="kategorie_id" nullable="true"/>
+    <field name="umfrageId" type="integer" column="umfrage_id" nullable="true"/>
+  </entity>
+</doctrine-mapping>

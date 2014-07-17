@@ -362,4 +362,116 @@ class Resumfrage
     {
         return $this->id;
     }
+    /**
+     * @var string
+     */
+    private $einleitungstext;
+
+    /**
+     * @var integer
+     */
+    private $teilnehmertzahl;
+
+
+    /**
+     * Set einleitungstext
+     *
+     * @param string $einleitungstext
+     * @return Resumfrage
+     */
+    public function setEinleitungstext($einleitungstext)
+    {
+        $this->einleitungstext = $einleitungstext;
+
+        return $this;
+    }
+
+    /**
+     * Get einleitungstext
+     *
+     * @return string 
+     */
+    public function getEinleitungstext()
+    {
+        return $this->einleitungstext;
+    }
+
+    /**
+     * Set teilnehmertzahl
+     *
+     * @param integer $teilnehmertzahl
+     * @return Resumfrage
+     */
+    public function setTeilnehmertzahl($teilnehmertzahl)
+    {
+        $this->teilnehmertzahl = $teilnehmertzahl;
+
+        return $this;
+    }
+
+    /**
+     * Get teilnehmertzahl
+     *
+     * @return integer 
+     */
+    public function getTeilnehmertzahl()
+    {
+        return $this->teilnehmertzahl;
+    }
+    /**
+     * @var integer
+     */
+    private $teilnehmerzahl;
+
+
+    /**
+     * Set teilnehmerzahl
+     *
+     * @param integer $teilnehmerzahl
+     * @return Resumfrage
+     */
+    public function setTeilnehmerzahl($teilnehmerzahl)
+    {
+        $this->teilnehmerzahl = $teilnehmerzahl;
+
+        return $this;
+    }
+
+    /**
+     * Get teilnehmerzahl
+     *
+     * @return integer 
+     */
+    public function getTeilnehmerzahl()
+    {
+        return $this->teilnehmerzahl;
+    }
+    /**
+     * @var integer
+     */
+    private $ersteller;
+
+
+    /**
+     * Set ersteller
+     *
+     * @param integer $ersteller
+     * @return Resumfrage
+     */
+    public function setErsteller($ersteller)
+    {
+        $this->ersteller = $ersteller;
+
+        return $this;
+    }
+
+    /**
+     * Get ersteller
+     *
+     * @return integer 
+     */
+    public function getErsteller()
+    {
+        return $this->ersteller;
+    }
 }

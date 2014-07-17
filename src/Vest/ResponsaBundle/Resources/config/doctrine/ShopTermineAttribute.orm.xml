@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\ShopTermineAttribute" table="shop_termine_attribute">
+    <indexes>
+      <index name="fk_shop_termine_attribute_shop_termine1" columns="termin_id"/>
+      <index name="fk_shop_termine_attribute_shop_attribute1" columns="attribut_id"/>
+    </indexes>
+    <id name="terminAttribut" type="integer" column="termin_attribut">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="terminId" type="integer" column="termin_id" nullable="true"/>
+    <field name="attributId" type="integer" column="attribut_id" nullable="true"/>
+    <field name="value" type="text" column="value" nullable="true"/>
+  </entity>
+</doctrine-mapping>

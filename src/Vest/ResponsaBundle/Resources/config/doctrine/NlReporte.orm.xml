@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\NlReporte" table="nl_reporte">
+    <id name="reportId" type="integer" column="report_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="auftragId" type="bigint" column="auftrag_id" nullable="true"/>
+    <field name="reportName" type="string" column="report_name" length="45" nullable="true"/>
+    <field name="reportUrl" type="string" column="report_url" length="45" nullable="true"/>
+  </entity>
+</doctrine-mapping>

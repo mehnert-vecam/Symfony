@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Vest\ResponsaBundle\Entity\SaleRabattVaVeranstaltungen" table="sale_rabatt_va_veranstaltungen">
+    <id name="rabattVeranstaltungId" type="integer" column="rabatt_veranstaltung_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="rabattId" type="integer" column="rabatt_id" nullable="true"/>
+    <field name="veranstaltungId" type="string" column="veranstaltung_id" length="45" nullable="true"/>
+  </entity>
+</doctrine-mapping>
