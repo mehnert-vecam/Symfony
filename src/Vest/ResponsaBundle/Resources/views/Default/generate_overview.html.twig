@@ -1,0 +1,65 @@
+{% extends "VestSharedBundle:turbulence:base.html.twig" %}
+{% block contentinner %}
+
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3>{{title}}</h3>
+	</div>
+  <div class="panel-body">
+		{% if erhalten == false%}
+		
+			{{ form_start(form) }}      <!-- Start des Formularbereits -->
+					{{ form_errors(form) }}  <!-- Ausgabe von Fehler die erzeugt werden. -->
+
+					<div class="task_wrapper">
+							{{ form_label(form.u_id, 'Name') }}   <br />
+							{{ form_errors(form.u_id) }}
+							{{ form_widget(form.u_id) }}
+					</div>
+
+					<div class="task_wrapper">
+							{{ form_label(form.feld1, 'Parameter 1') }}   <br />
+							{{ form_errors(form.feld1) }}
+							{{ form_widget(form.feld1) }}
+					</div>
+					<div class="task_wrapper">
+							{{ form_label(form.feld2, 'Parameter 2') }}   <br />
+							{{ form_errors(form.feld2) }}
+							{{ form_widget(form.feld2) }}
+					</div>
+					<div class="task_wrapper">
+							{{ form_label(form.feld3, 'Parameter 3') }}   <br />
+							{{ form_errors(form.feld3) }}
+							{{ form_widget(form.feld3) }}
+					</div>
+					<div class="task_wrapper">
+							{{ form_label(form.feld4, 'Parameter 4') }}   <br />
+							{{ form_errors(form.feld4) }}
+							{{ form_widget(form.feld4) }}
+					</div>
+					<div class="task_wrapper">
+							{{ form_label(form.feld5, 'Parameter 5') }}   <br />
+							{{ form_errors(form.feld5) }}
+							{{ form_widget(form.feld5) }}
+					</div>
+
+					<div class="button_wrapper">
+							{{ form_widget(form.Speichern) }}
+					</div>
+
+			{{ form_end(form) }}  <!-- Ende des Formularbereits -->
+		{% else %}
+			
+			<p> Umfrage Wurde erzeugt. Hier der Link zu ihr: </P>
+			<a href="{{ path('Responsa_view_show', {'u_id': u_id,'feld1': feld1,'feld2': feld2,'feld3': feld3,'feld4': feld4,'feld5': feld5}) }}">
+				{{ path('Responsa_view_show', {'u_id': u_id,'feld1': feld1,'feld2': feld2,'feld3': feld3,'feld4': feld4,'feld5': feld5}) }}
+			</a>
+		
+		{% endif %}
+  </div>
+</div>
+
+
+
+{% endblock %}

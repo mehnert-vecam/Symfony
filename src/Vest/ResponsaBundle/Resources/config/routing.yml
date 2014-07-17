@@ -80,7 +80,7 @@ Responsa_view_show:
     pattern:  /responsa/view/show/{u_id}.{feld1}.{feld2}.{feld3}.{feld4}.{feld5}
     defaults: { _controller: VestResponsaBundle:View:show }
 Responsa_view_erhalten:
-    pattern:  /responsa/view/erhalten/{u_id}
+    pattern:  /responsa/view/erhalten/{u_id}.{feld1}.{feld2}.{feld3}.{feld4}.{feld5}
     defaults: { _controller: VestResponsaBundle:View:erhalten }
 
 Responsa_help:
@@ -89,3 +89,11 @@ Responsa_help:
 Responsa_Auswertung:
     pattern:  /responsa/auswertung/
     defaults: { _controller: VestResponsaBundle:Auswertung:overview }
+
+
+Responsa_generate_show:
+    pattern:  /responsa/generate/show/
+    defaults: { _controller: VestResponsaBundle:View:generate }
+Responsa_generate_erhalten:
+    pattern:  /responsa/generate/erhalten/
+    defaults: { _controller: VestResponsaBundle:View:GenerateErhahlten }

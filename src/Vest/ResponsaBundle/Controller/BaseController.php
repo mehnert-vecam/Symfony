@@ -109,6 +109,14 @@ class BaseController extends Controller
             $this->navigation[]=$navitem;
 						
 						
+            $navitem['name']='Erzeugen';
+            $navitem['kurzname']='Responsa_generate_show';
+            $navitem['icon']='icon-home nav-icon';
+            $navitem['farbe']='#000099';
+            $navitem['viewcount']=0;
+            $this->navigation[]=$navitem;
+						
+						
 						
     }
 

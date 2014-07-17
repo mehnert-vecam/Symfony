@@ -2,10 +2,13 @@
 namespace Vest\ResponsaBundle\Entity;
 
 class resfragenliste{
-    protected $frage = array();
-    protected $antwort = array();
+    protected $f_frage = array();
+    protected $f_antwort = array();
+    protected $s_frage = array();
+    protected $s_antwort = array();
 		
-    protected $f_id= array();
+    protected $f_f_id= array();
+    protected $s_f_id= array();
 		
 
     protected $u_id;
@@ -16,33 +19,61 @@ class resfragenliste{
     protected $feld4;
     protected $feld5;
 
-    public function getFrage()
+    public function getSFrage()
     {
-        return $this->frage;
+        return $this->s_frage;
     }
 
-    public function setFrage($frage)
+    public function setSFrage($s_frage)
     {
-        $this->frage = $frage;
+        $this->s_frage = $s_frage;
     }
-    public function getAntwort()
+    public function getSAntwort()
     {
-        return $this->antwort;
-    }
-
-    public function setAntwort($antwort)
-    {
-        $this->antwort = $antwort;
+        return $this->s_antwort;
     }
 
-    public function getFid()
+    public function setSAntwort($s_antwort)
     {
-        return $this->f_id;
+        $this->s_antwort = $s_antwort;
+    }
+		
+    public function getFFrage()
+    {
+        return $this->f_frage;
     }
 
-    public function setFid($f_id)
+    public function setFFrage($f_frage)
     {
-        $this->f_id = $f_id;
+        $this->f_frage = $f_frage;
+    }
+    public function getFAntwort()
+    {
+        return $this->f_antwort;
+    }
+
+    public function setFAntwort($f_antwort)
+    {
+        $this->f_antwort = $f_antwort;
+    }
+
+    public function getFFid()
+    {
+        return $this->f_f_id;
+    }
+
+    public function setFFid($f_f_id)
+    {
+        $this->f_f_id = $f_f_id;
+    }
+    public function getSFid()
+    {
+        return $this->s_f_id;
+    }
+
+    public function setSFid($s_f_id)
+    {
+        $this->s_f_id = $s_f_id;
     }
 
     public function getU_id()
