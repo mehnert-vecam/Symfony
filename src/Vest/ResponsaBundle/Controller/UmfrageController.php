@@ -29,7 +29,28 @@ class UmfrageController extends BaseController
 			$uebergabe[] = $tmp;
 		}
 		*/
-    return $this->renderTemplate('VestResponsaBundle:Default:umfrage_overview.html.twig', array('data' => $umfragen, 'title' => 'Umfragen Übersicht'));
+				$fragen_vorhanden = array();
+				foreach($umfragen as $umfrage){
+						$fragen_vorhanden[$umfrage->getId()] = false;
+				;}
+			
+				$fragen_zahl = array();
+				$em = $this->getDoctrine()->getManager();
+				$query = $em->createQuery("SELECT f.id,COUNT(f.id) FROM VestResponsaBundle:Resfrage f GROUP BY f.uId");
+				$result = $query->getResult();
+				if(sizeof($result) >0){
+					foreach($result as $row){
+						$fragen_zahl[$row['id']] = $row[1];
+						$fragen_vorhanden[$row['id']] = true;
+					}
+				}
+				
+    return $this->renderTemplate('VestResponsaBundle:Default:umfrage_overview.html.twig', array(
+			'data' => $umfragen, 
+			'title' => 'Umfragen Übersicht',
+			'fragen_vorhanden' => $fragen_vorhanden,
+			'fragen_zahl' => $fragen_zahl
+		));
            
 	}
 	public function NewAction($id = 0){
@@ -114,6 +135,11 @@ class UmfrageController extends BaseController
 				$query = $em->createQuery(
 						"DELETE FROM VestResponsaBundle:Resumfrage u 
 						WHERE u.id =".$u_id
+				);
+				$result = $query->getResult();
+				$query = $em->createQuery(
+						"DELETE FROM VestResponsaBundle:Resfrage f 
+						WHERE f.u_id =".$u_id
 				);
 				$result = $query->getResult();
 				return $this->forward('VestResponsaBundle:Umfrage:Overview', array());

@@ -1,27 +1,41 @@
 {% extends "VestSharedBundle:turbulence:base.html.twig" %}
 {% block contentinner %}
-<div class="table-responsive">
-	<table class="table table-bordered table-hover">
-		<tr>
-			<th>id</th>
-			<th>Name</th>
-			<th>Teilnehmerzahl</th>
 
-		</tr>
+<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3>Ihre Umfragen</h3>
+		</div>
+  <div class="panel-body">
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover">
+					<tr>
+						<th>id</th>
+						<th>Name</th>
+						<th>Teilnehmerzahl</th>
+						<th>Fragenzahl</th>
 
-		{% for row in data %}
-			<tr>
-				<td>{{ row.id }}</td>
-				<td><a href="{{ path('Responsa_frage_overview', {'u_id': row.id}) }}">{{ row.name }}</a></td>
-				<td>{{ row.teilnehmerzahl }}</td>
-			
+					</tr>
 
-			</tr>
-		{% endfor %}
+					{% for row in data %}
+						<tr>
+							<td>{{ row.id }}</td>
+							<td><a href="{{ path('Responsa_frage_overview', {'u_id': row.id}) }}">{{ row.name }}</a></td>
+							<td>{{ row.teilnehmerzahl }}</td>
+							<td> 
+								{% if fragen_vorhanden[row.id] == true%}
+									{{fragen_zahl[row.id]}}
+								{% else %}
+								 0
+								{% endif %}
+							</td>
+						</tr>
+					{% endfor %}
 
-	</table>
+					</table>
+				</div>
+				<p><a href="{{ path('Responsa_new') }}"><span class="glyphicon glyphicon-plus-sign"> Umfrage hinzufügen</a></p>
+	</div>
 </div>
-  <p><a href="{{ path('Responsa_new') }}">Hinzufügen</a></p>
 <style>
 .warpper{
 	max-width: 90%;

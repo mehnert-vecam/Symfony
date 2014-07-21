@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 17. Jul 2014 um 17:47
+-- Erstellungszeit: 21. Jul 2014 um 09:27
 -- Server Version: 5.6.17
 -- PHP-Version: 5.5.12
 
@@ -35,14 +35,14 @@ CREATE TABLE IF NOT EXISTS `resantwort` (
   `auswertungsbereich` text,
   `f_type` int(11) NOT NULL,
   `datum` date NOT NULL,
-  `feld1` int(11) DEFAULT NULL,
-  `feld2` int(11) DEFAULT NULL,
-  `feld3` int(11) DEFAULT NULL,
-  `feld4` int(11) DEFAULT NULL,
-  `feld5` int(11) DEFAULT NULL,
+  `feld1` varchar(255) DEFAULT NULL,
+  `feld2` varchar(255) DEFAULT NULL,
+  `feld3` varchar(255) DEFAULT NULL,
+  `feld4` varchar(255) DEFAULT NULL,
+  `feld5` varchar(255) DEFAULT NULL,
   `token` varchar(255) NOT NULL DEFAULT 'asd',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
 
 --
 -- Daten für Tabelle `resantwort`
@@ -64,7 +64,11 @@ INSERT INTO `resantwort` (`id`, `f_id`, `u_id`, `antwort`, `auswertungsbereich`,
 (37, 1, 1, 'Test', NULL, 1, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'ca8cfed8324a33606e5f6b6252e50aee'),
 (38, 2, 1, 'Test', NULL, 1, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'ca8cfed8324a33606e5f6b6252e50aee'),
 (39, 3, 1, '4', 'AB 1', 0, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'ca8cfed8324a33606e5f6b6252e50aee'),
-(40, 4, 1, '4', 'Test', 0, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'ca8cfed8324a33606e5f6b6252e50aee');
+(40, 4, 1, '4', 'Test', 0, '2014-07-17', NULL, NULL, NULL, NULL, NULL, 'ca8cfed8324a33606e5f6b6252e50aee'),
+(41, 1, 1, 'Test', NULL, 1, '2014-07-18', NULL, NULL, NULL, NULL, NULL, '8fe5ab1afc2c507db3ed85d960edb51b'),
+(42, 2, 1, 'Test', NULL, 1, '2014-07-18', NULL, NULL, NULL, NULL, NULL, '8fe5ab1afc2c507db3ed85d960edb51b'),
+(43, 3, 1, '1', 'AB 1', 0, '2014-07-18', NULL, NULL, NULL, NULL, NULL, '8fe5ab1afc2c507db3ed85d960edb51b'),
+(44, 4, 1, '1', 'Test', 0, '2014-07-18', NULL, NULL, NULL, NULL, NULL, '8fe5ab1afc2c507db3ed85d960edb51b');
 
 -- --------------------------------------------------------
 
@@ -81,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `resfrage` (
   `auswertungsbereich` varchar(100) DEFAULT '-',
   `type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Daten für Tabelle `resfrage`
@@ -92,8 +96,6 @@ INSERT INTO `resfrage` (`id`, `u_id`, `frage`, `prio`, `auswertungsbereich`, `ty
 (2, 1, 'Mögen Sie diese Frage?', 12, NULL, 1),
 (3, 1, 'Ich bin eine Frage!', 9, 'AB 1', 0),
 (4, 1, 'Das ist eine Aussage', 9, 'Test', 0),
-(5, 2, 'Frage zu Umfrage 2', 1, NULL, 0),
-(6, 2, 'Frage zu Umfrage 2 nochmal', 12, NULL, 1),
 (7, 11, 'Mögen sie diese umfrage??', 1, NULL, 0);
 
 -- --------------------------------------------------------
@@ -126,14 +128,14 @@ CREATE TABLE IF NOT EXISTS `resumfrage` (
   `bild` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Daten für Tabelle `resumfrage`
 --
 
 INSERT INTO `resumfrage` (`id`, `danketext`, `name`, `feld1`, `feld2`, `feld3`, `feld4`, `feld5`, `auswertungsbereich1`, `auswertungsbereich2`, `auswertungsbereich3`, `auswertungsbereich4`, `auswertungsbereich5`, `einleitungstext`, `teilnehmerzahl`, `kontakt_id`, `farbe1`, `farbe2`, `farbe4`, `bild`) VALUES
-(1, 'Vielen Dank, dass SIe an dieser Testumfrage teilgenommen haben!\r\n\r\nIhre Teilnahme wird uns dabei helfen die Umfrage-Software weiter zu verbessern.', 'Testumfrage1', 'Bearbeitender', 'Mitarbeiter', 'Moderator', 'ServiceID', NULL, 'Test', NULL, 'AB 1', 'AB 2', NULL, 'Dies ist ein Eileitungstext. Viel Spaß mit der Umfrage! :)', 0, 10000, NULL, NULL, NULL, NULL),
+(1, 'Vielen Dank, dass SIe an dieser Testumfrage teilgenommen haben!\r\n\r\nIhre Teilnahme wird uns dabei helfen die Umfrage-Software weiter zu verbessern.', 'Testumfrage1', 'Bearbeitender', 'Mitarbeiter', 'Moderator', 'ServiceID', NULL, 'Test', NULL, 'AB 1', 'AB 2', NULL, 'Dies ist ein Eileitungstext. Viel Spaß mit der Umfrage! :)', 1, 10000, NULL, NULL, NULL, NULL),
 (11, NULL, 'Testumfrage2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Testumfrage2', 0, 10000, NULL, NULL, NULL, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

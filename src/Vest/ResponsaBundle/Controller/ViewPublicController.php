@@ -18,10 +18,12 @@ class ViewPublicController extends Controller
         
 				$u_name = $umfrage->getName();
 				$token = $session->get('token');
+					print_r($token);
 				//print_r($token.'--');
 				if($token == ''){
 					$tmp = time();
-					$token = md5($tmp.$u_id);
+					$tmp = $tmp.$u_id;
+					$token = md5($tmp);
 					$session->set('token',$token);
 				}else{
 					$repository_antwort = $this->getDoctrine()->getRepository('VestResponsaBundle:Resantwort');// Baut Doctrine auf

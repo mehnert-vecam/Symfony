@@ -530,4 +530,116 @@ class Resumfrage
     {
         return $this->danketext;
     }
+    /**
+     * @var string
+     */
+    private $farbe1;
+
+    /**
+     * @var string
+     */
+    private $farbe2;
+
+    /**
+     * @var string
+     */
+    private $farbe4;
+
+    /**
+     * @var string
+     */
+    private $bild;
+
+
+    /**
+     * Set farbe1
+     *
+     * @param string $farbe1
+     * @return Resumfrage
+     */
+    public function setFarbe1($farbe1)
+    {
+        $this->farbe1 = $farbe1;
+
+        return $this;
+    }
+
+    /**
+     * Get farbe1
+     *
+     * @return string 
+     */
+    public function getFarbe1()
+    {
+        return $this->farbe1;
+    }
+
+    /**
+     * Set farbe2
+     *
+     * @param string $farbe2
+     * @return Resumfrage
+     */
+    public function setFarbe2($farbe2)
+    {
+        $this->farbe2 = $farbe2;
+
+        return $this;
+    }
+
+    /**
+     * Get farbe2
+     *
+     * @return string 
+     */
+    public function getFarbe2()
+    {
+        return $this->farbe2;
+    }
+
+    /**
+     * Set farbe4
+     *
+     * @param string $farbe4
+     * @return Resumfrage
+     */
+    public function setFarbe4($farbe4)
+    {
+        $this->farbe4 = $farbe4;
+
+        return $this;
+    }
+
+    /**
+     * Get farbe4
+     *
+     * @return string 
+     */
+    public function getFarbe4()
+    {
+        return $this->farbe4;
+    }
+
+    /**
+     * Set bild
+     *
+     * @param string $bild
+     * @return Resumfrage
+     */
+    public function setBild($bild)
+    {
+        $this->bild = $bild;
+
+        return $this;
+    }
+
+    /**
+     * Get bild
+     *
+     * @return string 
+     */
+    public function getBild()
+    {
+        return $this->bild;
+    }
 }

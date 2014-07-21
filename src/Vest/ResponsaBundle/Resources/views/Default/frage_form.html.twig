@@ -1,6 +1,23 @@
 {% extends "VestSharedBundle:turbulence:base.html.twig" %}
 {% block contentinner %}
 
+<script >
+
+
+$(document).ready(function(){
+	$( "#form_type" ).change(function() {
+		if(
+			$("#form_type option:selected").val() == 1
+		){
+			$( "#form_auswertungsbereich" ).attr("disabled",true);
+			$( "#form_auswertungsbereich" ).val(0);
+		}else{
+			$( "#form_auswertungsbereich" ).attr("disabled",false);
+		}
+	});
+});
+</script>
+
 <div class="panel panel-default">
 	<div class="panel-heading">
 		{% if new == true%}
@@ -25,14 +42,14 @@
 							{{ form_widget(form.prio) }}
 					</div>
 					<div class="task_wrapper">
-							{{ form_label(form.auswertungsbereich, 'Auswertungsbereich') }}   <br />
-							{{ form_errors(form.auswertungsbereich) }}
-							{{ form_widget(form.auswertungsbereich) }}
-					</div>
-					<div class="task_wrapper">
 							{{ form_label(form.type, 'Fragentyp') }}   <br />
 							{{ form_errors(form.type) }}
 							{{ form_widget(form.type) }}
+					</div>
+					<div class="task_wrapper">
+							{{ form_label(form.auswertungsbereich, 'Auswertungsbereich') }}   <br />
+							{{ form_errors(form.auswertungsbereich) }}
+							{{ form_widget(form.auswertungsbereich) }}
 					</div>
 
 
