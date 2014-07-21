@@ -1,10 +1,10 @@
 <?php namespace Vest\ResponsaBundle\Controller;
 
-use Vest\ResponsaBundle\Entity\Resumfrageerzeuger; 
-use Vest\ResponsaBundle\Entity\Resumfrage;     // Zeigt dem Controller, wo er die Entit�t findet (verwendet in Zeilte 17)
-use Vest\ResponsaBundle\Entity\resfragenliste;
-use Vest\ResponsaBundle\Entity\Resantwort;
-use Vest\ResponsaBundle\Entity\Resfrage;     // Zeigt dem Controller, wo er die Entit�t findet (verwendet in Zeilte 17)
+use Vest\ResponsaBundle\Entity\ResUmfrageerzeuger; 
+use Vest\ResponsaBundle\Entity\ResUmfrage;     // Zeigt dem Controller, wo er die Entit�t findet (verwendet in Zeilte 17)
+use Vest\ResponsaBundle\Entity\ResFragenliste;
+use Vest\ResponsaBundle\Entity\ResAntwort;
+use Vest\ResponsaBundle\Entity\ResFrage;     // Zeigt dem Controller, wo er die Entit�t findet (verwendet in Zeilte 17)
 use Symfony\Component\HttpFoundation\Request;   // Zeigt dem Controller wo er die Funktionen f�r Requests findet.
 use Symfony\Component\Validator\Constraints\DateTime;              
 							
@@ -12,13 +12,13 @@ class ViewController extends BaseController
 { 
 	public function ShowAction($u_id, $feld1, $feld2, $feld3, $feld4, $feld5){
 	
-		$umfrage = new Resumfrage(); // legt eine neue Person an 
-				$repository_umfrage = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
+		$umfrage = new ResUmfrage(); // legt eine neue Person an 
+				$repository_umfrage = $this->getDoctrine()->getRepository('VestResponsaBundle:ResUmfrage');// Baut Doctrine auf
 				$umfrage = $repository_umfrage->findOneBy(array('id' => $u_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
         
 				$u_name = $umfrage->getName();
 				
-				$frageliste = new resfragenliste();
+				$frageliste = new ResFragenliste();
 				$frageliste->setU_Id($u_id);
 				$frageliste->setU_Name($umfrage->getName());
 				$frageliste->setFeld1($feld1);
@@ -26,7 +26,7 @@ class ViewController extends BaseController
 				$frageliste->setFeld3($feld3);
 				$frageliste->setFeld4($feld4);
 				$frageliste->setFeld5($feld5);
-				$repository_fragen = $this->getDoctrine()->getRepository('VestResponsaBundle:Resfrage');// Baut Doctrine auf
+				$repository_fragen = $this->getDoctrine()->getRepository('VestResponsaBundle:ResFrage');// Baut Doctrine auf
 				$f_fragen = $repository_fragen->findBy(array('uId' => $u_id, 'type' => 1));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
      				
 				$frage_tmp = array();
@@ -43,7 +43,7 @@ class ViewController extends BaseController
 				
 				
 				
-				$repository_fragen = $this->getDoctrine()->getRepository('VestResponsaBundle:Resfrage');// Baut Doctrine auf
+				$repository_fragen = $this->getDoctrine()->getRepository('VestResponsaBundle:ResFrage');// Baut Doctrine auf
 				$s_fragen = $repository_fragen->findBy(array('uId' => $u_id, 'type' => 0));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
      				
 				$frage_tmp = array();
@@ -101,13 +101,13 @@ class ViewController extends BaseController
 	}
 	
 	public function ErhaltenAction(Request $request, $u_id, $feld1, $feld2, $feld3, $feld4, $feld5){
-			$umfrage = new Resumfrage(); // legt eine neue Person an 
-				$repository_umfrage = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
+			$umfrage = new ResUmfrage(); // legt eine neue Person an 
+				$repository_umfrage = $this->getDoctrine()->getRepository('VestResponsaBundle:ResUmfrage');// Baut Doctrine auf
 				$umfrage = $repository_umfrage->findOneBy(array('id' => $u_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
         
 				$u_name = $umfrage->getName();
 				
-				$frageliste = new resfragenliste();
+				$frageliste = new ResFragenliste();
 				$frageliste->setU_Id($u_id);
 				$frageliste->setU_Name($umfrage->getName());
 				$frageliste->setFeld1($feld1);
@@ -115,7 +115,7 @@ class ViewController extends BaseController
 				$frageliste->setFeld3($feld3);
 				$frageliste->setFeld4($feld4);
 				$frageliste->setFeld5($feld5);
-				$repository_fragen = $this->getDoctrine()->getRepository('VestResponsaBundle:Resfrage');// Baut Doctrine auf
+				$repository_fragen = $this->getDoctrine()->getRepository('VestResponsaBundle:ResFrage');// Baut Doctrine auf
 				$f_fragen = $repository_fragen->findBy(array('uId' => $u_id, 'type' => 1));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
      				
 				$frage_tmp = array();
@@ -132,7 +132,7 @@ class ViewController extends BaseController
 				
 				
 				
-				$repository_fragen = $this->getDoctrine()->getRepository('VestResponsaBundle:Resfrage');// Baut Doctrine auf
+				$repository_fragen = $this->getDoctrine()->getRepository('VestResponsaBundle:ResFrage');// Baut Doctrine auf
 				$s_fragen = $repository_fragen->findBy(array('uId' => $u_id, 'type' => 0));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
      				
 				$frage_tmp = array();
@@ -183,12 +183,12 @@ class ViewController extends BaseController
 				if ($form->isValid()) {
 					$count = 0;
 					foreach($frageliste->getFAntwort() as $aw){
-						$ant = new Resantwort();
+						$ant = new ResAntwort();
 						$ant->setAntwort($aw);
 						$f_id = $f_f_id_tmp[$count];
 						$ant->setFId($f_id);
 						
-						$repository_frage = $this->getDoctrine()->getRepository('VestResponsaBundle:Resfrage');// Baut Doctrine auf
+						$repository_frage = $this->getDoctrine()->getRepository('VestResponsaBundle:ResFrage');// Baut Doctrine auf
 						$frage = $repository_frage->findOneBy(array('id' => $f_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
         
 						
@@ -205,12 +205,12 @@ class ViewController extends BaseController
 					
 					$count = 0;
 					foreach($frageliste->getSAntwort() as $aw){
-						$ant = new Resantwort();
+						$ant = new ResAntwort();
 						$ant->setAntwort($aw);
 						$f_id = $s_f_id_tmp[$count];
 						$ant->setFId($f_id);
 						
-						$repository_frage = $this->getDoctrine()->getRepository('VestResponsaBundle:Resfrage');// Baut Doctrine auf
+						$repository_frage = $this->getDoctrine()->getRepository('VestResponsaBundle:ResFrage');// Baut Doctrine auf
 						$frage = $repository_frage->findOneBy(array('id' => $f_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
         
 						
@@ -237,7 +237,7 @@ class ViewController extends BaseController
 	
 	public function GenerateAction(){
 	
-		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
+		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:ResUmfrage');// Baut Doctrine auf
 		$umfragen = $repository->findBy(array());  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 		$u_id = array();
 		foreach($umfragen as $umfrage){
@@ -246,7 +246,7 @@ class ViewController extends BaseController
 			$u_id[$id] = $name;
 		}	
 	
-		$umfrageerzeuger = new resumfrageerzeuger();
+		$umfrageerzeuger = new ResUmfrageerzeuger();
 		$form = $this->createFormBuilder($umfrageerzeuger) // Formular wird auf Basis der Person erstellt   
 					->setAction($this->generateUrl('Responsa_generate_erhalten'))     //nimmt die URL aus der routing.yml 
 					->add('u_id', 'choice', array('choices'   =>$u_id))
@@ -270,7 +270,7 @@ class ViewController extends BaseController
 	
 		public function GenerateErhahltenAction(Request $request){
 	
-		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
+		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:ResUmfrage');// Baut Doctrine auf
 		$umfragen = $repository->findBy(array());  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 		$u_id = array();
 		foreach($umfragen as $umfrage){
@@ -279,7 +279,7 @@ class ViewController extends BaseController
 			$u_id[$id] = $name;
 		}	
 	
-		$umfrageerzeuger = new resumfrageerzeuger();
+		$umfrageerzeuger = new ResUmfrageerzeuger();
 		$form = $this->createFormBuilder($umfrageerzeuger) // Formular wird auf Basis der Person erstellt   
 					->setAction($this->generateUrl('Responsa_generate_erhalten'))     //nimmt die URL aus der routing.yml 
 					->add('u_id', 'choice', array('choices'   =>$u_id))

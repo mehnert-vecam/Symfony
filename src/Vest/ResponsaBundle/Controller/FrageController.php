@@ -1,7 +1,7 @@
 <?php namespace Vest\ResponsaBundle\Controller;
 
-use Vest\ResponsaBundle\Entity\Resumfrage;     // Zeigt dem Controller, wo er die Entität findet (verwendet in Zeilte 17)
-use Vest\ResponsaBundle\Entity\Resfrage;     // Zeigt dem Controller, wo er die Entität findet (verwendet in Zeilte 17)
+use Vest\ResponsaBundle\Entity\ResUmfrage;     // Zeigt dem Controller, wo er die Entität findet (verwendet in Zeilte 17)
+use Vest\ResponsaBundle\Entity\ResFrage;     // Zeigt dem Controller, wo er die Entität findet (verwendet in Zeilte 17)
 use Symfony\Component\HttpFoundation\Request;   // Zeigt dem Controller wo er die Funktionen für Requests findet.
               
 class FrageController extends BaseController
@@ -9,7 +9,7 @@ class FrageController extends BaseController
 	public function OverviewAction($u_id){
 		$leer = false;
 		$uebergabe = array();
-		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:Resfrage');// Baut Doctrine auf
+		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:ResFrage');// Baut Doctrine auf
 		$fragen = $repository->findBy(array('uId' => $u_id),array('prio' => 'ASC'));  //holt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.
 		if($fragen == null){
 			$leer = true;
@@ -28,7 +28,7 @@ class FrageController extends BaseController
 				}
 					
 		}
-		$repository_umfrage = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
+		$repository_umfrage = $this->getDoctrine()->getRepository('VestResponsaBundle:ResUmfrage');// Baut Doctrine auf
 		$umfragen = $repository_umfrage->findoneBy(array('id' => $u_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 		if($umfragen){
 					$u_name = $umfragen->getName();
@@ -50,15 +50,15 @@ class FrageController extends BaseController
 	
 	
 	public function NewAction($u_id = 0, $id = 0){
-				$frage = new Resfrage(); // legt eine neue Person an 
+				$frage = new ResFrage(); // legt eine neue Person an 
 				if($id > 0){ // Wenn eine ID übergeben wurde, wird dir passende Umfrage aus der DB gehohlt, um sie zu bearbeiten.
-					$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:Resfrage');// Baut Doctrine auf
+					$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:ResFrage');// Baut Doctrine auf
 					$frage = $repository->findOneBy(array('id' => $id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
         	$new = false;
 				}else{
 					$new = true;
 				}
-				$repo = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
+				$repo = $this->getDoctrine()->getRepository('VestResponsaBundle:ResUmfrage');// Baut Doctrine auf
 				$umfrage = $repo->findOneBy(array('id' => $u_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 				$ab = array();
 				if($umfrage){
@@ -98,13 +98,13 @@ class FrageController extends BaseController
 	
 	public function SaveAction(Request $request, $u_id, $id){
 				if($id > 0){ // Wenn eine ID übergeben wurde, wird dir passende Umfrage aus der DB gehohlt, um sie zu bearbeiten.
-					$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:Resfrage');// Baut Doctrine auf
+					$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:ResFrage');// Baut Doctrine auf
 					$frage = $repository->findOneBy(array('id' => $id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
         }else{
-					$frage = new Resfrage(); // legt eine neue Person an 
+					$frage = new ResFrage(); // legt eine neue Person an 
 				}	
 				
-				$repo = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
+				$repo = $this->getDoctrine()->getRepository('VestResponsaBundle:ResUmfrage');// Baut Doctrine auf
 				$umfrage = $repo->findOneBy(array('id' => $u_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 				$ab = array();
 				if($tmp = $umfrage->getAuswertungsbereich1()){
@@ -146,7 +146,7 @@ class FrageController extends BaseController
 	public function DeleteAction($f_id, $u_id){
 				$em = $this->getDoctrine()->getManager();
 				$query = $em->createQuery(
-						"DELETE FROM VestResponsaBundle:Resfrage f 
+						"DELETE FROM VestResponsaBundle:ResFrage f 
 						WHERE f.id =".$f_id
 				);
 				$result = $query->getResult();

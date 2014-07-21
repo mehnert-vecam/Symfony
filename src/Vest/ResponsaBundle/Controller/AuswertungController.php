@@ -1,19 +1,19 @@
 <?php namespace Vest\ResponsaBundle\Controller;
 
-use Vest\ResponsaBundle\Entity\Resumfrage;     // Zeigt dem Controller, wo er die Entit�t findet (verwendet in Zeilte 17)
-use Vest\ResponsaBundle\Entity\Resfrage;     // Zeigt dem Controller, wo er die Entit�t findet (verwendet in Zeilte 17)
-use Vest\ResponsaBundle\Entity\Resantwort;
+use Vest\ResponsaBundle\Entity\ResUmfrage;     // Zeigt dem Controller, wo er die Entit�t findet (verwendet in Zeilte 17)
+use Vest\ResponsaBundle\Entity\ResFrage;     // Zeigt dem Controller, wo er die Entit�t findet (verwendet in Zeilte 17)
+use Vest\ResponsaBundle\Entity\ResAntwort;
              
 class AuswertungController extends BaseController
 { 
 	public function OverviewAction(){
 		$session = $this->get("session");
 		$kontakt_id = $session->get('kontakt_id');
-		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:Resantwort');// Baut Doctrine auf
+		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:ResAntwort');// Baut Doctrine auf
 		$antworten = $repository->findBy(array());  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 	
 			//foreach($antworten as $antwort){}
-		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
+		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:ResUmfrage');// Baut Doctrine auf
 		$umfragen = $repository->findBy(array('kontaktId' => $kontakt_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 	
 			$auswertungsbereiche = array();
@@ -46,7 +46,7 @@ class AuswertungController extends BaseController
 				//echo print_r(' ---- '.$ab.' ---- ');
 				$query = $em->createQuery(
 						"SELECT a.antwort,COUNT(a.antwort) 
-						FROM VestResponsaBundle:resantwort a
+						FROM VestResponsaBundle:ResAntwort a
 						WHERE a.auswertungsbereich ='".$ab."' AND a.fType = 0
 						GROUP BY a.antwort"
 				);

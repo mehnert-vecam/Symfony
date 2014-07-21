@@ -1,7 +1,7 @@
 <?php
 namespace Vest\ResponsaBundle\Entity;
 
-class resfragenliste{
+class ResFragenliste{
     protected $f_frage = array();
     protected $f_antwort = array();
     protected $s_frage = array();

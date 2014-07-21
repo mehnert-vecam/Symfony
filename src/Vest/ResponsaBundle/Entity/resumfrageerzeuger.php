@@ -1,7 +1,7 @@
 <?php
 namespace Vest\ResponsaBundle\Entity;
 
-class Resumfrageerzeuger{
+class ResUmfrageerzeuger{
     protected $u_id;
     protected $feld1;
     protected $feld2;

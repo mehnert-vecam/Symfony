@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Session\Storage\PhpBridgeSessionStorage;
 use Vest\SharedBundle\Security\User\User;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Vest\SharedBundle\Entity\AddrPersonen;
+use Vest\SharedBundle\Entity\AddrKontakte;
 use Vest\SharedBundle\Entity\RbacGruppenRbacRollen;
 use Vest\SharedBundle\Entity\RbacRollenAddrPersonen;
 use Vest\SharedBundle\Entity\RbacGruppenAddrPersonen;
@@ -249,7 +250,12 @@ class BaseController extends Controller
         $session=$this->get("session");
         $request = $this->container->get('request');
         $this->user= new User2Controller($this->getDoctrine(),$session);
-
+				//print_r($session);
+			
+				$repository_kontakt = $this->getDoctrine()->getRepository('VestResponsaBundle:AddrKontakte');// Baut Doctrine auf
+				$kontakt = $repository_kontakt->findBy(array('kontaktId' => $session->get('kontakt_id')));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
+    
+				
         if(!$this->user->authBySession($session->get('id'))) {
 
             $user=$request->get("personEmail");
@@ -259,7 +265,8 @@ class BaseController extends Controller
                 if(!$id=$this->user->authByCredentials($user,$pass)) {
                     $this->LoginAction(); // TODO: ???
                 } else {
-                    $templateParameter=array_merge(array('navigation'=>$this->navigation,'user'=>$this->user->getInfo()),$data);
+                    $templateParameter=array_merge(array('navigation'=>$this->navigation,
+										'user'=>$this->user->getInfo(), 'kontakt' =>$kontakt[0]),$data);
                     return $this->render($templateName,$templateParameter);
                 }
             } else {
@@ -267,7 +274,7 @@ class BaseController extends Controller
             }
 
         } else {
-            $templateParameter=array_merge(array('navigation'=>$this->navigation,'user'=>$this->user->getInfo()),$data);
+            $templateParameter=array_merge(array('navigation'=>$this->navigation,'user'=>$this->user->getInfo(), 'kontakt' =>$kontakt[0]),$data);
             return $this->render($templateName,$templateParameter);
         }
         return true;

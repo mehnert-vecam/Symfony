@@ -5,64 +5,46 @@ namespace Vest\ResponsaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Resfrage
- *
- * @ORM\Table(name="resfrage")
- * @ORM\Entity
+ * ResFrage
  */
-class Resfrage
+class ResFrage
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="u_id", type="integer", nullable=false)
      */
     private $uId;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="frage", type="text", nullable=false)
      */
     private $frage;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="prio", type="integer", nullable=false)
      */
     private $prio;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="auswertungsbereich", type="string", length=100, nullable=false)
      */
     private $auswertungsbereich;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="type", type="integer", nullable=false)
      */
     private $type;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-
 
 
     /**
      * Set uId
      *
      * @param integer $uId
-     * @return Resfrage
+     * @return ResFrage
      */
     public function setUId($uId)
     {
@@ -85,7 +67,7 @@ class Resfrage
      * Set frage
      *
      * @param string $frage
-     * @return Resfrage
+     * @return ResFrage
      */
     public function setFrage($frage)
     {
@@ -108,7 +90,7 @@ class Resfrage
      * Set prio
      *
      * @param integer $prio
-     * @return Resfrage
+     * @return ResFrage
      */
     public function setPrio($prio)
     {
@@ -131,7 +113,7 @@ class Resfrage
      * Set auswertungsbereich
      *
      * @param string $auswertungsbereich
-     * @return Resfrage
+     * @return ResFrage
      */
     public function setAuswertungsbereich($auswertungsbereich)
     {
@@ -154,7 +136,7 @@ class Resfrage
      * Set type
      *
      * @param integer $type
-     * @return Resfrage
+     * @return ResFrage
      */
     public function setType($type)
     {

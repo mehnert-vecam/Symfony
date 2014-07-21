@@ -5,106 +5,139 @@ namespace Vest\ResponsaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Resumfrage
- *
- * @ORM\Table(name="resumfrage", uniqueConstraints={@ORM\UniqueConstraint(name="name", columns={"name"})})
- * @ORM\Entity
+ * ResUmfrage
  */
-class Resumfrage
+class ResUmfrage
 {
     /**
      * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=100, nullable=false)
+     */
+    private $danketext;
+
+    /**
+     * @var string
      */
     private $name;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="feld1", type="string", length=100, nullable=true)
      */
     private $feld1;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="feld2", type="string", length=100, nullable=true)
      */
     private $feld2;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="feld3", type="string", length=100, nullable=true)
      */
     private $feld3;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="feld4", type="string", length=100, nullable=true)
      */
     private $feld4;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="feld5", type="string", length=100, nullable=true)
      */
     private $feld5;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="auswertungsbereich1", type="string", length=100, nullable=true)
      */
     private $auswertungsbereich1;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="auswertungsbereich2", type="string", length=100, nullable=true)
      */
     private $auswertungsbereich2;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="auswertungsbereich3", type="string", length=100, nullable=true)
      */
     private $auswertungsbereich3;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="auswertungsbereich4", type="string", length=100, nullable=true)
      */
     private $auswertungsbereich4;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="auswertungsbereich5", type="string", length=100, nullable=true)
      */
     private $auswertungsbereich5;
 
     /**
+     * @var string
+     */
+    private $einleitungstext;
+
+    /**
      * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $teilnehmerzahl;
+
+    /**
+     * @var integer
+     */
+    private $kontaktId;
+
+    /**
+     * @var string
+     */
+    private $farbe1;
+
+    /**
+     * @var string
+     */
+    private $farbe2;
+
+    /**
+     * @var string
+     */
+    private $farbe4;
+
+    /**
+     * @var string
+     */
+    private $bild;
+
+    /**
+     * @var integer
      */
     private $id;
 
 
+    /**
+     * Set danketext
+     *
+     * @param string $danketext
+     * @return ResUmfrage
+     */
+    public function setDanketext($danketext)
+    {
+        $this->danketext = $danketext;
+
+        return $this;
+    }
+
+    /**
+     * Get danketext
+     *
+     * @return string 
+     */
+    public function getDanketext()
+    {
+        return $this->danketext;
+    }
 
     /**
      * Set name
      *
      * @param string $name
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setName($name)
     {
@@ -127,7 +160,7 @@ class Resumfrage
      * Set feld1
      *
      * @param string $feld1
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setFeld1($feld1)
     {
@@ -150,7 +183,7 @@ class Resumfrage
      * Set feld2
      *
      * @param string $feld2
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setFeld2($feld2)
     {
@@ -173,7 +206,7 @@ class Resumfrage
      * Set feld3
      *
      * @param string $feld3
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setFeld3($feld3)
     {
@@ -196,7 +229,7 @@ class Resumfrage
      * Set feld4
      *
      * @param string $feld4
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setFeld4($feld4)
     {
@@ -219,7 +252,7 @@ class Resumfrage
      * Set feld5
      *
      * @param string $feld5
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setFeld5($feld5)
     {
@@ -242,7 +275,7 @@ class Resumfrage
      * Set auswertungsbereich1
      *
      * @param string $auswertungsbereich1
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setAuswertungsbereich1($auswertungsbereich1)
     {
@@ -265,7 +298,7 @@ class Resumfrage
      * Set auswertungsbereich2
      *
      * @param string $auswertungsbereich2
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setAuswertungsbereich2($auswertungsbereich2)
     {
@@ -288,7 +321,7 @@ class Resumfrage
      * Set auswertungsbereich3
      *
      * @param string $auswertungsbereich3
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setAuswertungsbereich3($auswertungsbereich3)
     {
@@ -311,7 +344,7 @@ class Resumfrage
      * Set auswertungsbereich4
      *
      * @param string $auswertungsbereich4
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setAuswertungsbereich4($auswertungsbereich4)
     {
@@ -334,7 +367,7 @@ class Resumfrage
      * Set auswertungsbereich5
      *
      * @param string $auswertungsbereich5
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setAuswertungsbereich5($auswertungsbereich5)
     {
@@ -354,30 +387,10 @@ class Resumfrage
     }
 
     /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-    /**
-     * @var string
-     */
-    private $einleitungstext;
-
-    /**
-     * @var integer
-     */
-    private $teilnehmertzahl;
-
-
-    /**
      * Set einleitungstext
      *
      * @param string $einleitungstext
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setEinleitungstext($einleitungstext)
     {
@@ -397,38 +410,10 @@ class Resumfrage
     }
 
     /**
-     * Set teilnehmertzahl
-     *
-     * @param integer $teilnehmertzahl
-     * @return Resumfrage
-     */
-    public function setTeilnehmertzahl($teilnehmertzahl)
-    {
-        $this->teilnehmertzahl = $teilnehmertzahl;
-
-        return $this;
-    }
-
-    /**
-     * Get teilnehmertzahl
-     *
-     * @return integer 
-     */
-    public function getTeilnehmertzahl()
-    {
-        return $this->teilnehmertzahl;
-    }
-    /**
-     * @var integer
-     */
-    private $teilnehmerzahl;
-
-
-    /**
      * Set teilnehmerzahl
      *
      * @param integer $teilnehmerzahl
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setTeilnehmerzahl($teilnehmerzahl)
     {
@@ -446,45 +431,12 @@ class Resumfrage
     {
         return $this->teilnehmerzahl;
     }
-    /**
-     * @var integer
-     */
-    private $ersteller;
-
-
-    /**
-     * Set ersteller
-     *
-     * @param integer $ersteller
-     * @return Resumfrage
-     */
-    public function setErsteller($ersteller)
-    {
-        $this->ersteller = $ersteller;
-
-        return $this;
-    }
-
-    /**
-     * Get ersteller
-     *
-     * @return integer 
-     */
-    public function getErsteller()
-    {
-        return $this->ersteller;
-    }
-    /**
-     * @var integer
-     */
-    private $kontaktId;
-
 
     /**
      * Set kontaktId
      *
      * @param integer $kontaktId
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setKontaktId($kontaktId)
     {
@@ -502,60 +454,12 @@ class Resumfrage
     {
         return $this->kontaktId;
     }
-    /**
-     * @var string
-     */
-    private $danketext;
-
-
-    /**
-     * Set danketext
-     *
-     * @param string $danketext
-     * @return Resumfrage
-     */
-    public function setDanketext($danketext)
-    {
-        $this->danketext = $danketext;
-
-        return $this;
-    }
-
-    /**
-     * Get danketext
-     *
-     * @return string 
-     */
-    public function getDanketext()
-    {
-        return $this->danketext;
-    }
-    /**
-     * @var string
-     */
-    private $farbe1;
-
-    /**
-     * @var string
-     */
-    private $farbe2;
-
-    /**
-     * @var string
-     */
-    private $farbe4;
-
-    /**
-     * @var string
-     */
-    private $bild;
-
 
     /**
      * Set farbe1
      *
      * @param string $farbe1
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setFarbe1($farbe1)
     {
@@ -578,7 +482,7 @@ class Resumfrage
      * Set farbe2
      *
      * @param string $farbe2
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setFarbe2($farbe2)
     {
@@ -601,7 +505,7 @@ class Resumfrage
      * Set farbe4
      *
      * @param string $farbe4
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setFarbe4($farbe4)
     {
@@ -624,7 +528,7 @@ class Resumfrage
      * Set bild
      *
      * @param string $bild
-     * @return Resumfrage
+     * @return ResUmfrage
      */
     public function setBild($bild)
     {
@@ -641,5 +545,15 @@ class Resumfrage
     public function getBild()
     {
         return $this->bild;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }

@@ -1,7 +1,7 @@
 <?php namespace Vest\ResponsaBundle\Controller;
 
-use Vest\ResponsaBundle\Entity\Resumfrage;     // Zeigt dem Controller, wo er die Entit�t findet (verwendet in Zeilte 17)
-use Vest\ResponsaBundle\Entity\Resfrage;     // Zeigt dem Controller, wo er die Entit�t findet (verwendet in Zeilte 17)
+use Vest\ResponsaBundle\Entity\ResUmfrage;     // Zeigt dem Controller, wo er die Entit�t findet (verwendet in Zeilte 17)
+use Vest\ResponsaBundle\Entity\ResFrage;     // Zeigt dem Controller, wo er die Entit�t findet (verwendet in Zeilte 17)
 use Symfony\Component\HttpFoundation\Request;   // Zeigt dem Controller wo er die Funktionen f�r Requests findet.
               
 class AntwortController extends BaseController
@@ -10,7 +10,7 @@ class AntwortController extends BaseController
 		$umfrage = false;
 		$leer = false;
 		$uebergabe = array();
-		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:Resantwort');// Baut Doctrine auf
+		$repository = $this->getDoctrine()->getRepository('VestResponsaBundle:ResAntwort');// Baut Doctrine auf
 		$antworten = $repository->findBy(array('fId' => $f_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 		if($antworten == null){
 			$leer = true;
@@ -27,7 +27,7 @@ class AntwortController extends BaseController
 				$uebergabe[] = $tmp;
 				}
 		}
-		$repository_frage = $this->getDoctrine()->getRepository('VestResponsaBundle:Resfrage');// Baut Doctrine auf
+		$repository_frage = $this->getDoctrine()->getRepository('VestResponsaBundle:ResFrage');// Baut Doctrine auf
 		$frage = $repository_frage->findOneBy(array('id' => $f_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 
 		$f_name = $frage->getfrage();
@@ -41,11 +41,11 @@ class AntwortController extends BaseController
 		$umfrage = true;
 		$leer = false;
 		$uebergabe = array();
-		$repository_umfrage = $this->getDoctrine()->getRepository('VestResponsaBundle:Resfrage');// Baut Doctrine auf
+		$repository_umfrage = $this->getDoctrine()->getRepository('VestResponsaBundle:ResFrage');// Baut Doctrine auf
 		$fragen = $repository_umfrage->findBy(array('uId' => $u_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 		
 		foreach ($fragen as $frage){
-			$repository_frage = $this->getDoctrine()->getRepository('VestResponsaBundle:Resantwort');// Baut Doctrine auf
+			$repository_frage = $this->getDoctrine()->getRepository('VestResponsaBundle:ResAntwort');// Baut Doctrine auf
 			$antworten = $repository_frage->findBy(array('fId' => $frage->getId()));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 		
 			foreach($antworten as $antwort){
@@ -60,7 +60,7 @@ class AntwortController extends BaseController
 			}
 		}
 		
-		$repository_umfrage = $this->getDoctrine()->getRepository('VestResponsaBundle:Resumfrage');// Baut Doctrine auf
+		$repository_umfrage = $this->getDoctrine()->getRepository('VestResponsaBundle:ResUmfrage');// Baut Doctrine auf
 		$umfrage = $repository_umfrage->findOneBy(array('id' => $u_id));  //hohlt das passende Objekt aus der Doctrine. Wichtig, damit man danach updaten kann.    
 
 		$f_name = $umfrage->getName();

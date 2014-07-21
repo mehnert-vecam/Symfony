@@ -1,6 +1,6 @@
 <?php namespace Vest\ResponsaBundle\Controller;
 
-use Vest\ResponsaBundle\Entity\Resumfrage;     // Zeigt dem Controller, wo er die Entität findet (verwendet in Zeilte 17)
+use Vest\ResponsaBundle\Entity\ResUmfrage;     // Zeigt dem Controller, wo er die Entität findet (verwendet in Zeilte 17)
 use Symfony\Component\HttpFoundation\Request;   // Zeigt dem Controller wo er die Funktionen für Requests findet.
 use Symfony\Component\HttpFoundation\Session\Session;
   

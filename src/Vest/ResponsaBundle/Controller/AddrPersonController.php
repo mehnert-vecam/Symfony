@@ -56,7 +56,7 @@ class AddrPersonController extends Controller
         
         if($id >0){   // checkt, ob die ID gesetzt ist. Ist sie gesetzt, wird bearbeitet
           $repository = $this->getDoctrine()->getRepository('VestResponsaBundle:AddrPersonen');      // lädt das repository und sagt ihm um welche Entity es sich kümmern soll.
-          $person = $repository->findOneBy(array('personId' => $id));   //Versucht eine Person mit der personId zu finden
+          $person = $repository->findOneBy(array('Id' => $id));   //Versucht eine Person mit der personId zu finden
         }else{              // ist keine ID gesetzt, handelt es sich um eine neue Person.
           $person = new AddrPersonen();      // wurde keine Person geladen, wird eine neue erzeugt
           $person->setRecordStatus(1);       // setzt de recordstatus bei neuen Personen auf 1

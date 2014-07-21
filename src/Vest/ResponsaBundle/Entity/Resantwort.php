@@ -5,57 +5,81 @@ namespace Vest\ResponsaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Resantwort
- *
- * @ORM\Table(name="resantwort")
- * @ORM\Entity
+ * ResAntwort
  */
-class Resantwort
+class ResAntwort
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="f_id", type="integer", nullable=false)
      */
     private $fId;
 
     /**
+     * @var integer
+     */
+    private $uId;
+
+    /**
      * @var string
-     *
-     * @ORM\Column(name="antwort", type="text", nullable=false)
      */
     private $antwort;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="auswertungsbereich", type="text", nullable=true)
      */
     private $auswertungsbereich;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="f_type", type="integer", nullable=false)
      */
     private $fType;
 
     /**
+     * @var \DateTime
+     */
+    private $datum;
+
+    /**
+     * @var string
+     */
+    private $feld1;
+
+    /**
+     * @var string
+     */
+    private $feld2;
+
+    /**
+     * @var string
+     */
+    private $feld3;
+
+    /**
+     * @var string
+     */
+    private $feld4;
+
+    /**
+     * @var string
+     */
+    private $feld5;
+
+    /**
+     * @var string
+     */
+    private $token;
+
+    /**
      * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-
 
 
     /**
      * Set fId
      *
      * @param integer $fId
-     * @return Resantwort
+     * @return ResAntwort
      */
     public function setFId($fId)
     {
@@ -75,10 +99,33 @@ class Resantwort
     }
 
     /**
+     * Set uId
+     *
+     * @param integer $uId
+     * @return ResAntwort
+     */
+    public function setUId($uId)
+    {
+        $this->uId = $uId;
+
+        return $this;
+    }
+
+    /**
+     * Get uId
+     *
+     * @return integer 
+     */
+    public function getUId()
+    {
+        return $this->uId;
+    }
+
+    /**
      * Set antwort
      *
      * @param string $antwort
-     * @return Resantwort
+     * @return ResAntwort
      */
     public function setAntwort($antwort)
     {
@@ -101,7 +148,7 @@ class Resantwort
      * Set auswertungsbereich
      *
      * @param string $auswertungsbereich
-     * @return Resantwort
+     * @return ResAntwort
      */
     public function setAuswertungsbereich($auswertungsbereich)
     {
@@ -124,7 +171,7 @@ class Resantwort
      * Set fType
      *
      * @param integer $fType
-     * @return Resantwort
+     * @return ResAntwort
      */
     public function setFType($fType)
     {
@@ -144,29 +191,14 @@ class Resantwort
     }
 
     /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-    /**
-     * @var \DateTime
-     */
-    private $datum;
-
-
-    /**
      * Set datum
      *
      * @param \DateTime $datum
-     * @return Resantwort
+     * @return ResAntwort
      */
     public function setDatum()
     {
-        $this->datum = new \DateTime();
+        $this->datum = new \DateTime;
 
         return $this;
     }
@@ -180,47 +212,12 @@ class Resantwort
     {
         return $this->datum;
     }
-    /**
-     * @var integer
-     */
-    private $feld1;
-
-    /**
-     * @var integer
-     */
-    private $feld2;
-
-    /**
-     * @var integer
-     */
-    private $feld3;
-
-    /**
-     * @var integer
-     */
-    private $feld4;
-
-    /**
-     * @var integer
-     */
-    private $feld5;
-
-    /**
-     * @var string
-     */
-    private $token;
-
-    /**
-     * @var string
-     */
-    private $tokenReserv;
-
 
     /**
      * Set feld1
      *
-     * @param integer $feld1
-     * @return Resantwort
+     * @param string $feld1
+     * @return ResAntwort
      */
     public function setFeld1($feld1)
     {
@@ -232,7 +229,7 @@ class Resantwort
     /**
      * Get feld1
      *
-     * @return integer 
+     * @return string 
      */
     public function getFeld1()
     {
@@ -242,8 +239,8 @@ class Resantwort
     /**
      * Set feld2
      *
-     * @param integer $feld2
-     * @return Resantwort
+     * @param string $feld2
+     * @return ResAntwort
      */
     public function setFeld2($feld2)
     {
@@ -255,7 +252,7 @@ class Resantwort
     /**
      * Get feld2
      *
-     * @return integer 
+     * @return string 
      */
     public function getFeld2()
     {
@@ -265,8 +262,8 @@ class Resantwort
     /**
      * Set feld3
      *
-     * @param integer $feld3
-     * @return Resantwort
+     * @param string $feld3
+     * @return ResAntwort
      */
     public function setFeld3($feld3)
     {
@@ -278,7 +275,7 @@ class Resantwort
     /**
      * Get feld3
      *
-     * @return integer 
+     * @return string 
      */
     public function getFeld3()
     {
@@ -288,8 +285,8 @@ class Resantwort
     /**
      * Set feld4
      *
-     * @param integer $feld4
-     * @return Resantwort
+     * @param string $feld4
+     * @return ResAntwort
      */
     public function setFeld4($feld4)
     {
@@ -301,7 +298,7 @@ class Resantwort
     /**
      * Get feld4
      *
-     * @return integer 
+     * @return string 
      */
     public function getFeld4()
     {
@@ -311,8 +308,8 @@ class Resantwort
     /**
      * Set feld5
      *
-     * @param integer $feld5
-     * @return Resantwort
+     * @param string $feld5
+     * @return ResAntwort
      */
     public function setFeld5($feld5)
     {
@@ -324,7 +321,7 @@ class Resantwort
     /**
      * Get feld5
      *
-     * @return integer 
+     * @return string 
      */
     public function getFeld5()
     {
@@ -335,7 +332,7 @@ class Resantwort
      * Set token
      *
      * @param string $token
-     * @return Resantwort
+     * @return ResAntwort
      */
     public function setToken($token)
     {
@@ -355,53 +352,12 @@ class Resantwort
     }
 
     /**
-     * Set tokenReserv
-     *
-     * @param string $tokenReserv
-     * @return Resantwort
-     */
-    public function setTokenReserv($tokenReserv)
-    {
-        $this->tokenReserv = $tokenReserv;
-
-        return $this;
-    }
-
-    /**
-     * Get tokenReserv
-     *
-     * @return string 
-     */
-    public function getTokenReserv()
-    {
-        return $this->tokenReserv;
-    }
-    /**
-     * @var integer
-     */
-    private $uId;
-
-
-    /**
-     * Set uId
-     *
-     * @param integer $uId
-     * @return Resantwort
-     */
-    public function setUId($uId)
-    {
-        $this->uId = $uId;
-
-        return $this;
-    }
-
-    /**
-     * Get uId
+     * Get id
      *
      * @return integer 
      */
-    public function getUId()
+    public function getId()
     {
-        return $this->uId;
+        return $this->id;
     }
 }
