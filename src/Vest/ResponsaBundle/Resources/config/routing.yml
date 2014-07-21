@@ -25,21 +25,21 @@ AddrPerson-save:
     defaults: { _controller: VestResponsaBundle:AddrPerson:save }
 
 Security_login:
-    pattern:  /login/
+    pattern:  /responsa/login/
     defaults: { _controller: VestResponsaBundle:Login:Login }
 Security_log-me-in:
-    pattern:  /login/check/
+    pattern:  /responsa/login/check/
     defaults: { _controller: VestResponsaBundle:Login:logincheck }
 Security_Session:
-    pattern:  /session/
+    pattern:  /responsa/session/
     defaults: { _controller: VestResponsaBundle:Login:sessioncheck	 }
 Security_logout:
-    pattern:  /logout/
+    pattern:  /responsa/logout/
     defaults: { _controller: VestResponsaBundle:Base:Logout	 }
 
 
 Responsa_default:
-    pattern:  /
+    pattern:  /responsa/
     defaults: { _controller: VestResponsaBundle:Umfrage:overview	 }
 
 Responsa_overview:
@@ -103,3 +103,11 @@ Responsa_generate_show:
 Responsa_generate_erhalten:
     pattern:  /responsa/generate/erhalten/
     defaults: { _controller: VestResponsaBundle:View:GenerateErhahlten }
+
+
+Profil_show:
+    pattern:  /responsa/profil/show/
+    defaults: { _controller: VestResponsaBundle:Profil:Overview,}
+Profil_save:
+    pattern:  /responsa/profil/save/
+    defaults: { _controller: VestResponsaBundle:Profil:Save}

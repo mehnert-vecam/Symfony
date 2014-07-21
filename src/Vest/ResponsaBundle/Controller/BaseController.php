@@ -95,7 +95,7 @@ class BaseController extends Controller
             $this->navigation[]=$navitem;
 						
             $navitem['name']='Profil';
-            $navitem['kurzname']='Responsa_overview';
+            $navitem['kurzname']='Profil_show';
             $navitem['icon']='icon-home nav-icon';
             $navitem['farbe']='#000099';
             $navitem['viewcount']=0;

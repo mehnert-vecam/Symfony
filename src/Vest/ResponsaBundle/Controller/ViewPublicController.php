@@ -18,7 +18,6 @@ class ViewPublicController extends Controller
         
 				$u_name = $umfrage->getName();
 				$token = $session->get('token');
-					print_r($token);
 				//print_r($token.'--');
 				if($token == ''){
 					$tmp = time();
@@ -145,13 +144,13 @@ class ViewPublicController extends Controller
 					}
 					
 				};
+				
 				$query = $em->createQuery(
 						"UPDATE VestResponsaBundle:resumfrage u 
 						SET u.teilnehmerzahl = u.teilnehmerzahl+1
 						WHERE u.id =".$u_id
 				);
 				$result = $query->getResult();
-				
 				
 				$frageliste = new resfragenliste();
 				$frageliste->setU_Id($u_id);

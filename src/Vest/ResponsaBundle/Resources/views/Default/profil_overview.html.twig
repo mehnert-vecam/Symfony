@@ -1,0 +1,109 @@
+{% extends "VestSharedBundle:turbulence:base.html.twig" %}
+{% block contentinner %}
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3>Ihr Profil</h3>
+	</div>
+  <div class="panel-body">
+		{%if changed%}
+		
+		<div class="alert alert-dismissible alert-{{ erfolg }}">
+		  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			{{ result }}
+		</div>
+		{%endif%}
+		<div class="row">	
+			<div class="col-md-6">
+				<ul class="profil_liste">
+					<li>
+						{{person.personAnrede}} {{person.personTitel}} {{person.personVorname}} {{person.personName}}  
+					</li>
+					<li>
+						{{person.personTelefon}} 
+					</li>
+					<li>
+						{{person.personEmail}}
+					</li>
+					<li>
+						&nbsp;
+					</li>
+					<li>
+						{{kontakt.kontaktTyp}} {{kontakt.kontaktName}}
+					</li>
+					<li>
+						{{kontakt.kontaktName2}}
+					</li>
+					<li>
+						{{kontakt.kontaktName3}}
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<ul class="profil_liste">
+					<li>
+						{{kontakt.kontaktStrasse}}
+					</li>
+					<li>
+						{{kontakt.kontaktPlz}}
+					</li>
+					<li>
+						{{kontakt.kontaktOrt}}
+					</li>
+					<li>
+						{{kontakt.kontaktTelefon}}
+					</li>
+					<li>
+						{{kontakt.kontaktTelefax}}
+					</li>
+					<li>
+						{{kontakt.kontaktEmail}}
+					</li>
+					<li>
+						<a href="{{kontakt.kontaktUrl}}">{{kontakt.kontaktUrl}}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="row profil_zeile2">	
+			<div class="col-md-6">
+				<ul class="profil_liste">
+					<li>
+				{{ form_start(form) }}      <!-- Start des Formularbereits -->
+
+					<div class="pw_change_wrapper">
+							{{ form_label(form.altes_passwort, 'altes Passwort') }}   <br />
+							{{ form_errors(form.altes_passwort) }}
+							{{ form_widget(form.altes_passwort) }}
+					</div>
+					<div class="pw_change_wrapper">
+							{{ form_label(form.neues_passwort, 'Neues Passwort') }}   <br />
+							{{ form_errors(form.neues_passwort) }}
+							{{ form_widget(form.neues_passwort) }}
+					</div>
+					<div class="pw_change_wrapper">
+							{{ form_label(form.neues_passwort2, 'Neues Passwort wiederhohlen') }}   <br />
+							{{ form_errors(form.neues_passwort2) }}
+							{{ form_widget(form.neues_passwort2) }}
+					</div>
+					<div class="pw_change_wrapper">
+							{{ form_widget(form.Ändern) }}
+					</div>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<ul class="profil_liste">
+					<li>
+						Sollten Sie mehr als Ihr Passwort ändern wollen wenden Sie sich bitte an den <a href="{{ path('Responsa_help') }}">Support</a> oder nutzen Sie ihren Disciplina-Zugang, sollten Sie einen haben.
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<style>
+</style>
+{% endblock %}
